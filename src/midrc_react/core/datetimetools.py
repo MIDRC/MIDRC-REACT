@@ -60,13 +60,9 @@ def get_date_parts(date_val):
         tuple: A tuple containing the year, month, and day.
 
     """
-    # If date_val is a numpy.datetime64 or an element from a numpy array,
-    # convert it to a pandas.Timestamp to access .year, .month, .day.
-    timestamp = pd.to_datetime(date_val)
-    year = timestamp.year
-    month = timestamp.month
-    day = timestamp.day
-    return year, month, day
+    # Use a pandas Period with daily frequency to avoid nanosecond precision issues
+    period = pd.Period(date_val, freq='D')
+    return period.year, period.month, period.day
 
 
 def numpy_datetime64_to_qdate(numpy_datetime):
