@@ -1,0 +1,1757 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>midrc_react.core package &mdash; MIDRC-REACT  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="midrc_react.gui package" href="midrc_react.gui.html" />
+    <link rel="prev" title="midrc_react package" href="midrc_react.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MIDRC-REACT
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">midrc_react</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="midrc_react.html">midrc_react package</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">midrc_react.core package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="midrc_react.gui.html">midrc_react.gui package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="midrc_react.gui.common.html">midrc_react.gui.common package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="midrc_react.gui.dash.html">midrc_react.gui.dash package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="midrc_react.gui.ipython.html">midrc_react.gui.ipython package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="midrc_react.gui.pyside6.html">midrc_react.gui.pyside6 package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="midrc_react.plugins.html">midrc_react.plugins package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MIDRC-REACT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">midrc_react</a></li>
+          <li class="breadcrumb-item"><a href="midrc_react.html">midrc_react package</a></li>
+      <li class="breadcrumb-item active">midrc_react.core package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/midrc_react.core.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="midrc-react-core-package">
+<h1>midrc_react.core package<a class="headerlink" href="#midrc-react-core-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-midrc_react.core.aggregate_jsd_calc">
+<span id="midrc-react-core-aggregate-jsd-calc-module"></span><h2>midrc_react.core.aggregate_jsd_calc module<a class="headerlink" href="#module-midrc_react.core.aggregate_jsd_calc" title="Link to this heading"></a></h2>
+<p>This module contains functions for calculating Jensen-Shannon Distance (JSD) between datasets.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.aggregate_jsd_calc.calc_aggregate_jsd_at_date">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.aggregate_jsd_calc.</span></span><span class="sig-name descname"><span class="pre">calc_aggregate_jsd_at_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_to_use</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#midrc_react.core.aggregate_jsd_calc.calc_aggregate_jsd_at_date" title="Link to this definition"></a></dt>
+<dd><p>Calculate Jensen-Shannon Distance (JSD) based on features between two datasets at a specific date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df1</strong> – pandas DataFrame containing the first dataset</p></li>
+<li><p><strong>df2</strong> – pandas DataFrame containing the second dataset</p></li>
+<li><p><strong>cols_to_use</strong> – list of columns to use for the JSD calculation</p></li>
+<li><p><strong>date</strong> – date at which to calculate the JSD</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary of JSD values for each feature</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.aggregate_jsd_calc.calc_jsd_by_features">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.aggregate_jsd_calc.</span></span><span class="sig-name descname"><span class="pre">calc_jsd_by_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_to_use</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#midrc_react.core.aggregate_jsd_calc.calc_jsd_by_features" title="Link to this definition"></a></dt>
+<dd><p>Calculate Jensen-Shannon Distance (JSD) based on features based on input datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df_list</strong> – list of pandas DataFrames containing the datasets</p></li>
+<li><p><strong>cols_to_use</strong> – list of columns to use for the JSD calculation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary of JSD values for each dataset combination</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.aggregate_jsd_calc.calc_jsd_by_features_2df">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.aggregate_jsd_calc.</span></span><span class="sig-name descname"><span class="pre">calc_jsd_by_features_2df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_to_use</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#midrc_react.core.aggregate_jsd_calc.calc_jsd_by_features_2df" title="Link to this definition"></a></dt>
+<dd><p>Calculate Jensen-Shannon Distance (JSD) based on features between two datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df1</strong> – pandas DataFrame containing the first dataset</p></li>
+<li><p><strong>df2</strong> – pandas DataFrame containing the second dataset</p></li>
+<li><p><strong>cols_to_use</strong> – list of columns to use for the JSD calculation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary of JSD values for each feature</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.aggregate_jsd_calc.calc_jsd_from_counts_dict">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.aggregate_jsd_calc.</span></span><span class="sig-name descname"><span class="pre">calc_jsd_from_counts_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">counts_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.aggregate_jsd_calc.calc_jsd_from_counts_dict" title="Link to this definition"></a></dt>
+<dd><p>Calculates the Jensen-Shannon Distance (JSD) between each pair of datasets in a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>counts_dict</strong> – dictionary of counts for each dataset</p></li>
+<li><p><strong>dataset_names</strong> – list of dataset names to compare</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary of JSD values for each dataset combination</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.core.cucconi">
+<span id="midrc-react-core-cucconi-module"></span><h2>midrc_react.core.cucconi module<a class="headerlink" href="#module-midrc_react.core.cucconi" title="Link to this heading"></a></h2>
+<p>This module contains functions for calculating the Cucconi test and distribution.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.core.cucconi.CucconiMultisampleResult">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.core.cucconi.</span></span><span class="sig-name descname"><span class="pre">CucconiMultisampleResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statistic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pvalue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.cucconi.CucconiMultisampleResult" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.core.cucconi.CucconiMultisampleResult.pvalue">
+<span class="sig-name descname"><span class="pre">pvalue</span></span><a class="headerlink" href="#midrc_react.core.cucconi.CucconiMultisampleResult.pvalue" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.core.cucconi.CucconiMultisampleResult.statistic">
+<span class="sig-name descname"><span class="pre">statistic</span></span><a class="headerlink" href="#midrc_react.core.cucconi.CucconiMultisampleResult.statistic" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.core.cucconi.CucconiResult">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.core.cucconi.</span></span><span class="sig-name descname"><span class="pre">CucconiResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statistic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pvalue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.cucconi.CucconiResult" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.core.cucconi.CucconiResult.pvalue">
+<span class="sig-name descname"><span class="pre">pvalue</span></span><a class="headerlink" href="#midrc_react.core.cucconi.CucconiResult.pvalue" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.core.cucconi.CucconiResult.statistic">
+<span class="sig-name descname"><span class="pre">statistic</span></span><a class="headerlink" href="#midrc_react.core.cucconi.CucconiResult.statistic" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.cucconi.cucconi_multisample_test">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.cucconi.</span></span><span class="sig-name descname"><span class="pre">cucconi_multisample_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">_ScalarType_co</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'bootstrap'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replications</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ties</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'average'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#midrc_react.core.cucconi.CucconiMultisampleResult" title="midrc_react.core.cucconi.CucconiMultisampleResult"><span class="pre">CucconiMultisampleResult</span></a></span></span><a class="headerlink" href="#midrc_react.core.cucconi.cucconi_multisample_test" title="Link to this definition"></a></dt>
+<dd><p>Method to perform a multisample Cucconi scale-location test.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>List</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – list of observation vectors</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – method for determining p-value,
+possible values are ‘bootstrap’ and ‘permutation’</p></li>
+<li><p><strong>replications</strong> (<em>int</em>) – number of bootstrap replications</p></li>
+<li><p><strong>ties</strong> (<em>str</em>) – string specifying a method to deal with ties in data,
+possible values as for scipy.stats.rankdata</p></li>
+<li><p><strong>n_jobs</strong> (<em>int</em>) – the maximum number of concurrently running jobs. If -1 all CPUs are used. If 1 is given,
+no parallel computing code is used at all. For n_jobs below -1, (n_cpus + 1 + n_jobs) are used.
+None is a marker for ‘unset’ that will be interpreted as n_jobs=1 (sequential execution)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>namedtuple with test statistic value and the p-value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – if ‘method’ parameter is not specified to ‘bootstrap’ or ‘permutation’</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">987654321</span><span class="p">)</span> <span class="c1"># set random seed to get the same result</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample_a</span> <span class="o">=</span> <span class="n">sample_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cucconi_multisample_test</span><span class="p">([</span><span class="n">sample_a</span><span class="p">,</span> <span class="n">sample_b</span><span class="p">],</span> <span class="n">replications</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="go">CucconiMultisampleResult(statistic=6.996968353551774e-07, pvalue=1.0)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">987654321</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cucconi_multisample_test</span><span class="p">([</span><span class="n">sample_a</span><span class="p">,</span> <span class="n">sample_a</span><span class="p">,</span> <span class="n">sample_b</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;permutation&#39;</span><span class="p">)</span>
+<span class="go">CucconiMultisampleResult(statistic=45.3891929069273, pvalue=0.000999000999000999)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.cucconi.cucconi_test">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.cucconi.</span></span><span class="sig-name descname"><span class="pre">cucconi_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">_ScalarType_co</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">_ScalarType_co</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'bootstrap'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replications</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ties</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'average'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#midrc_react.core.cucconi.CucconiResult" title="midrc_react.core.cucconi.CucconiResult"><span class="pre">CucconiResult</span></a></span></span><a class="headerlink" href="#midrc_react.core.cucconi.cucconi_test" title="Link to this definition"></a></dt>
+<dd><p>Method to perform a Cucconi scale-location test.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>np.ndarray</em>) – vector of observations</p></li>
+<li><p><strong>b</strong> (<em>np.ndarray</em>) – vector of observations</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – method for determining p-value,
+possible values are ‘bootstrap’ and ‘permutation’</p></li>
+<li><p><strong>replications</strong> (<em>int</em>) – number of bootstrap replications</p></li>
+<li><p><strong>ties</strong> (<em>str</em>) – string specifying a method to deal with ties in data,
+possible values as for scipy.stats.rankdata</p></li>
+<li><p><strong>n_jobs</strong> (<em>int</em>) – the maximum number of concurrently running jobs. If -1 all CPUs are used. If 1 is given,
+no parallel computing code is used at all. For n_jobs below -1, (n_cpus + 1 + n_jobs) are used.
+None is a marker for ‘unset’ that will be interpreted as n_jobs=1 (sequential execution)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>namedtuple with test statistic value and the p-value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – if ‘method’ parameter is not specified to ‘bootstrap’ or ‘permutation’</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">987654321</span><span class="p">)</span> <span class="c1"># set random seed to get the same result</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample_a</span> <span class="o">=</span> <span class="n">sample_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cucconi_test</span><span class="p">(</span><span class="n">sample_a</span><span class="p">,</span> <span class="n">sample_b</span><span class="p">,</span> <span class="n">replications</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="go">CucconiResult(statistic=3.7763314663244195e-08, pvalue=1.0)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">987654321</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cucconi_test</span><span class="p">(</span><span class="n">sample_a</span><span class="p">,</span> <span class="n">sample_b</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;permutation&#39;</span><span class="p">)</span>
+<span class="go">CucconiResult(statistic=2.62372293956099, pvalue=0.000999000999000999)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.core.data_preprocessing">
+<span id="midrc-react-core-data-preprocessing-module"></span><h2>midrc_react.core.data_preprocessing module<a class="headerlink" href="#module-midrc_react.core.data_preprocessing" title="Link to this heading"></a></h2>
+<p>This module contains functions for data preprocessing and combining datasets.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.data_preprocessing.bin_dataframe_column">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.data_preprocessing.</span></span><span class="sig-name descname"><span class="pre">bin_dataframe_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_to_bin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cut_column_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CUT'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.data_preprocessing.bin_dataframe_column" title="Link to this definition"></a></dt>
+<dd><p>Cuts the age column into bins and adds a column with the bin labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df_to_bin</strong> – pandas DataFrame containing the data</p></li>
+<li><p><strong>column_name</strong> – name of the column to be binned</p></li>
+<li><p><strong>cut_column_name</strong> – name of the column to be added with the bin labels</p></li>
+<li><p><strong>bins</strong> – list of bins to be used for the binning</p></li>
+<li><p><strong>labels</strong> – list of labels for the bins</p></li>
+<li><p><strong>right</strong> – whether to use right-inclusive intervals</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>pandas DataFrame with the binned column and the labels</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.data_preprocessing.combine_datasets_from_list">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.data_preprocessing.</span></span><span class="sig-name descname"><span class="pre">combine_datasets_from_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'_dataset_'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.data_preprocessing.combine_datasets_from_list" title="Link to this definition"></a></dt>
+<dd><p>Combines a list of dataframes into a single dataframe with a new column for the dataset name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df_list</strong> (<em>list</em><em>[</em><em>pd.DataFrame</em><em>]</em>) – A list of dataframes to be combined.</p></li>
+<li><p><strong>dataset_column</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the column to be used for the dataset name. Defaults to ‘_dataset_’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A combined dataframe with a new column for the dataset name.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.core.datetimetools">
+<span id="midrc-react-core-datetimetools-module"></span><h2>midrc_react.core.datetimetools module<a class="headerlink" href="#module-midrc_react.core.datetimetools" title="Link to this heading"></a></h2>
+<p>This module contains functions for converting between different date and time formats.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.datetimetools.convert_date_to_milliseconds">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.datetimetools.</span></span><span class="sig-name descname"><span class="pre">convert_date_to_milliseconds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.datetimetools.convert_date_to_milliseconds" title="Link to this definition"></a></dt>
+<dd><p>Converts a date to milliseconds since epoch.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.datetimetools.get_date_parts">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_date_parts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.datetimetools.get_date_parts" title="Link to this definition"></a></dt>
+<dd><p>Extracts the year, month, and day from a date value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>date_val</strong> – A date value (could be a string, datetime, or other formats).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the year, month, and day.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.datetimetools.numpy_datetime64_to_qdate">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.datetimetools.</span></span><span class="sig-name descname"><span class="pre">numpy_datetime64_to_qdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numpy_datetime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.datetimetools.numpy_datetime64_to_qdate" title="Link to this definition"></a></dt>
+<dd><p>Convert a NumPy datetime64 object to a PySide2 QDate object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>numpy_datetime</strong> (<em>numpy.datetime64</em>) – NumPy datetime64 object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PySide2 QDate object representing the same date.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QDate</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.datetimetools.pandas_date_to_qdate">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.datetimetools.</span></span><span class="sig-name descname"><span class="pre">pandas_date_to_qdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pandas_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.datetimetools.pandas_date_to_qdate" title="Link to this definition"></a></dt>
+<dd><p>Convert a pandas Timestamp or datetime object to a PySide2 QDate object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pandas_date</strong> (<em>pd.Timestamp</em><em> or </em><em>datetime64</em>) – Pandas Timestamp or datetime object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PySide2 QDate object representing the same date.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QDate</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.core.excel_layout">
+<span id="midrc-react-core-excel-layout-module"></span><h2>midrc_react.core.excel_layout module<a class="headerlink" href="#module-midrc_react.core.excel_layout" title="Link to this heading"></a></h2>
+<p>This module contains classes and functions for building and processing Excel and CSV files.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSheet">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.core.excel_layout.</span></span><span class="sig-name descname"><span class="pre">DataSheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sheet_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_age_ranges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_excel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ExcelFile</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSheet" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class representing a data sheet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of the data sheet.</p></li>
+<li><p><strong>_columns</strong> (<em>dict</em>) – A dictionary containing the columns of the data sheet.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSheet.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sheet_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_age_ranges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_excel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ExcelFile</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSheet.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the DataSheet object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sheet_name</strong> (<em>str</em>) – The name of the sheet in the Excel file to parse.</p></li>
+<li><p><strong>data_source</strong> (<em>dict</em>) – The data source object.</p></li>
+<li><p><strong>is_excel</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag indicating whether the data source is an Excel file. Defaults to False.</p></li>
+<li><p><strong>file</strong> (<em>pd.ExcelFile</em><em>, </em><em>optional</em>) – The Excel file to read the sheet from</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSheet.columns">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSheet.columns" title="Link to this definition"></a></dt>
+<dd><p>Return the columns.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSheet.create_custom_age_columns">
+<span class="sig-name descname"><span class="pre">create_custom_age_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">age_ranges</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSheet.create_custom_age_columns" title="Link to this definition"></a></dt>
+<dd><p>Creates custom age columns by summing values from columns that match each age range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>age_ranges</strong> (<em>list</em><em> of </em><em>tuple</em>) – Each tuple is (min_age, max_age).</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Drops any previously created custom columns.</p></li>
+<li><p>Considers only columns that start with a digit and do not contain ‘(%)’ or ‘(CUSUM)’.</p></li>
+<li><dl class="simple">
+<dt>A column is included for an age range if:</dt><dd><ul>
+<li><p>Its lower bound (the first number in the header) is within the range.</p></li>
+<li><p>If an upper bound exists (a second number), the age range’s max is not less than it.</p></li>
+<li><p>If no upper bound exists, the column is only included if max_age is infinite.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Warns if any eligible column is unused.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSheet.data_columns">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_columns</span></span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSheet.data_columns" title="Link to this definition"></a></dt>
+<dd><p>Return the data columns. This skips the first column, which is the date column.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSheet.df">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">df</span></span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSheet.df" title="Link to this definition"></a></dt>
+<dd><p>Return the dataframe.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSource">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.core.excel_layout.</span></span><span class="sig-name descname"><span class="pre">DataSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_age_ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSource" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class representing a data source with optional plugin-based preprocessing and numeric column adjustments.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSource.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_age_ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSource.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initializes the DataSource class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_source</strong> (<em>dict</em>) – The data source configuration.</p></li>
+<li><p><strong>custom_age_ranges</strong> (<em>dict</em><em>, </em><em>optional</em>) – A dictionary of custom age ranges.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSource.apply_numeric_column_adjustments">
+<span class="sig-name descname"><span class="pre">apply_numeric_column_adjustments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSource.apply_numeric_column_adjustments" title="Link to this definition"></a></dt>
+<dd><p>Applies numeric column adjustments to a DataFrame using binning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The input DataFrame.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The DataFrame with numeric column adjustments.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSource.build_data_frames_from_content">
+<span class="sig-name descname"><span class="pre">build_data_frames_from_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BytesIO</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSource.build_data_frames_from_content" title="Link to this definition"></a></dt>
+<dd><p>Loads data from an in-memory content stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>io.BytesIO</em>) – Binary Excel file data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSource.build_data_frames_from_csv">
+<span class="sig-name descname"><span class="pre">build_data_frames_from_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSource.build_data_frames_from_csv" title="Link to this definition"></a></dt>
+<dd><p>Loads and preprocesses a CSV or TSV file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The file path.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSource.build_data_frames_from_file">
+<span class="sig-name descname"><span class="pre">build_data_frames_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSource.build_data_frames_from_file" title="Link to this definition"></a></dt>
+<dd><p>Loads an Excel file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The file path.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSource.calculate_cumulative_sums">
+<span class="sig-name descname"><span class="pre">calculate_cumulative_sums</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSource.calculate_cumulative_sums" title="Link to this definition"></a></dt>
+<dd><p>Calculates cumulative sums for a given column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The input DataFrame.</p></li>
+<li><p><strong>col</strong> (<em>str</em>) – The column to calculate cumulative sums for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame with cumulative sums.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSource.create_sheets">
+<span class="sig-name descname"><span class="pre">create_sheets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ExcelFile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSource.create_sheets" title="Link to this definition"></a></dt>
+<dd><p>Creates sheets from a given file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>pd.ExcelFile</em>) – The Excel file object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSource.create_sheets_from_df">
+<span class="sig-name descname"><span class="pre">create_sheets_from_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSource.create_sheets_from_df" title="Link to this definition"></a></dt>
+<dd><p>Creates data sheets from a DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The processed DataFrame.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSource.load_plugin">
+<span class="sig-name descname"><span class="pre">load_plugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSource.load_plugin" title="Link to this definition"></a></dt>
+<dd><p>Dynamically loads a preprocessing plugin from the given path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>plugin_path</strong> (<em>str</em>) – Path to the plugin Python file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A reference to the plugin’s preprocess_data function if found, else None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSource.numeric_cols">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numeric_cols</span></span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSource.numeric_cols" title="Link to this definition"></a></dt>
+<dd><p>Returns a dictionary of numeric columns to use for the analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of numeric columns to use for the analysis.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.excel_layout.DataSource.raw_columns_to_use">
+<span class="sig-name descname"><span class="pre">raw_columns_to_use</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excel_layout.DataSource.raw_columns_to_use" title="Link to this definition"></a></dt>
+<dd><p>Returns a list of the raw columns to use for the analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of the raw columns to use for the analysis.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.core.excelparse">
+<span id="midrc-react-core-excelparse-module"></span><h2>midrc_react.core.excelparse module<a class="headerlink" href="#module-midrc_react.core.excelparse" title="Link to this heading"></a></h2>
+<p>This module contains a function to parse Excel files and return a pandas DataFrame.</p>
+<p>CURRENTLY UNUSED IN midrc_react PROJECT</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.excelparse.excelparse">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.excelparse.</span></span><span class="sig-name descname"><span class="pre">excelparse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.excelparse.excelparse" title="Link to this definition"></a></dt>
+<dd><p>Parse a spreadsheet using the filename and sheet name specified and return a pandas dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>string</em>) – filename to open</p></li>
+<li><p><strong>sheet_name</strong> (<em>string</em>) – sheet name to parse</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>pandas dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.core.famd_calc">
+<span id="midrc-react-core-famd-calc-module"></span><h2>midrc_react.core.famd_calc module<a class="headerlink" href="#module-midrc_react.core.famd_calc" title="Link to this heading"></a></h2>
+<p>This module contains functions for calculating Factor Analysis of Mixed Data (FAMD) and related distances.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.famd_calc.adjust_bin_widths">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.famd_calc.</span></span><span class="sig-name descname"><span class="pre">adjust_bin_widths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.famd_calc.adjust_bin_widths" title="Link to this definition"></a></dt>
+<dd><p>Adjust the width of bins by merging a specified number of adjacent bins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bins</strong> (<em>array</em>) – The original bin edges.</p></li>
+<li><p><strong>hist</strong> (<em>array</em>) – The original histogram values.</p></li>
+<li><p><strong>multiple</strong> (<em>int</em>) – The factor by which to adjust the bin widths (e.g., 2 to double, 3 to triple).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The new bin edges with adjusted widths.
+new_hist (array): The new histogram values corresponding to the new bins.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new_bins (array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.famd_calc.calc_famd_df">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.famd_calc.</span></span><span class="sig-name descname"><span class="pre">calc_famd_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_to_use</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'_dataset_'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_outliers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">famd_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'famd_x_coordinates'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.famd_calc.calc_famd_df" title="Link to this definition"></a></dt>
+<dd><p>Calculate the FAMD coordinates for the input DataFrame and return a new DataFrame with the coordinates added.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_df</strong> (<em>DataFrame</em>) – The raw data to be preprocessed.</p></li>
+<li><p><strong>cols_to_use</strong> (<em>list</em>) – List of columns to use for the calculation.</p></li>
+<li><p><strong>numeric_cols</strong> (<em>list</em>) – List of numeric columns to use for the calculation.</p></li>
+<li><p><strong>dataset_column</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the column to be used for the dataset name. Defaults to ‘_dataset_’.</p></li>
+<li><p><strong>print_outliers</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to print outliers. Defaults to False.</p></li>
+<li><p><strong>famd_column</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the column to be used for the FAMD coordinates.
+Defaults to ‘famd_x_coordinates’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame with the FAMD coordinates added.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.famd_calc.calc_famd_distances">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.famd_calc.</span></span><span class="sig-name descname"><span class="pre">calc_famd_distances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_to_use</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'_dataset_'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_metrics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jsd_scaled_bin_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_outliers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.famd_calc.calc_famd_distances" title="Link to this definition"></a></dt>
+<dd><p>Calculate various distance metrics based on FAMD coordinates calculated from the input DataFrame using the feature
+columns specified in the SamplingData object.</p>
+<p>This function computes Jensen-Shannon Divergence (JSD),
+Wasserstein distance, Kolmogorov-Smirnov (KS) statistics,
+and Cucconi distance, with optional scaling methods for
+the given distances. The results are returned as a
+dictionary where keys represent the metric names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – The DataFrame containing the data.</p></li>
+<li><p><strong>sampling_data</strong> (<em>SamplingData</em>) – Object containing dataset information.</p></li>
+<li><p><strong>distance_metrics</strong> (<em>tuple</em>) – A tuple of strings specifying which distance metrics to compute.
+Use ‘all’ to compute all available metrics or specify individual metrics
+(e.g., ‘jsd’, ‘wass’, ‘ks2’, ‘cuc’) along with optional scaling
+options (e.g., ‘wass(std)’, ‘ks2(rob)’, etc.).</p></li>
+<li><p><strong>jsd_scaled_bin_width</strong> (<em>float</em>) – Width of each histogram bin for scaled JSD (default is 0.01).</p></li>
+<li><p><strong>print_outliers</strong> (<em>bool</em>) – Whether to print outliers (default is False).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary of distance values specified in distance_metrics for each dataset combination.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.famd_calc.calc_famd_ks2_at_date">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.famd_calc.</span></span><span class="sig-name descname"><span class="pre">calc_famd_ks2_at_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_to_use</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.famd_calc.calc_famd_ks2_at_date" title="Link to this definition"></a></dt>
+<dd><p>Calculate the KS2 distance between two datasets at a specific date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df1</strong> – first DataFrame</p></li>
+<li><p><strong>df2</strong> – second DataFrame</p></li>
+<li><p><strong>cols_to_use</strong> – columns to use for the calculation</p></li>
+<li><p><strong>numeric_cols</strong> – list of numeric columns</p></li>
+<li><p><strong>calc_date</strong> – date to calculate the KS2 distance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>KS2 distance at specified date</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.famd_calc.calc_famd_ks2_at_dates">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.famd_calc.</span></span><span class="sig-name descname"><span class="pre">calc_famd_ks2_at_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_to_use</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_date_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.famd_calc.calc_famd_ks2_at_dates" title="Link to this definition"></a></dt>
+<dd><p>Calculate the KS2 distance between two datasets at multiple dates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df1</strong> – first DataFrame</p></li>
+<li><p><strong>df2</strong> – second DataFrame</p></li>
+<li><p><strong>cols_to_use</strong> – columns to use for the calculation</p></li>
+<li><p><strong>numeric_cols</strong> – list of numeric columns</p></li>
+<li><p><strong>calc_date_list</strong> – list of dates to calculate the KS2 distance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of KS2 distances at each date</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.famd_calc.fit_famd">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.famd_calc.</span></span><span class="sig-name descname"><span class="pre">fit_famd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.famd_calc.fit_famd" title="Link to this definition"></a></dt>
+<dd><p>Fits a Factor Analysis of Mixed Data (FAMD) model to the input data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>pandas.DataFrame</em>) – The input data to fit the FAMD model.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the fitted FAMD model and the row coordinates.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>famd_model, coordinates = fit_famd(data)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.famd_calc.preprocess_data_for_famd">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.famd_calc.</span></span><span class="sig-name descname"><span class="pre">preprocess_data_for_famd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'standard'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.famd_calc.preprocess_data_for_famd" title="Link to this definition"></a></dt>
+<dd><p>Preprocesses the raw data for Factor Analysis of Mixed Data (FAMD).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_df</strong> (<em>DataFrame</em>) – The raw data to be preprocessed.</p></li>
+<li><p><strong>features</strong> (<em>List</em>) – List of features to be included in the preprocessing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Preprocessed data with selected features.
+df (DataFrame): Concatenated DataFrame with preprocessed data and ‘dataset’ column.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>c_data (DataFrame)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.core.jsdconfig">
+<span id="midrc-react-core-jsdconfig-module"></span><h2>midrc_react.core.jsdconfig module<a class="headerlink" href="#module-midrc_react.core.jsdconfig" title="Link to this heading"></a></h2>
+<p>This module contains the JSDConfig class, which loads and stores data from a YAML file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.core.jsdconfig.JSDConfig">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.core.jsdconfig.</span></span><span class="sig-name descname"><span class="pre">JSDConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'jsdconfig.yaml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdconfig.JSDConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The JSDConfig class loads and stores data from a YAML file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – The name of the YAML file to load. Default is ‘jsdconfig.yaml’.</p></li>
+<li><p><strong>data</strong> (<em>dict</em>) – The loaded data from the YAML file.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdconfig.JSDConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jsdconfig.yaml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdconfig.JSDConfig.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initializes a new instance of JSDConfig.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdconfig.JSDConfig.__post_init__">
+<span class="sig-name descname"><span class="pre">__post_init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdconfig.JSDConfig.__post_init__" title="Link to this definition"></a></dt>
+<dd><p>Loads the YAML data from the current filename.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.core.jsdconfig.JSDConfig.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#midrc_react.core.jsdconfig.JSDConfig.data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.core.jsdconfig.JSDConfig.filename">
+<span class="sig-name descname"><span class="pre">filename</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'jsdconfig.yaml'</span></em><a class="headerlink" href="#midrc_react.core.jsdconfig.JSDConfig.filename" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdconfig.JSDConfig.set_filename">
+<span class="sig-name descname"><span class="pre">set_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdconfig.JSDConfig.set_filename" title="Link to this definition"></a></dt>
+<dd><p>Set a new filename and reload the data.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.core.jsdcontroller">
+<span id="midrc-react-core-jsdcontroller-module"></span><h2>midrc_react.core.jsdcontroller module<a class="headerlink" href="#module-midrc_react.core.jsdcontroller" title="Link to this heading"></a></h2>
+<p>This module contains the JSDController class, which manages the JSD view and model.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.core.jsdcontroller.</span></span><span class="sig-name descname"><span class="pre">JSDController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jsd_view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jsd_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<p>Class JSDController</p>
+<p>This class represents a JSD Controller. It emits a signal when the model changes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>modelChanged</strong> – A Signal that is emitted when the model changes.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.NOT_REPORTED_COLUMN_NAME">
+<span class="sig-name descname"><span class="pre">NOT_REPORTED_COLUMN_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Not</span> <span class="pre">Reported'</span></em><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.NOT_REPORTED_COLUMN_NAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jsd_view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jsd_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the JSDController.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jsd_view</strong> (<em>object</em>) – The JSD view object.</p></li>
+<li><p><strong>jsd_model</strong> (<em>object</em>) – The JSD model object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.category_changed">
+<span class="sig-name descname"><span class="pre">category_changed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.category_changed" title="Link to this definition"></a></dt>
+<dd><p>Parses the dates from all files for the current category and updates the data in the model appropriately.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.connect_signals">
+<span class="sig-name descname"><span class="pre">connect_signals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.connect_signals" title="Link to this definition"></a></dt>
+<dd><p>Connects signals for file and category comboboxes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.fileChangedSignal">
+<span class="sig-name descname"><span class="pre">fileChangedSignal</span></span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.fileChangedSignal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.file_changed">
+<span class="sig-name descname"><span class="pre">file_changed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_category_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.file_changed" title="Link to this definition"></a></dt>
+<dd><p>Parses the categories from the files selected in the comboboxes and updates the category box appropriately.
+Emits the fileChangedSignal signal upon completion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Optional</strong> (<em>new_category_index</em>) – The index of the category to set, if None then use previous index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.get_categories">
+<span class="sig-name descname"><span class="pre">get_categories</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.get_categories" title="Link to this definition"></a></dt>
+<dd><p>Get the list of categories from the data sources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of categories.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.get_cols_to_use_for_jsd_calc">
+<span class="sig-name descname"><span class="pre">get_cols_to_use_for_jsd_calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.get_cols_to_use_for_jsd_calc" title="Link to this definition"></a></dt>
+<dd><p>Generates a list of columns from a sheet that should be used in the JSD calculation.</p>
+<p>This handles custom categories i.e. for custom age ranges</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_id</strong> (<em>str</em>) – The combobox used to get the data file from.</p></li>
+<li><p><strong>category</strong> (<em>str</em>) – The sheet category to get the columns from.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of columns in the current sheet category</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.get_file_sheets_from_index">
+<span class="sig-name descname"><span class="pre">get_file_sheets_from_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.get_file_sheets_from_index" title="Link to this definition"></a></dt>
+<dd><p>Get the sheets from the selected file combobox.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – The index of the file combobox. Default is 0.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the sheets from the selected file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.get_spider_plot_values">
+<span class="sig-name descname"><span class="pre">get_spider_plot_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calc_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.get_spider_plot_values" title="Link to this definition"></a></dt>
+<dd><p>Compiles a dictionary of categories and JSD values for a given date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>calc_date</strong> (<em>Optional</em><em>[</em><em>datetime.date</em><em>]</em>) – The date to use for JSD calculation. Default is None.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary of categories and JSD values for a given date.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.get_timeline_data">
+<span class="sig-name descname"><span class="pre">get_timeline_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.get_timeline_data" title="Link to this definition"></a></dt>
+<dd><p>Get the timeline data for the specified category.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>category</strong> (<em>str</em>) – The category for which to get the timeline data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame containing the timeline data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.initialize" title="Link to this definition"></a></dt>
+<dd><p>Initialize the JSDController.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.jsd_model">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">jsd_model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#midrc_react.core.jsdmodel.JSDTableModel" title="midrc_react.core.jsdmodel.JSDTableModel"><span class="pre">JSDTableModel</span></a></em><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.jsd_model" title="Link to this definition"></a></dt>
+<dd><p>Get the JSD model object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The JSD model object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.jsd_view">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">jsd_view</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="midrc_react.gui.common.html#midrc_react.gui.common.jsdview_base.JsdViewBase" title="midrc_react.gui.common.jsdview_base.JsdViewBase"><span class="pre">JsdViewBase</span></a></em><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.jsd_view" title="Link to this definition"></a></dt>
+<dd><p>Get the JSD view object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The JSD view object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.modelChanged">
+<span class="sig-name descname"><span class="pre">modelChanged</span></span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.modelChanged" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.num_categories">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_categories</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.num_categories" title="Link to this definition"></a></dt>
+<dd><p>Get the number of categories.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of categories.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.update_category_plots">
+<span class="sig-name descname"><span class="pre">update_category_plots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.update_category_plots" title="Link to this definition"></a></dt>
+<dd><p>Update the category plots.</p>
+<p>This method updates the JSD timeline plot and the area chart.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the update was successful, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.JSDController.update_file_based_charts">
+<span class="sig-name descname"><span class="pre">update_file_based_charts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.JSDController.update_file_based_charts" title="Link to this definition"></a></dt>
+<dd><p>Update the file-based charts.</p>
+<p>This method updates the pie chart dock and the spider chart.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the update was successful, False otherwise</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.calculate_jsd">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.jsdcontroller.</span></span><span class="sig-name descname"><span class="pre">calculate_jsd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_to_use</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.calculate_jsd" title="Link to this definition"></a></dt>
+<dd><p>Calculate the Jensen-Shannon distance between two dataframes for a given date.</p>
+<p>There is an assumption that the date column of the dataframes are sorted from smallest to largest.</p>
+<p><em>Note: The Jensen-Shannon distance returned is the square root of the Jensen-Shannon divergence.</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df1</strong> (<em>pd.DataFrame</em>) – First dataframe.</p></li>
+<li><p><strong>df2</strong> (<em>pd.DataFrame</em>) – Second dataframe.</p></li>
+<li><p><strong>cols_to_use</strong> (<em>list</em>) – List of columns to use for the calculation.</p></li>
+<li><p><strong>calc_date</strong> (<em>pd.Timestamp</em>) – Date for which the calculation is performed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Jensen-Shannon distance between the two dataframes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.jsdcontroller.remove_elements_less_than_from_sorted_list">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.jsdcontroller.</span></span><span class="sig-name descname"><span class="pre">remove_elements_less_than_from_sorted_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sorted_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdcontroller.remove_elements_less_than_from_sorted_list" title="Link to this definition"></a></dt>
+<dd><p>Remove elements less than the given value from a sorted list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sorted_list</strong> (<em>list</em>) – A sorted list of elements.</p></li>
+<li><p><strong>value</strong> – The value to compare against.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new list containing only elements greater than or equal to the value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.core.jsdmodel">
+<span id="midrc-react-core-jsdmodel-module"></span><h2>midrc_react.core.jsdmodel module<a class="headerlink" href="#module-midrc_react.core.jsdmodel" title="Link to this heading"></a></h2>
+<p>This module contains the JSDTableModel class, which is a subclass of QAbstractTableModel.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.core.jsdmodel.</span></span><span class="sig-name descname"><span class="pre">JSDTableModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_age_ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QAbstractTableModel</span></code></p>
+<p>A class representing a table model for JSD data.</p>
+<p>This class inherits from the QAbstractTableModel class and provides the necessary methods to interact with the
+JSD data in a table format. It handles the display of data, editing of data, and mapping of colors to specific
+areas of the table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>HEADER_MAPPING</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of header labels for the table columns.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.HEADER_MAPPING">
+<span class="sig-name descname"><span class="pre">HEADER_MAPPING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Date',</span> <span class="pre">'JSD']</span></em><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.HEADER_MAPPING" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_age_ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the JSDTableModel.</p>
+<p>This method initializes the JSDTableModel by setting up the input data, mapping, and raw data sources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_source_list</strong> (<em>List</em><em>[</em><em>dict</em><em>]</em><em>, </em><em>optional</em>) – <p>A list of data sources. Each data source is a dictionary with the                                                     following keys:</p>
+<ul>
+<li><p>’name’ (str): The name of the data source.</p></li>
+<li><p>’data type’ (str): The type of the data source.</p></li>
+<li><p>’filename’ (str): The filename of the data source.</p></li>
+</ul>
+</p></li>
+<li><p><strong>custom_age_ranges</strong> (<em>Any</em><em>, </em><em>optional</em>) – Custom age ranges for the data sources.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.add_color_mapping">
+<span class="sig-name descname"><span class="pre">add_color_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping_area</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.add_color_mapping" title="Link to this definition"></a></dt>
+<dd><p>Add a color mapping to the JSDTableModel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> (<em>str</em>) – The color to be mapped.</p></li>
+<li><p><strong>mapping_area</strong> (<em>Any</em>) – The area to be mapped to the color.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.add_data_source">
+<span class="sig-name descname"><span class="pre">add_data_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_source_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.add_data_source" title="Link to this definition"></a></dt>
+<dd><p>Add a data source to the JSDTableModel.</p>
+<p>This method adds a data source to the JSDTableModel by creating a new instance of the DataSource class and
+storing it in the data_sources dictionary. The data source is identified by its name, which is obtained from the
+‘name’ key in the data_source_dict parameter. The DataSource object is initialized with the data_source_dict
+and the custom_age_ranges, if provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data_source_dict</strong> (<em>dict</em>) – <p>A dictionary containing the information about the data source.</p>
+<p><em>The dictionary should have the following keys:</em></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>’name’ (str): The name of the data source.</p></li>
+<li><p>’data type’ (str): The type of the data source.</p></li>
+<li><p>’filename’ (str): The filename of the data source.</p></li>
+</ul>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.clear_color_mapping">
+<span class="sig-name descname"><span class="pre">clear_color_mapping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.clear_color_mapping" title="Link to this definition"></a></dt>
+<dd><p>Clear the color mapping in the JSDTableModel.</p>
+<p>This method clears the color mapping, removing all color mappings from the
+JSDTableModel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.columnCount">
+<span class="sig-name descname"><span class="pre">columnCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QModelIndex</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.columnCount" title="Link to this definition"></a></dt>
+<dd><p>Returns the number of columns in the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>_parent</strong> (<em>QModelIndex</em>) – The parent index. Defaults to QModelIndex(). This is unused.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of columns in the model.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.column_infos">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">column_infos</span></span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.column_infos" title="Link to this definition"></a></dt>
+<dd><p>Returns the column information of the JSDTableModel.</p>
+<p>This method returns the column information of the JSDTableModel, which is a list of dictionaries representing
+the metadata for each set of two columns in the model (one column for date, one column for the JSD value).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>The column information of the JSDTableModel.</p>
+<blockquote>
+<div><p><em>Each dictionary contains the following keys:</em></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>’index1’ (int): The index of the first file used</p></li>
+<li><p>’file1’ (str): The file name of the first file used.</p></li>
+<li><p>’index2’ (int): The index of the second file used.</p></li>
+<li><p>’file2’ (str): The file name of the second file used.</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.data">
+<span class="sig-name descname"><span class="pre">data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QModelIndex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ItemDataRole.DisplayRole</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.data" title="Link to this definition"></a></dt>
+<dd><p>Returns the data for the given index and role.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>QModelIndex</em>) – The index of the data.</p></li>
+<li><p><strong>role</strong> (<em>int</em>) – The role of the data. Defaults to Qt.DisplayRole.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The data for the given index and role. If the role is Qt.DisplayRole or Qt.EditRole,
+it returns the corresponding data from the input_data list. If the role is Qt.BackgroundRole, it
+checks if the index is within any of the mapping areas defined in the _color_mapping dictionary.
+If it is, it returns the corresponding color from the _color_cache dictionary. If it is not within
+any mapping area, it returns the color white from the _color_cache dictionary. If the role is not
+any of the above, it returns None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.data_source_added">
+<span class="sig-name descname"><span class="pre">data_source_added</span></span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.data_source_added" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.flags">
+<span class="sig-name descname"><span class="pre">flags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QModelIndex</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ItemFlag</span></span></span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.flags" title="Link to this definition"></a></dt>
+<dd><p>Get the flags for the given index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>QModelIndex</em>) – The index of the item.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The flags for the item.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.headerData">
+<span class="sig-name descname"><span class="pre">headerData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">section</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Orientation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ItemDataRole.DisplayRole</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.headerData" title="Link to this definition"></a></dt>
+<dd><p>Returns the header data for the specified section, orientation, and role.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>section</strong> (<em>int</em>) – The section index.</p></li>
+<li><p><strong>orientation</strong> (<em>int</em>) – The orientation of the header (Qt.Horizontal or Qt.Vertical).</p></li>
+<li><p><strong>role</strong> (<em>int</em>) – The role of the header data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The header data for the specified section, orientation, and role.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.input_data">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">input_data</span></span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.input_data" title="Link to this definition"></a></dt>
+<dd><p>Returns the input data of the JSDTableModel.</p>
+<p>This method returns the input data of the JSDTableModel, which is a list of lists representing the data for each
+column in the model. Each inner list represents a column and contains the data for that column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The input data of the JSDTableModel.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[List[Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.rowCount">
+<span class="sig-name descname"><span class="pre">rowCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QModelIndex</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.rowCount" title="Link to this definition"></a></dt>
+<dd><p>Get the number of rows in the model.</p>
+<p>This method returns the number of rows in the model based on the length of the input data.
+If the parent index is invalid, this method returns the largest number of rows in a column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parent</strong> (<em>QModelIndex</em>) – The parent index.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of rows in the model.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.setData">
+<span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QModelIndex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ItemDataRole.EditRole</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.setData" title="Link to this definition"></a></dt>
+<dd><p>Set the data for the given index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>QModelIndex</em>) – The index of the data to be set.</p></li>
+<li><p><strong>value</strong> (<em>Any</em>) – The new value to be set.</p></li>
+<li><p><strong>role</strong> (<em>int</em>) – The role of the data. Defaults to Qt.EditRole.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the data was successfully set, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.core.jsdmodel.JSDTableModel.update_input_data">
+<span class="sig-name descname"><span class="pre">update_input_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_input_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_column_infos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.jsdmodel.JSDTableModel.update_input_data" title="Link to this definition"></a></dt>
+<dd><p>Update the input data and column information in the JSDTableModel.</p>
+<p>This method updates the input data and column information in the JSDTableModel. It clears the existing input
+data and column information, and then sets them to the new values provided as arguments. It also updates the
+maximum row count based on the new input data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_input_data</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>Any</em><em>]</em><em>]</em>) – The new input data to be set in the model. It should be a list of lists,
+where each inner list represents a column and contains the data for that
+column.</p></li>
+<li><p><strong>new_column_infos</strong> (<em>List</em><em>[</em><em>dict</em><em>]</em>) – The new column information to be set in the model. It should be a list of
+dictionaries, where each dictionary represents the metadata for a column.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.core.numeric_distances">
+<span id="midrc-react-core-numeric-distances-module"></span><h2>midrc_react.core.numeric_distances module<a class="headerlink" href="#module-midrc_react.core.numeric_distances" title="Link to this heading"></a></h2>
+<p>This module contains functions for calculating various numerical distance metrics between datasets.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.numeric_distances.build_histogram_dict">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.numeric_distances.</span></span><span class="sig-name descname"><span class="pre">build_histogram_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.numeric_distances.build_histogram_dict" title="Link to this definition"></a></dt>
+<dd><p>Build a dictionary of histogram data for a specific dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – DataFrame containing the dataset.</p></li>
+<li><p><strong>dataset_column</strong> – Name of the dataset column within the DataFrame.</p></li>
+<li><p><strong>feature_column</strong> – Name of the feature column within the DataFrame.</p></li>
+<li><p><strong>bin_width</strong> – Width of each histogram bin (default is 0.01).</p></li>
+<li><p><strong>scaling_method</strong> – Method to use for scaling the feature column (default is None).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing histogram data for the specified dataset.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>hist_dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.numeric_distances.calc_cucconi_by_feature">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.numeric_distances.</span></span><span class="sig-name descname"><span class="pre">calc_cucconi_by_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'_dataset_'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.numeric_distances.calc_cucconi_by_feature" title="Link to this definition"></a></dt>
+<dd><p>Calculate the Cucconi test for a specific feature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The DataFrame containing the data.</p></li>
+<li><p><strong>feature</strong> (<em>str</em>) – The name of the feature to calculate the metric for.</p></li>
+<li><p><strong>dataset_column</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the column containing the dataset information.
+Defaults to ‘_dataset_’.</p></li>
+<li><p><strong>scaling</strong> (<em>str</em><em>, </em><em>optional</em>) – The scaling method to use for the feature. Defaults to None.
+(e.g., ‘standard’, ‘minmax’, ‘maxabs’, or ‘robust’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the metric results for each dataset combination.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.numeric_distances.calc_distances_via_df">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.numeric_distances.</span></span><span class="sig-name descname"><span class="pre">calc_distances_via_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">famd_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'_dataset_'</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jsd_scaled_bin_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.numeric_distances.calc_distances_via_df" title="Link to this definition"></a></dt>
+<dd><p>Calculate various distance metrics based on histogram data.</p>
+<p>This function computes Jensen-Shannon Divergence (JSD),
+Wasserstein distance, Kolmogorov-Smirnov (KS) statistics,
+and Cucconi distance, with optional scaling methods for
+Wasserstein and KS distances. The results are returned as a
+dictionary where keys represent the metric names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>famd_df</strong> (<em>DataFrame</em>) – A DataFrame containing FAMD (Factorial Analysis of Mixed Data) results.</p></li>
+<li><p><strong>hist_dict</strong> (<em>dict</em>) – A dictionary containing histogram data for each dataset.</p></li>
+<li><p><strong>sampling_data</strong> – An object containing dataset sampling information, including
+dataset_column and datasets attributes.</p></li>
+<li><p><strong>distance_metric</strong> (<em>tuple</em>) – A tuple of strings specifying which distance metrics to compute.
+Use ‘all’ to compute all available metrics or specify individual metrics
+(e.g., ‘jsd’, ‘wass’, ‘ks2’, ‘cuc’) along with optional scaling
+options (e.g., ‘wass(std)’, ‘ks2(rob)’, etc.).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A dictionary with keys as distance metric names and values as the computed metrics.</dt><dd><p>For example, output could include keys like ‘jsd’, ‘wass’, ‘ks2’, ‘cuc’, etc.
+If specific scaling options are computed, keys would include these as well,
+such as ‘wass(std)’, ‘jsd(rob)’, etc.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.numeric_distances.calc_ks2_samp_by_feature">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.numeric_distances.</span></span><span class="sig-name descname"><span class="pre">calc_ks2_samp_by_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'_dataset_'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.numeric_distances.calc_ks2_samp_by_feature" title="Link to this definition"></a></dt>
+<dd><p>Calculate the Kolmogorov-Smirnov test for a specific feature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The DataFrame containing the data.</p></li>
+<li><p><strong>feature</strong> (<em>str</em>) – The name of the feature to calculate the metric for.</p></li>
+<li><p><strong>dataset_column</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the column containing the dataset information.
+Defaults to ‘_dataset_’.</p></li>
+<li><p><strong>scaling</strong> (<em>str</em><em>, </em><em>optional</em>) – The scaling method to use for the feature. Defaults to None.
+(e.g., ‘standard’, ‘minmax’, ‘maxabs’, or ‘robust’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the metric results for each dataset combination.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.numeric_distances.calc_numerical_metric_by_feature">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.numeric_distances.</span></span><span class="sig-name descname"><span class="pre">calc_numerical_metric_by_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.numeric_distances.calc_numerical_metric_by_feature" title="Link to this definition"></a></dt>
+<dd><p>Calculate a specified metric based on a single feature for input datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – pandas DataFrame containing the data</p></li>
+<li><p><strong>feature</strong> – a string representing the feature to calculate the metric for</p></li>
+<li><p><strong>sampling_data</strong> – an instance of SamplingData class with dataset information</p></li>
+<li><p><strong>metric_function</strong> – a function to calculate the desired metric (e.g., cucconi, ks_2samp)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing metric results for each dataset combination.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.numeric_distances.calc_wasserstein_by_feature">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.numeric_distances.</span></span><span class="sig-name descname"><span class="pre">calc_wasserstein_by_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'_dataset_'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.numeric_distances.calc_wasserstein_by_feature" title="Link to this definition"></a></dt>
+<dd><p>Calculate the Wasserstein distance for a specific feature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The DataFrame containing the data.</p></li>
+<li><p><strong>feature</strong> (<em>str</em>) – The name of the feature to calculate the metric for.</p></li>
+<li><p><strong>dataset_column</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the column containing the dataset information.
+Defaults to ‘_dataset_’.</p></li>
+<li><p><strong>scaling</strong> (<em>str</em><em>, </em><em>optional</em>) – The scaling method to use for the feature. Defaults to None.
+(e.g., ‘standard’, ‘minmax’, ‘maxabs’, or ‘robust’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the metric results for each dataset combination.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.numeric_distances.generate_histogram">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.numeric_distances.</span></span><span class="sig-name descname"><span class="pre">generate_histogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.numeric_distances.generate_histogram" title="Link to this definition"></a></dt>
+<dd><p>Generate a histogram for a specific dataset within a DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – DataFrame containing the dataset.</p></li>
+<li><p><strong>x_coordinates</strong> – Array of x-coordinates for the histogram.</p></li>
+<li><p><strong>dataset_name</strong> – Name of the dataset within the DataFrame.</p></li>
+<li><p><strong>feature_column</strong> – Name of the feature column within the DataFrame.</p></li>
+<li><p><strong>bin_width</strong> – Width of each histogram bin (default is 0.01).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array of histogram values.
+bins: Array of bin edges.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>hist</p>
+</dd>
+</dl>
+<p>Enhance readability by generating a histogram for a specific dataset based on the provided x-coordinates and bin
+width.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.numeric_distances.get_supported_scaling_methods">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.numeric_distances.</span></span><span class="sig-name descname"><span class="pre">get_supported_scaling_methods</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.numeric_distances.get_supported_scaling_methods" title="Link to this definition"></a></dt>
+<dd><p>Get a list of supported scaling methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of supported scaling methods.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.numeric_distances.scale_feature">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.numeric_distances.</span></span><span class="sig-name descname"><span class="pre">scale_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'standard'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.numeric_distances.scale_feature" title="Link to this definition"></a></dt>
+<dd><p>Normalize a feature to mean 0 and standard deviation 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – pandas DataFrame containing the data</p></li>
+<li><p><strong>feature</strong> – a string representing the feature to normalize</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A copy of the DataFrame with the feature normalized.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.core.numeric_distances.scale_values">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.core.numeric_distances.</span></span><span class="sig-name descname"><span class="pre">scale_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'standard'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.core.numeric_distances.scale_values" title="Link to this definition"></a></dt>
+<dd><p>Normalize a feature to mean 0 and standard deviation 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – a list of values to normalize</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A copy of the DataFrame with the feature normalized.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.core">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-midrc_react.core" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="midrc_react.html" class="btn btn-neutral float-left" title="midrc_react package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="midrc_react.gui.html" class="btn btn-neutral float-right" title="midrc_react.gui package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, MIDRC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

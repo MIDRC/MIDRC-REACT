@@ -1,0 +1,21 @@
+midrc\_react.gui package
+========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 8
+
+   midrc_react.gui.common
+   midrc_react.gui.dash
+   midrc_react.gui.ipython
+   midrc_react.gui.pyside6
+
+Module contents
+---------------
+
+.. automodule:: midrc_react.gui
+   :members:
+   :show-inheritance:
+   :undoc-members:

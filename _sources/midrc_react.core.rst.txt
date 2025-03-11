@@ -1,0 +1,101 @@
+midrc\_react.core package
+=========================
+
+Submodules
+----------
+
+midrc\_react.core.aggregate\_jsd\_calc module
+---------------------------------------------
+
+.. automodule:: midrc_react.core.aggregate_jsd_calc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.core.cucconi module
+--------------------------------
+
+.. automodule:: midrc_react.core.cucconi
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.core.data\_preprocessing module
+--------------------------------------------
+
+.. automodule:: midrc_react.core.data_preprocessing
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.core.datetimetools module
+--------------------------------------
+
+.. automodule:: midrc_react.core.datetimetools
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.core.excel\_layout module
+--------------------------------------
+
+.. automodule:: midrc_react.core.excel_layout
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.core.excelparse module
+-----------------------------------
+
+.. automodule:: midrc_react.core.excelparse
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.core.famd\_calc module
+-----------------------------------
+
+.. automodule:: midrc_react.core.famd_calc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.core.jsdconfig module
+----------------------------------
+
+.. automodule:: midrc_react.core.jsdconfig
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.core.jsdcontroller module
+--------------------------------------
+
+.. automodule:: midrc_react.core.jsdcontroller
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.core.jsdmodel module
+---------------------------------
+
+.. automodule:: midrc_react.core.jsdmodel
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.core.numeric\_distances module
+-------------------------------------------
+
+.. automodule:: midrc_react.core.numeric_distances
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: midrc_react.core
+   :members:
+   :show-inheritance:
+   :undoc-members:

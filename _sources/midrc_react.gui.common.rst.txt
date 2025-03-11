@@ -1,0 +1,45 @@
+midrc\_react.gui.common package
+===============================
+
+Submodules
+----------
+
+midrc\_react.gui.common.file\_upload module
+-------------------------------------------
+
+.. automodule:: midrc_react.gui.common.file_upload
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.gui.common.jsdview\_base module
+--------------------------------------------
+
+.. automodule:: midrc_react.gui.common.jsdview_base
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.gui.common.plot\_utils module
+------------------------------------------
+
+.. automodule:: midrc_react.gui.common.plot_utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.gui.common.utils module
+------------------------------------
+
+.. automodule:: midrc_react.gui.common.utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: midrc_react.gui.common
+   :members:
+   :show-inheritance:
+   :undoc-members:

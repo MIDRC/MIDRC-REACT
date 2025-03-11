@@ -1,0 +1,20 @@
+midrc\_react package
+====================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 8
+
+   midrc_react.core
+   midrc_react.gui
+   midrc_react.plugins
+
+Module contents
+---------------
+
+.. automodule:: midrc_react
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,29 @@
+midrc\_react.gui.ipython package
+================================
+
+Submodules
+----------
+
+midrc\_react.gui.ipython.dataselectiongroupbox module
+-----------------------------------------------------
+
+.. automodule:: midrc_react.gui.ipython.dataselectiongroupbox
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.gui.ipython.jsdview\_ipython module
+------------------------------------------------
+
+.. automodule:: midrc_react.gui.ipython.jsdview_ipython
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: midrc_react.gui.ipython
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,21 @@
+midrc\_react.plugins package
+============================
+
+Submodules
+----------
+
+midrc\_react.plugins.midrc\_tsv\_loader module
+----------------------------------------------
+
+.. automodule:: midrc_react.plugins.midrc_tsv_loader
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: midrc_react.plugins
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,1352 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>midrc_react.gui.pyside6 package &mdash; MIDRC-REACT  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="midrc_react.plugins package" href="midrc_react.plugins.html" />
+    <link rel="prev" title="midrc_react.gui.ipython package" href="midrc_react.gui.ipython.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MIDRC-REACT
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">midrc_react</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="midrc_react.html">midrc_react package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="midrc_react.core.html">midrc_react.core package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="midrc_react.gui.html">midrc_react.gui package</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="midrc_react.gui.common.html">midrc_react.gui.common package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="midrc_react.gui.dash.html">midrc_react.gui.dash package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="midrc_react.gui.ipython.html">midrc_react.gui.ipython package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">midrc_react.gui.pyside6 package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="midrc_react.plugins.html">midrc_react.plugins package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MIDRC-REACT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">midrc_react</a></li>
+          <li class="breadcrumb-item"><a href="midrc_react.html">midrc_react package</a></li>
+          <li class="breadcrumb-item"><a href="midrc_react.gui.html">midrc_react.gui package</a></li>
+      <li class="breadcrumb-item active">midrc_react.gui.pyside6 package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/midrc_react.gui.pyside6.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="midrc-react-gui-pyside6-package">
+<h1>midrc_react.gui.pyside6 package<a class="headerlink" href="#midrc-react-gui-pyside6-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-midrc_react.gui.pyside6.columnselectordialog">
+<span id="midrc-react-gui-pyside6-columnselectordialog-module"></span><h2>midrc_react.gui.pyside6.columnselectordialog module<a class="headerlink" href="#module-midrc_react.gui.pyside6.columnselectordialog" title="Link to this heading"></a></h2>
+<p>This module contains the ColumnSelectorDialog and NumericColumnSelectorDialog classes for selecting columns in a GUI.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.columnselectordialog.ColumnSelectorDialog">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.columnselectordialog.</span></span><span class="sig-name descname"><span class="pre">ColumnSelectorDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclusive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_per_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.columnselectordialog.ColumnSelectorDialog" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QDialog</span></code></p>
+<p>Dialog window for displaying and editing column selections.</p>
+<p>The checkboxes are displayed in a grid layout inside a scroll area to support
+a large number of columns. If a column name is longer than max_length characters,
+a shortened version is displayed with a tooltip showing the full column name.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.columnselectordialog.ColumnSelectorDialog.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclusive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows_per_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.columnselectordialog.ColumnSelectorDialog.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the ColumnSelectorDialog object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>columns</strong> (<em>list</em>) – A list of column names.</p></li>
+<li><p><strong>parent</strong> (<em>QWidget</em><em>, </em><em>optional</em>) – The parent widget. Defaults to None.</p></li>
+<li><p><strong>exclusive</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to use an exclusive button group. Defaults to False.</p></li>
+<li><p><strong>max_length</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum characters to display before shortening the label.</p></li>
+<li><p><strong>rows_per_column</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of checkboxes per column.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.columnselectordialog.ColumnSelectorDialog.get_selected_columns">
+<span class="sig-name descname"><span class="pre">get_selected_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.columnselectordialog.ColumnSelectorDialog.get_selected_columns" title="Link to this definition"></a></dt>
+<dd><p>Return a list of selected columns.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.columnselectordialog.NumericColumnSelectorDialog">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.columnselectordialog.</span></span><span class="sig-name descname"><span class="pre">NumericColumnSelectorDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.columnselectordialog.NumericColumnSelectorDialog" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QDialog</span></code></p>
+<p>Dialog window for displaying and editing numeric column settings.</p>
+<p>This class represents a dialog window that allows the user to select numeric columns and set binning parameters.
+It inherits from the QDialog class provided by the PySide6.QtWidgets module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>columns</strong> (<em>list</em>) – A list of column names.</p></li>
+<li><p><strong>parent</strong> (<em>QWidget</em>) – The parent widget of the dialog.</p></li>
+<li><p><strong>layout</strong> (<em>QVBoxLayout</em>) – The layout of the dialog.</p></li>
+<li><p><strong>column_settings</strong> (<em>dict</em>) – A dictionary containing the checkbox, min_input, max_input, and step_input widgets.</p></li>
+<li><p><strong>button_box</strong> (<em>QDialogButtonBox</em>) – The button box containing the OK and Cancel buttons.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.columnselectordialog.NumericColumnSelectorDialog.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.columnselectordialog.NumericColumnSelectorDialog.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the NumericColumnSelectorDialog object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>columns</strong> (<em>list</em>) – A list of column names.</p></li>
+<li><p><strong>parent</strong> (<em>QWidget</em><em>, </em><em>optional</em>) – The parent widget of the dialog. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.columnselectordialog.NumericColumnSelectorDialog.get_selected_columns_with_bins">
+<span class="sig-name descname"><span class="pre">get_selected_columns_with_bins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.columnselectordialog.NumericColumnSelectorDialog.get_selected_columns_with_bins" title="Link to this definition"></a></dt>
+<dd><p>Return a dictionary of selected columns with their bin settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>keys are the target string column names; values are tuples</dt><dd><p>(raw column, bins, labels) where labels is None.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.columnselectordialog.NumericColumnSelectorDialog.toggle_inputs">
+<span class="sig-name descname"><span class="pre">toggle_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checked</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_ed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_input</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.columnselectordialog.NumericColumnSelectorDialog.toggle_inputs" title="Link to this definition"></a></dt>
+<dd><p>Toggle the visibility of the min, max, and step inputs based on the checkbox state.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.gui.pyside6.copyabletableview">
+<span id="midrc-react-gui-pyside6-copyabletableview-module"></span><h2>midrc_react.gui.pyside6.copyabletableview module<a class="headerlink" href="#module-midrc_react.gui.pyside6.copyabletableview" title="Link to this heading"></a></h2>
+<p>This module contains a custom QTableView subclass that allows copying selected data to the clipboard.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.copyabletableview.CopyableTableView">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.copyabletableview.</span></span><span class="sig-name descname"><span class="pre">CopyableTableView</span></span><a class="headerlink" href="#midrc_react.gui.pyside6.copyabletableview.CopyableTableView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QTableView</span></code></p>
+<p>Custom QTableView subclass that allows copying selected data to the clipboard.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.copyabletableview.CopyableTableView.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.copyabletableview.CopyableTableView.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the CopyableTableView and install its event filter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.copyabletableview.CopyableTableView.copy_selection">
+<span class="sig-name descname"><span class="pre">copy_selection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.copyabletableview.CopyableTableView.copy_selection" title="Link to this definition"></a></dt>
+<dd><p>Copy the currently selected table data to the clipboard in a tab-delimited format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.copyabletableview.CopyableTableView.eventFilter">
+<span class="sig-name descname"><span class="pre">eventFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.copyabletableview.CopyableTableView.eventFilter" title="Link to this definition"></a></dt>
+<dd><p>Filter events to handle key presses for copying selection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> (<em>QObject</em>) – The source object.</p></li>
+<li><p><strong>event</strong> (<em>QEvent</em>) – The event to filter.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the event was handled, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.gui.pyside6.dataselectiongroupbox">
+<span id="midrc-react-gui-pyside6-dataselectiongroupbox-module"></span><h2>midrc_react.gui.pyside6.dataselectiongroupbox module<a class="headerlink" href="#module-midrc_react.gui.pyside6.dataselectiongroupbox" title="Link to this heading"></a></h2>
+<p>This module contains the JsdDataSelectionGroupBox class, which is a custom widget for selecting data files and
+categories in a graphical user interface (GUI) using PySide6.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.dataselectiongroupbox.</span></span><span class="sig-name descname"><span class="pre">JsdDataSelectionGroupBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sources</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QGroupBox</span></code>, <a class="reference internal" href="midrc_react.gui.common.html#midrc_react.gui.common.jsdview_base.GroupBoxData" title="midrc_react.gui.common.jsdview_base.GroupBoxData"><code class="xref py py-class docutils literal notranslate"><span class="pre">GroupBoxData</span></code></a></p>
+<p>This class represents a group box widget for data selection. It provides functionality for creating labels and
+combo boxes for data files and a category combo box. The class has methods for setting up the layout,
+updating the category combo box, and initializing the widget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_data_items_changed</strong> (<em>Signal</em>) – A signal emitted when the number of data items in the JsdDataSelectionGroupBox
+changes.</p></li>
+<li><p><strong>file_checkbox_state_changed</strong> (<em>Signal</em>) – A signal emitted when the state of a file checkbox changes.</p></li>
+<li><p><strong>NUM_DEFAULT_DATA_ITEMS</strong> (<em>int</em>) – The default number of data items.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.NUM_DEFAULT_DATA_ITEMS">
+<span class="sig-name descname"><span class="pre">NUM_DEFAULT_DATA_ITEMS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.NUM_DEFAULT_DATA_ITEMS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sources</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the JsdDataSelectionGroupBox.</p>
+<p>This method sets up the data selection group box by creating labels and combo boxes for data files and a
+category combo box.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.add_file_combobox_to_layout">
+<span class="sig-name descname"><span class="pre">add_file_combobox_to_layout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auto_populate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.add_file_combobox_to_layout" title="Link to this definition"></a></dt>
+<dd><p>Add a file combobox to the layout.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>auto_populate</strong> (<em>bool</em>) – If True, the combobox will be populated with items from the first combobox.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.add_file_to_comboboxes">
+<span class="sig-name descname"><span class="pre">add_file_to_comboboxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.add_file_to_comboboxes" title="Link to this definition"></a></dt>
+<dd><p>Add a file to the file comboboxes.</p>
+<p>This method adds a file to each of the file comboboxes in the JsdDataSelectionGroupBox.
+The file is represented by a description and a name.
+The description is displayed in the combobox as the item text, and the name is stored as the item data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>description</strong> (<em>str</em>) – The description of the file.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name of the file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.file_checkbox_state_changed">
+<span class="sig-name descname"><span class="pre">file_checkbox_state_changed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Signal</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.file_checkbox_state_changed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.get_category_info">
+<span class="sig-name descname"><span class="pre">get_category_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.get_category_info" title="Link to this definition"></a></dt>
+<dd><p>Get the category information and current category.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing the category information.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.get_file_infos">
+<span class="sig-name descname"><span class="pre">get_file_infos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.get_file_infos" title="Link to this definition"></a></dt>
+<dd><p>Get the file information for all files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of dictionaries containing information about each file.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.num_data_items_changed">
+<span class="sig-name descname"><span class="pre">num_data_items_changed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Signal</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.num_data_items_changed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.remove_file_combobox_from_layout">
+<span class="sig-name descname"><span class="pre">remove_file_combobox_from_layout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.remove_file_combobox_from_layout" title="Link to this definition"></a></dt>
+<dd><p>Remove a file combobox from the layout.</p>
+<p>This method removes the last file combobox from the layout, including its corresponding label. It updates the
+form layout by removing the row at the specified index. It also removes the label and combobox from the
+respective lists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.set_layout">
+<span class="sig-name descname"><span class="pre">set_layout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sources</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.set_layout" title="Link to this definition"></a></dt>
+<dd><p>Set the layout for the given data sources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data_sources</strong> – A list of data sources.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.set_num_data_items">
+<span class="sig-name descname"><span class="pre">set_num_data_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.set_num_data_items" title="Link to this definition"></a></dt>
+<dd><p>Set the number of data items in the JsdDataSelectionGroupBox.</p>
+<p>This method adjusts the number of file comboboxes in the layout based on the given count.</p>
+<ul class="simple">
+<li><p>If the current number of file comboboxes is equal to the count, the method returns without making any changes.</p></li>
+<li><p>If the current number of file comboboxes is less than the count, the method adds file comboboxes to the layout
+using the add_file_combobox_to_layout method.</p></li>
+<li><p>If the current number of file comboboxes is greater than the count, the method removes file comboboxes from
+the layout using the remove_file_combobox_from_layout method.</p></li>
+<li><p>Finally, the method emits the num_data_items_changed signal with the updated count.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>count</strong> (<em>int</em>) – The desired number of data items.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.update_category_list">
+<span class="sig-name descname"><span class="pre">update_category_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">categorylist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categoryindex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox.update_category_list" title="Link to this definition"></a></dt>
+<dd><p>Update the category combo box with the given category list and set the selected index to the specified
+category index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>categorylist</strong> (<em>list</em>) – The list of categories to populate the combo box.</p></li>
+<li><p><strong>categoryindex</strong> (<em>int</em>) – The index of the category to select in the combo box.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.gui.pyside6.file_open_dialogs">
+<span id="midrc-react-gui-pyside6-file-open-dialogs-module"></span><h2>midrc_react.gui.pyside6.file_open_dialogs module<a class="headerlink" href="#module-midrc_react.gui.pyside6.file_open_dialogs" title="Link to this heading"></a></h2>
+<p>Module for file open dialogs using PySide6.</p>
+<p>This module provides dialogs for opening Excel and CSV/TSV files along with
+options dialogs. The dialogs support file-specific persistence via QSettings,
+plugin processing, and column selection.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.BaseFileOptionsDialog">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.file_open_dialogs.</span></span><span class="sig-name descname"><span class="pre">BaseFileOptionsDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.BaseFileOptionsDialog" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QDialog</span></code></p>
+<p>Base dialog window for displaying and editing file options.</p>
+<p>Provides common functionality such as setting the default window title
+and base name from the file.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.BaseFileOptionsDialog.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.BaseFileOptionsDialog.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the base file options dialog.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent</strong> (<em>Optional</em><em>[</em><em>QWidget</em><em>]</em>) – The parent widget.</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – The full path of the file.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.file_open_dialogs.</span></span><span class="sig-name descname"><span class="pre">CSVTSVOptionsDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">available_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#midrc_react.gui.pyside6.file_open_dialogs.BaseFileOptionsDialog" title="midrc_react.gui.pyside6.file_open_dialogs.BaseFileOptionsDialog"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseFileOptionsDialog</span></code></a></p>
+<p>Dialog for editing CSV/TSV file options with plugin processing.</p>
+<p>Provides file-specific persistence and a fallback to last used settings.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">available_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the CSV/TSV options dialog.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent</strong> (<em>Optional</em><em>[</em><em>QWidget</em><em>]</em>) – The parent widget.</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – The file path.</p></li>
+<li><p><strong>available_columns</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – The list of available columns.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.accept">
+<span class="sig-name descname"><span class="pre">accept</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.accept" title="Link to this definition"></a></dt>
+<dd><p>Override accept to save defaults before closing the dialog.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.get_data" title="Link to this definition"></a></dt>
+<dd><p>Retrieve all user selections from the dialog.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing file metadata and user selections.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.load_defaults">
+<span class="sig-name descname"><span class="pre">load_defaults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.load_defaults" title="Link to this definition"></a></dt>
+<dd><p>Load saved options for this file from QSettings.</p>
+<p>If no file-specific settings are found, load the last used settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.open_column_selector">
+<span class="sig-name descname"><span class="pre">open_column_selector</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.open_column_selector" title="Link to this definition"></a></dt>
+<dd><p>Open a dialog for selecting columns to use and pre-select items based on the text edit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.open_numeric_column_selector">
+<span class="sig-name descname"><span class="pre">open_numeric_column_selector</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.open_numeric_column_selector" title="Link to this definition"></a></dt>
+<dd><p>Open a dialog for selecting numeric columns and binning parameters.
+Pre-select items based on either the YAML config or the current columns text.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.process_plugin">
+<span class="sig-name descname"><span class="pre">process_plugin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.process_plugin" title="Link to this definition"></a></dt>
+<dd><p>Process the file with the selected plugin (if any) and update available columns.
+The plugin selection controls are locked after processing.
+Instead of popups, text is displayed in the plugin status label.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.save_defaults">
+<span class="sig-name descname"><span class="pre">save_defaults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.CSVTSVOptionsDialog.save_defaults" title="Link to this definition"></a></dt>
+<dd><p>Save current dialog options to QSettings for both file-specific and last used settings.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.FileOptionsDialog">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.file_open_dialogs.</span></span><span class="sig-name descname"><span class="pre">FileOptionsDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.FileOptionsDialog" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#midrc_react.gui.pyside6.file_open_dialogs.BaseFileOptionsDialog" title="midrc_react.gui.pyside6.file_open_dialogs.BaseFileOptionsDialog"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseFileOptionsDialog</span></code></a></p>
+<p>Dialog window for displaying and editing Excel file options.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.FileOptionsDialog.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.FileOptionsDialog.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the FileOptionsDialog for an Excel file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent</strong> (<em>Optional</em><em>[</em><em>QWidget</em><em>]</em>) – The parent widget.</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – The Excel file path.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.get_csv_tsv_columns">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.file_open_dialogs.</span></span><span class="sig-name descname"><span class="pre">get_csv_tsv_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.get_csv_tsv_columns" title="Link to this definition"></a></dt>
+<dd><p>Extract and return the header row (column names) from a CSV or TSV file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>str</em>) – The path to the CSV/TSV file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of column names. Returns an empty list if reading fails.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.open_csv_tsv_file_dialog">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.file_open_dialogs.</span></span><span class="sig-name descname"><span class="pre">open_csv_tsv_file_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.open_csv_tsv_file_dialog" title="Link to this definition"></a></dt>
+<dd><p>Open a file dialog to select a CSV or TSV file and show its options dialog.</p>
+<p>This function reads the header row to obtain available columns, then opens the CSVTSVOptionsDialog.
+It then validates and collects user selections and emits a data source dictionary.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.open_excel_file_dialog">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.file_open_dialogs.</span></span><span class="sig-name descname"><span class="pre">open_excel_file_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.open_excel_file_dialog" title="Link to this definition"></a></dt>
+<dd><p>Open a file dialog to select an Excel file and show its options dialog.</p>
+<p>Emits a data source dictionary via self.add_data_source and updates UI elements via self._dataselectiongroupbox.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.open_yaml_input_dialog">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.file_open_dialogs.</span></span><span class="sig-name descname"><span class="pre">open_yaml_input_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.open_yaml_input_dialog" title="Link to this definition"></a></dt>
+<dd><p>Open a dialog to paste YAML content and add it as a data source.</p>
+<p>The dialog loads previously saved YAML content (if available) and saves
+the current input upon acceptance.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.file_open_dialogs.represent_list">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.file_open_dialogs.</span></span><span class="sig-name descname"><span class="pre">represent_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dumper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.file_open_dialogs.represent_list" title="Link to this definition"></a></dt>
+<dd><p>Represent lists in flow style (inline with square brackets)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dumper</strong> – The YAML dumper.</p></li>
+<li><p><strong>data</strong> – The list to represent.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.gui.pyside6.grabbablewidget">
+<span id="midrc-react-gui-pyside6-grabbablewidget-module"></span><h2>midrc_react.gui.pyside6.grabbablewidget module<a class="headerlink" href="#module-midrc_react.gui.pyside6.grabbablewidget" title="Link to this heading"></a></h2>
+<p>This module provides a mixin class for adding snapshot (grab) and save functionalities to a QWidget.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.grabbablewidget.</span></span><span class="sig-name descname"><span class="pre">GrabbableChartView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chart</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QChart</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_file_prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'MIDRC-REACT_plot_'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QChartView</span></code></p>
+<p>Subclass of QChartView for creating a chart view that can be grabbed and saved as an image.</p>
+<p>Inherits functionality from QChartView and adds the ability to save the chart as an image.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chart</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QChart</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_file_prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'MIDRC-REACT_plot_'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the class instance with an optional parent QWidget, a save file prefix, and a GrabbableWidgetMixin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chart</strong> (<em>QChart</em>) – The chart to be displayed in the view.</p></li>
+<li><p><strong>parent</strong> (<em>Optional</em><em>[</em><em>QWidget</em><em>]</em>) – The optional parent QWidget for the chart view.</p></li>
+<li><p><strong>save_file_prefix</strong> (<em>str</em>) – The prefix for save file names.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Connect context menu signals for the parent widget to show the context menu and handle events.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView.save_chart_to_disk">
+<span class="sig-name descname"><span class="pre">save_chart_to_disk</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView.save_chart_to_disk" title="Link to this definition"></a></dt>
+<dd><p>Save the chart view to disk using the <cite>save_to_disk</cite> functionality from <cite>GrabbableWidgetMixin</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.grabbablewidget.</span></span><span class="sig-name descname"><span class="pre">GrabbableWidgetMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_file_prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'MIDRC-REACT_plot_'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<p>Mixin class for adding snapshot (grab) and save functionalities to a QWidget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>DEFAULT_SAVE_FILE_PREFIX</strong> (<em>str</em>) – Default prefix for save file names.</p></li>
+<li><p><strong>DATE_TIME_FORMAT</strong> (<em>str</em>) – The datetime format for appending to default filenames when saving snapshots</p></li>
+<li><p><strong>save_dialog_open</strong> (<em>bool</em>) – Indicates if the save dialog is currently open.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.DATE_TIME_FORMAT">
+<span class="sig-name descname"><span class="pre">DATE_TIME_FORMAT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'yyyyMMddhhmmss'</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.DATE_TIME_FORMAT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.DEFAULT_SAVE_FILE_PREFIX">
+<span class="sig-name descname"><span class="pre">DEFAULT_SAVE_FILE_PREFIX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'MIDRC-REACT_plot_'</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.DEFAULT_SAVE_FILE_PREFIX" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_file_prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'MIDRC-REACT_plot_'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the class instance with optional parent QWidget and a save file prefix.
+Set the save dialog status to False by default.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.copy_to_clipboard">
+<span class="sig-name descname"><span class="pre">copy_to_clipboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.copy_to_clipboard" title="Link to this definition"></a></dt>
+<dd><p>Copy the snapshot of the parent widget to the clipboard.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.create_directory">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.create_directory" title="Link to this definition"></a></dt>
+<dd><p>Create the directory for saving snapshots if it does not exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The directory path for saving the snapshot.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>QDir</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.default_filename">
+<span class="sig-name descname"><span class="pre">default_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'.png'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.default_filename" title="Link to this definition"></a></dt>
+<dd><p>Generate a default filename for saving snapshots.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>suffix</strong> – The file extension to be appended to the filename. Default is ‘.png’.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The default file path for saving the snapshot.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.eventFilter">
+<span class="sig-name descname"><span class="pre">eventFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.eventFilter" title="Link to this definition"></a></dt>
+<dd><p>Filters events for the widget to handle context menu events.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – The source of the event.</p></li>
+<li><p><strong>event</strong> – The event to be filtered.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the event is a context menu event for the parent widget, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.save_high_res_to_disk">
+<span class="sig-name descname"><span class="pre">save_high_res_to_disk</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.save_high_res_to_disk" title="Link to this definition"></a></dt>
+<dd><p>Save a high-resolution snapshot of the parent widget to disk.</p>
+<p>Opens a dialog to capture a high-resolution snapshot of the widget and saves it to the chosen file location.
+Resets the save dialog status after saving the snapshot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.save_to_disk">
+<span class="sig-name descname"><span class="pre">save_to_disk</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.save_to_disk" title="Link to this definition"></a></dt>
+<dd><p>Save a snapshot of the parent widget to disk.</p>
+<p>Prompts the user to choose a file location and format for saving the snapshot.
+If a file is selected, the snapshot of the widget is saved to the chosen location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.show_context_menu">
+<span class="sig-name descname"><span class="pre">show_context_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableWidgetMixin.show_context_menu" title="Link to this definition"></a></dt>
+<dd><p>Display a context menu for the widget for capturing snapshots of the widget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pos</strong> – The position where the context menu should be displayed.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.grabbablewidget.</span></span><span class="sig-name descname"><span class="pre">SaveWidgetAsImageDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QDialog</span></code></p>
+<p>Dialog for saving a widget as an image with options to restore, cancel, and save the image with a specified ratio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>widget</strong> – The widget to be saved as an image.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.WINDOW_HEIGHT">
+<span class="sig-name descname"><span class="pre">WINDOW_HEIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">300</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.WINDOW_HEIGHT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.WINDOW_TITLE">
+<span class="sig-name descname"><span class="pre">WINDOW_TITLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Save</span> <span class="pre">High</span> <span class="pre">Resolution</span> <span class="pre">Image'</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.WINDOW_TITLE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.WINDOW_WIDTH">
+<span class="sig-name descname"><span class="pre">WINDOW_WIDTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">400</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.WINDOW_WIDTH" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the SaveWidgetAsImageDialog with the specified widget and optional parent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>widget</strong> (<em>QWidget</em>) – The widget to be saved as an image.</p></li>
+<li><p><strong>parent</strong> (<em>Optional</em><em>[</em><em>QWidget</em><em>]</em>) – The optional parent widget for the dialog.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.cancel_save">
+<span class="sig-name descname"><span class="pre">cancel_save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.cancel_save" title="Link to this definition"></a></dt>
+<dd><p>Restore the original widget and reject the save operation.</p>
+<p>This method restores the original widget by removing the temporary widget and replaces it with the original.
+Then, it rejects the save operation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.closeEvent">
+<span class="sig-name descname"><span class="pre">closeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.closeEvent" title="Link to this definition"></a></dt>
+<dd><p>Handle the event when the dialog is closed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>QCloseEvent</em>) – The close event triggered when the dialog is closed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.image">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">image</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">QImage</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.image" title="Link to this definition"></a></dt>
+<dd><p>Get the image generated from the widget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The image generated from the widget.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>QImage</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.save_image">
+<span class="sig-name descname"><span class="pre">save_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.grabbablewidget.SaveWidgetAsImageDialog.save_image" title="Link to this definition"></a></dt>
+<dd><p>Save the image of the widget with a specified ratio.</p>
+<p>Creates an image of the widget with a given ratio, renders it using a QPainter, and then restores the original.
+Finally, accepts the save operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_</strong> – Signals can send a parameter, so ignore it</p></li>
+<li><p><strong>ratio</strong> (<em>int</em>) – The ratio to scale the image.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.gui.pyside6.jsdview">
+<span id="midrc-react-gui-pyside6-jsdview-module"></span><h2>midrc_react.gui.pyside6.jsdview module<a class="headerlink" href="#module-midrc_react.gui.pyside6.jsdview" title="Link to this heading"></a></h2>
+<p>This module contains the JsdWindow class, which represents the main window of the midrc_react application.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdChart">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.jsdview.</span></span><span class="sig-name descname"><span class="pre">JsdChart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent:</span> <span class="pre">~PySide6.QtWidgets.QWidget</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animation_options:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">&lt;AnimationOption.AllAnimations:</span> <span class="pre">3&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdChart" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QChart</span></code></p>
+<p>Custom chart class for JSD data visualization.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdChart.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent:</span> <span class="pre">~PySide6.QtWidgets.QWidget</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">animation_options:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">&lt;AnimationOption.AllAnimations:</span> <span class="pre">3&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdChart.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the JsdChart with optional parent and animation options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent</strong> (<em>Optional</em><em>[</em><em>QWidget</em><em>]</em>) – The parent widget.</p></li>
+<li><p><strong>animation_options</strong> (<em>int</em>) – Chart animation options.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.jsdview.</span></span><span class="sig-name descname"><span class="pre">JsdWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QMainWindow</span></code>, <a class="reference internal" href="midrc_react.gui.common.html#midrc_react.gui.common.jsdview_base.JsdViewBase" title="midrc_react.gui.common.jsdview_base.JsdViewBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">JsdViewBase</span></code></a></p>
+<p>Main window of the MIDRC-REACT application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>add_data_source</strong> (<em>Signal</em>) – Emitted when a new data source is added.</p></li>
+<li><p><strong>WINDOW_TITLE</strong> (<em>str</em>) – The window title.</p></li>
+<li><p><strong>DOCK_TITLES</strong> (<em>dict</em>) – Titles for various dock widgets.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.DOCK_TITLES">
+<span class="sig-name descname"><span class="pre">DOCK_TITLES</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'pie_chart_dock':</span> <span class="pre">'Pie</span> <span class="pre">Charts</span> <span class="pre">-</span> <span class="pre">MIDRC-REACT</span> <span class="pre">Representativeness</span> <span class="pre">Exploration</span> <span class="pre">and</span> <span class="pre">Comparison</span> <span class="pre">Tool',</span> <span class="pre">'spider_chart_dock':</span> <span class="pre">'Distribution</span> <span class="pre">Charts</span> <span class="pre">-</span> <span class="pre">MIDRC-REACT</span> <span class="pre">Representativeness</span> <span class="pre">Exploration</span> <span class="pre">and</span> <span class="pre">Comparison</span> <span class="pre">Tool',</span> <span class="pre">'table_dock':</span> <span class="pre">'JSD</span> <span class="pre">Table</span> <span class="pre">-</span> <span class="pre">MIDRC-REACT</span> <span class="pre">Representativeness</span> <span class="pre">Exploration</span> <span class="pre">and</span> <span class="pre">Comparison</span> <span class="pre">Tool'}</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.DOCK_TITLES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.WINDOW_TITLE">
+<span class="sig-name descname"><span class="pre">WINDOW_TITLE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'MIDRC-REACT</span> <span class="pre">Representativeness</span> <span class="pre">Exploration</span> <span class="pre">and</span> <span class="pre">Comparison</span> <span class="pre">Tool'</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.WINDOW_TITLE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_sources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the JsdWindow with provided data sources and set up the GUI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data_sources</strong> (<em>Any</em>) – Data sources used to initialize the data selection group box.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.add_area_chart_view">
+<span class="sig-name descname"><span class="pre">add_area_chart_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area_chart</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QChart</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView" title="midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView"><span class="pre">GrabbableChartView</span></a></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.add_area_chart_view" title="Link to this definition"></a></dt>
+<dd><p>Add an area chart view to the area chart widget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>area_chart</strong> (<em>QChart</em>) – The area chart to add.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The view that was added.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView" title="midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView">GrabbableChartView</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.add_data_source">
+<span class="sig-name descname"><span class="pre">add_data_source</span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.add_data_source" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.add_spider_chart_view">
+<span class="sig-name descname"><span class="pre">add_spider_chart_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView" title="midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView"><span class="pre">GrabbableChartView</span></a></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.add_spider_chart_view" title="Link to this definition"></a></dt>
+<dd><p>Add a spider chart view to the spider chart container.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The spider chart view that was added.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView" title="midrc_react.gui.pyside6.grabbablewidget.GrabbableChartView">GrabbableChartView</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.adjust_number_of_files_to_compare">
+<span class="sig-name descname"><span class="pre">adjust_number_of_files_to_compare</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.adjust_number_of_files_to_compare" title="Link to this definition"></a></dt>
+<dd><p>Open a dialog to adjust the number of files to compare and update the UI accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.create_main_layout">
+<span class="sig-name descname"><span class="pre">create_main_layout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QVBoxLayout</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.create_main_layout" title="Link to this definition"></a></dt>
+<dd><p>Create and return the main layout for the application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The vertical box layout containing the data selection group box and timeline chart.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>QVBoxLayout</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.create_menu_bar">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_menu_bar</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">QMenuBar</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.create_menu_bar" title="Link to this definition"></a></dt>
+<dd><p>Create and return the main menu bar with File, Settings, and View menus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The created menu bar.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>QMenuBar</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.create_pie_chart_dock_widget">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_pie_chart_dock_widget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QLayout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QDockWidget</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.create_pie_chart_dock_widget" title="Link to this definition"></a></dt>
+<dd><p>Create a dock widget for pie charts with a given layout and title.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>layout</strong> (<em>QLayout</em>) – The layout containing pie chart widgets.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – The title of the dock widget.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The created dock widget.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QDockWidget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.create_spider_chart_dock_widget">
+<span class="sig-name descname"><span class="pre">create_spider_chart_dock_widget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spider_chart_vbox</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QSplitter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QDockWidget</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.create_spider_chart_dock_widget" title="Link to this definition"></a></dt>
+<dd><p>Create a dock widget containing a spider chart and an area chart.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spider_chart_vbox</strong> (<em>QSplitter</em>) – The container for the spider chart.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – The title of the dock widget.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The created dock widget.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QDockWidget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.create_table_dock_widget">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_table_dock_widget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QTableView</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QDockWidget</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.create_table_dock_widget" title="Link to this definition"></a></dt>
+<dd><p>Create a dock widget that contains a table view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table_view</strong> (<em>QTableView</em>) – The table view widget.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – The title of the dock widget.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The created dock widget.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QDockWidget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.dataselectiongroupbox">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dataselectiongroupbox</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox" title="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox"><span class="pre">JsdDataSelectionGroupBox</span></a></em><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.dataselectiongroupbox" title="Link to this definition"></a></dt>
+<dd><p>Return the data selection group box widget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The data selection group box.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox" title="midrc_react.gui.pyside6.dataselectiongroupbox.JsdDataSelectionGroupBox">JsdDataSelectionGroupBox</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.open_csv_tsv_file_dialog">
+<span class="sig-name descname"><span class="pre">open_csv_tsv_file_dialog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.open_csv_tsv_file_dialog" title="Link to this definition"></a></dt>
+<dd><p>Open a file dialog to select a CSV or TSV file and show its options dialog.</p>
+<p>This function reads the header row to obtain available columns, then opens the CSVTSVOptionsDialog.
+It then validates and collects user selections and emits a data source dictionary.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.open_excel_file_dialog">
+<span class="sig-name descname"><span class="pre">open_excel_file_dialog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.open_excel_file_dialog" title="Link to this definition"></a></dt>
+<dd><p>Open a file dialog to select an Excel file and show its options dialog.</p>
+<p>Emits a data source dictionary via self.add_data_source and updates UI elements via self._dataselectiongroupbox.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.open_yaml_input_dialog">
+<span class="sig-name descname"><span class="pre">open_yaml_input_dialog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.open_yaml_input_dialog" title="Link to this definition"></a></dt>
+<dd><p>Open a dialog to paste YAML content and add it as a data source.</p>
+<p>The dialog loads previously saved YAML content (if available) and saves
+the current input upon acceptance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.populate_dock_widget_menu">
+<span class="sig-name descname"><span class="pre">populate_dock_widget_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dock_widget_menu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QMenu</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.populate_dock_widget_menu" title="Link to this definition"></a></dt>
+<dd><p>Clear and repopulate the dock widget menu with toggle actions for each dock widget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dock_widget_menu</strong> (<em>QMenu</em>) – The menu to populate.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.reset_minimum_sizes">
+<span class="sig-name descname"><span class="pre">reset_minimum_sizes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.reset_minimum_sizes" title="Link to this definition"></a></dt>
+<dd><p>Reset the minimum sizes of the spider and pie chart dock widgets to allow free resizing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.set_animation_options">
+<span class="sig-name descname"><span class="pre">set_animation_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable_animations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.set_animation_options" title="Link to this definition"></a></dt>
+<dd><p>Enable or disable chart animations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>enable_animations</strong> (<em>bool</em>) – True to enable animations, False to disable.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True after setting the animation options.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.set_default_widget_sizes">
+<span class="sig-name descname"><span class="pre">set_default_widget_sizes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.set_default_widget_sizes" title="Link to this definition"></a></dt>
+<dd><p>Set default sizes for main window and dock widgets for an optimal initial layout.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.update_area_chart">
+<span class="sig-name descname"><span class="pre">update_area_chart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.update_area_chart" title="Link to this definition"></a></dt>
+<dd><p>Update the area chart with new data from the provided sheets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>category</strong> (<em>dict</em>) – A dictionary where each key maps to a sheet containing chart data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if area charts were updated.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.update_jsd_timeline_plot">
+<span class="sig-name descname"><span class="pre">update_jsd_timeline_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jsd_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.update_jsd_timeline_plot" title="Link to this definition"></a></dt>
+<dd><p>Update the JSD timeline plot using the provided model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jsd_model</strong> (<em>Any</em>) – The data model containing JSD timeline data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the timeline plot was updated successfully.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.update_pie_chart_dock">
+<span class="sig-name descname"><span class="pre">update_pie_chart_dock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sheet_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.update_pie_chart_dock" title="Link to this definition"></a></dt>
+<dd><p>Update the pie chart dock with the provided sheet data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sheet_dict</strong> (<em>dict</em>) – A dictionary where each key maps to a set of sheets.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.update_spider_chart">
+<span class="sig-name descname"><span class="pre">update_spider_chart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spider_plot_values_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.update_spider_chart" title="Link to this definition"></a></dt>
+<dd><p>Update the spider chart with the provided plot values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>spider_plot_values_dict</strong> (<em>dict</em>) – Dictionary containing series values keyed by index pairs.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if chart updated; False if no data provided.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.JsdWindow.update_spider_chart_title">
+<span class="sig-name descname"><span class="pre">update_spider_chart_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file1_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'File</span> <span class="pre">1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file2_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'File</span> <span class="pre">2'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.JsdWindow.update_spider_chart_title" title="Link to this definition"></a></dt>
+<dd><p>Update the title of the spider chart with the provided file names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file1_data</strong> (<em>str</em>) – Data label for file 1.</p></li>
+<li><p><strong>file2_data</strong> (<em>str</em>) – Data label for file 2.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.jsdview.clear_layout">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.jsdview.</span></span><span class="sig-name descname"><span class="pre">clear_layout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QLayout</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.jsdview.clear_layout" title="Link to this definition"></a></dt>
+<dd><p>Recursively clear all widgets and sub-layouts from a given layout.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>layout</strong> (<em>Optional</em><em>[</em><em>QLayout</em><em>]</em>) – The layout to clear.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if layout cleared; False if layout was None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.gui.pyside6.launch_react">
+<span id="midrc-react-gui-pyside6-launch-react-module"></span><h2>midrc_react.gui.pyside6.launch_react module<a class="headerlink" href="#module-midrc_react.gui.pyside6.launch_react" title="Link to this heading"></a></h2>
+<p>This module contains the main function to launch MIDRC-REACT as a PySide6 application.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.launch_react.SplashScreen">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.launch_react.</span></span><span class="sig-name descname"><span class="pre">SplashScreen</span></span><a class="headerlink" href="#midrc_react.gui.pyside6.launch_react.SplashScreen" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QSplashScreen</span></code></p>
+<p>This class is a subclass of QSplashScreen and represents a splash screen for a GUI application.
+It provides a static method _create_pixmap() to create a pixmap with a centered splash screen message.
+The __init__() method initializes the object and sets the pixmap.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.launch_react.SplashScreen.BACKGROUND_COLOR">
+<span class="sig-name descname"><span class="pre">BACKGROUND_COLOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtGui.QColor.fromRgbF(1.000000,</span> <span class="pre">1.000000,</span> <span class="pre">1.000000,</span> <span class="pre">1.000000)</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.launch_react.SplashScreen.BACKGROUND_COLOR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.launch_react.SplashScreen.FONT_FAMILY">
+<span class="sig-name descname"><span class="pre">FONT_FAMILY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Arial'</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.launch_react.SplashScreen.FONT_FAMILY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.launch_react.SplashScreen.FONT_SIZE">
+<span class="sig-name descname"><span class="pre">FONT_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">36</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.launch_react.SplashScreen.FONT_SIZE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.launch_react.SplashScreen.SPLASH_HEIGHT">
+<span class="sig-name descname"><span class="pre">SPLASH_HEIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">600</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.launch_react.SplashScreen.SPLASH_HEIGHT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.launch_react.SplashScreen.SPLASH_SCREEN_MESSAGE">
+<span class="sig-name descname"><span class="pre">SPLASH_SCREEN_MESSAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'MIDRC-REACT\n\nRepresentativeness</span> <span class="pre">Exploration\nand</span> <span class="pre">Comparison</span> <span class="pre">Tool\n\n\nLoading</span> <span class="pre">Excel</span> <span class="pre">files,</span> <span class="pre">please</span> <span class="pre">wait...'</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.launch_react.SplashScreen.SPLASH_SCREEN_MESSAGE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.launch_react.SplashScreen.SPLASH_WIDTH">
+<span class="sig-name descname"><span class="pre">SPLASH_WIDTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">800</span></em><a class="headerlink" href="#midrc_react.gui.pyside6.launch_react.SplashScreen.SPLASH_WIDTH" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.launch_react.SplashScreen.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#midrc_react.gui.pyside6.launch_react.SplashScreen.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="midrc_react.gui.pyside6.launch_react.launch_react">
+<span class="sig-prename descclassname"><span class="pre">midrc_react.gui.pyside6.launch_react.</span></span><span class="sig-name descname"><span class="pre">launch_react</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.pyside6.launch_react.launch_react" title="Link to this definition"></a></dt>
+<dd><p>Function: launch_react</p>
+<p>This function launches the midrc_react application.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It checks if a QApplication instance already exists, and if not, creates one.</p></li>
+<li><p>It then creates a SplashScreen object and displays it.</p></li>
+<li><p>Next, it initializes a JSDConfig object and retrieves the data source list from the configuration.</p></li>
+<li><p>It creates a JsdWindow object with the data source list and sets the JSDController with a JSDTableModel and the configuration.</p></li>
+<li><p>Finally, it shows the JsdWindow, finishes the SplashScreen, and exits the application.</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-midrc_react.gui.pyside6">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-midrc_react.gui.pyside6" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="midrc_react.gui.ipython.html" class="btn btn-neutral float-left" title="midrc_react.gui.ipython package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="midrc_react.plugins.html" class="btn btn-neutral float-right" title="midrc_react.plugins package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, MIDRC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

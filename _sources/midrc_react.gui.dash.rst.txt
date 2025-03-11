@@ -1,0 +1,29 @@
+midrc\_react.gui.dash package
+=============================
+
+Submodules
+----------
+
+midrc\_react.gui.dash.dataselectiongroupbox module
+--------------------------------------------------
+
+.. automodule:: midrc_react.gui.dash.dataselectiongroupbox
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.gui.dash.jsdview\_dash module
+------------------------------------------
+
+.. automodule:: midrc_react.gui.dash.jsdview_dash
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: midrc_react.gui.dash
+   :members:
+   :show-inheritance:
+   :undoc-members:

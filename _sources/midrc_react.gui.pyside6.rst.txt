@@ -1,0 +1,69 @@
+midrc\_react.gui.pyside6 package
+================================
+
+Submodules
+----------
+
+midrc\_react.gui.pyside6.columnselectordialog module
+----------------------------------------------------
+
+.. automodule:: midrc_react.gui.pyside6.columnselectordialog
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.gui.pyside6.copyabletableview module
+-------------------------------------------------
+
+.. automodule:: midrc_react.gui.pyside6.copyabletableview
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.gui.pyside6.dataselectiongroupbox module
+-----------------------------------------------------
+
+.. automodule:: midrc_react.gui.pyside6.dataselectiongroupbox
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.gui.pyside6.file\_open\_dialogs module
+---------------------------------------------------
+
+.. automodule:: midrc_react.gui.pyside6.file_open_dialogs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.gui.pyside6.grabbablewidget module
+-----------------------------------------------
+
+.. automodule:: midrc_react.gui.pyside6.grabbablewidget
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.gui.pyside6.jsdview module
+---------------------------------------
+
+.. automodule:: midrc_react.gui.pyside6.jsdview
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+midrc\_react.gui.pyside6.launch\_react module
+---------------------------------------------
+
+.. automodule:: midrc_react.gui.pyside6.launch_react
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: midrc_react.gui.pyside6
+   :members:
+   :show-inheritance:
+   :undoc-members:
