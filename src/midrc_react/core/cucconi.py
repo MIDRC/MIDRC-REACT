@@ -104,6 +104,7 @@ def cucconi_test(a: npt.NDArray, b: npt.NDArray, method: str = 'bootstrap', repl
                  ties: str = 'average', n_jobs: int = 1) -> CucconiResult:
     """
     Method to perform a Cucconi scale-location test.
+
     Args:
         a (np.ndarray): vector of observations
         b (np.ndarray): vector of observations
@@ -245,6 +246,7 @@ def cucconi_multisample_test(samples: list[npt.NDArray], method: str = 'bootstra
                              ties: str = 'average', n_jobs: int = 1) -> CucconiMultisampleResult:
     """
     Method to perform a multisample Cucconi scale-location test.
+
     Args:
         samples (List[numpy.ndarray]): list of observation vectors
         method (str): method for determining p-value,

@@ -26,7 +26,7 @@ from midrc_react.core.excel_layout import DataSource
 
 
 class JSDTableModel(QAbstractTableModel):
-    """
+    r"""
     A class representing a table model for JSD data.
 
     This class inherits from the QAbstractTableModel class and provides the necessary methods to interact with the
@@ -35,21 +35,6 @@ class JSDTableModel(QAbstractTableModel):
 
     Attributes:
         HEADER_MAPPING (List[str]): A list of header labels for the table columns.
-
-    Methods:
-        __init__(self, data_source_list=None, custom_age_ranges=None): Initializes the JSDTableModel with the given data
-            sources and custom age ranges.
-        rowCount(self, parent: QModelIndex = None) -> int: Returns the number of rows in the model.
-        columnCount(self, parent: QModelIndex = QModelIndex()) -> int: Returns the number of columns in the model.
-        headerData(self, section: int, orientation: int, role: int, *args, **kwargs) -> Any: Returns the header data for
-            the specified section, orientation, and role.
-        data(self, index: QModelIndex, role: int = Qt.DisplayRole) -> Optional[Any]: Returns the data for the given
-            index and role.
-        setData(self, index: QModelIndex, value: Any, role: int = Qt.EditRole) -> bool: Sets the data for the given
-            index.
-        flags(self, index: QModelIndex) -> Qt.ItemFlags: Returns the flags for the given index.
-        add_color_mapping(self, color: str, mapping_area: Any): Adds a color mapping to the JSDTableModel.
-        clear_color_mapping(self): Clears the color mapping in the JSDTableModel.
 
     """
     HEADER_MAPPING = [
@@ -65,11 +50,13 @@ class JSDTableModel(QAbstractTableModel):
         This method initializes the JSDTableModel by setting up the input data, mapping, and raw data sources.
 
         Args:
-            data_source_list (List[dict], optional): A list of data sources. Each data source is a dictionary with the
+            data_source_list (List[dict], optional): A list of data sources. Each data source is a dictionary with the\
                                                      following keys:
+
                 - 'name' (str): The name of the data source.
                 - 'data type' (str): The type of the data source.
                 - 'filename' (str): The filename of the data source.
+
             custom_age_ranges (Any, optional): Custom age ranges for the data sources.
 
         Returns:
@@ -99,10 +86,12 @@ class JSDTableModel(QAbstractTableModel):
 
         Args:
             data_source_dict (dict): A dictionary containing the information about the data source.
-                                     It should have the following keys:
-                - 'name' (str): The name of the data source.
-                - 'data type' (str): The type of the data source.
-                - 'filename' (str): The filename of the data source.
+
+                *The dictionary should have the following keys:*
+
+                    - 'name' (str): The name of the data source.
+                    - 'data type' (str): The type of the data source.
+                    - 'filename' (str): The filename of the data source.
 
         Returns:
             None
@@ -260,14 +249,16 @@ class JSDTableModel(QAbstractTableModel):
 
         This method returns the column information of the JSDTableModel, which is a list of dictionaries representing
         the metadata for each set of two columns in the model (one column for date, one column for the JSD value).
-        Each dictionary contains the following keys:
-        - 'index1' (int): The index of the first file used
-        - 'file1' (str): The file name of the first file used.
-        - 'index2' (int): The index of the second file used.
-        - 'file2' (str): The file name of the second file used.
 
         Returns:
             List[dict]: The column information of the JSDTableModel.
+
+                *Each dictionary contains the following keys:*
+
+                    - 'index1' (int): The index of the first file used
+                    - 'file1' (str): The file name of the first file used.
+                    - 'index2' (int): The index of the second file used.
+                    - 'file2' (str): The file name of the second file used.
         """
         return self._column_infos
 

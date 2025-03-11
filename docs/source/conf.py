@@ -6,7 +6,7 @@
 # Add the package directory to sys.path
 # import os
 # import sys
-# sys.path.insert(0, os.path.abspath('../src/'))  # Adjust the path as needed
+# sys.path.insert(0, os.path.abspath('..'))  # Adjust the path as needed
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -32,5 +32,29 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+    'collapse_navigation': False,
+    'navigation_depth': -1,
+}
+
+# html_theme = 'furo'
+
 html_static_path = ['_static']
+
+
+# Include __init__() in the documentation
+napoleon_include_init_with_doc = True
+
+# Use :ivar: style for class attributes so they’re only listed once in the Attributes section.
+napoleon_use_ivar = True
+
+def skip_member(app, what, name, obj, skip, options):
+    if name in ("staticMetaObject", "FlowStyleListDumper"):
+        return True
+    return skip
+
+def setup(app):
+    app.connect("autodoc-skip-member", skip_member)
+
+

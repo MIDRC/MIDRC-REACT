@@ -262,14 +262,7 @@ class DataSheet:
 
     Attributes:
         name (str): The name of the data sheet.
-        columns (dict): A dictionary containing the columns of the data sheet.
-        data_columns (list): A list of data columns in the data sheet.
-
-    Methods:
-        __init__(self, sheet_name, data_source, custom_age_ranges, is_excel=False, file=None):
-                    Initializes a new instance of the DataSheet class.
-        create_custom_age_columns(self, age_ranges): Scans the column headers in the age category to build consistent
-                                                     age columns.
+        _columns (dict): A dictionary containing the columns of the data sheet.
     """
     def __init__(self, sheet_name, data_source, custom_age_ranges, is_excel=False, file: pd.ExcelFile = None,
                  df: pd.DataFrame = None):

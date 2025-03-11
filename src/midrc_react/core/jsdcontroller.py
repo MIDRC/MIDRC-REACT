@@ -41,10 +41,7 @@ class JSDController(QObject):
     This class represents a JSD Controller. It emits a signal when the model changes.
 
     Attributes:
-    - modelChanged: A Signal that is emitted when the model changes.
-
-    Methods:
-    - None
+        modelChanged: A Signal that is emitted when the model changes.
 
     """
     modelChanged = Signal()
@@ -553,16 +550,16 @@ def calculate_jsd(df1, df2, cols_to_use, calc_date):
 
     There is an assumption that the date column of the dataframes are sorted from smallest to largest.
 
-    Note: The Jensen-Shannon distance returned is the square root of the Jensen-Shannon divergence.
+    *Note: The Jensen-Shannon distance returned is the square root of the Jensen-Shannon divergence.*
 
     Parameters:
-    df1 (pd.DataFrame): First dataframe.
-    df2 (pd.DataFrame): Second dataframe.
-    cols_to_use (list): List of columns to use for the calculation.
-    calc_date (pd.Timestamp): Date for which the calculation is performed.
+        df1 (pd.DataFrame): First dataframe.
+        df2 (pd.DataFrame): Second dataframe.
+        cols_to_use (list): List of columns to use for the calculation.
+        calc_date (pd.Timestamp): Date for which the calculation is performed.
 
     Returns:
-    float: Jensen-Shannon distance between the two dataframes.
+        float: Jensen-Shannon distance between the two dataframes.
     """
     if df1.empty or df2.empty:
         return None

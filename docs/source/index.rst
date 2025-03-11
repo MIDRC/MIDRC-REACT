@@ -12,11 +12,13 @@ documentation for details.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 8
    :caption: Contents:
 
    modules
 
 .. automodule:: midrc_react
-   :members:
+   :member-order: groupwise
+   :show-inheritance:
+   :no-index:
 

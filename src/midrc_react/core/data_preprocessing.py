@@ -26,15 +26,15 @@ def bin_dataframe_column(df_to_bin, column_name, cut_column_name='CUT', bins=Non
     Cuts the age column into bins and adds a column with the bin labels.
 
     Parameters:
-    - df_to_bin: pandas DataFrame containing the data
-    - column_name: name of the column to be binned
-    - cut_column_name: name of the column to be added with the bin labels
-    - bins: list of bins to be used for the binning
-    - labels: list of labels for the bins
-    - right: whether to use right-inclusive intervals
+        df_to_bin: pandas DataFrame containing the data
+        column_name: name of the column to be binned
+        cut_column_name: name of the column to be added with the bin labels
+        bins: list of bins to be used for the binning
+        labels: list of labels for the bins
+        right: whether to use right-inclusive intervals
 
     Returns:
-    - df: pandas DataFrame with the binned column and the labels
+        pd.DataFrame: pandas DataFrame with the binned column and the labels
     """
     if column_name in df_to_bin.columns:
         if bins is None:

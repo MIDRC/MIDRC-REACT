@@ -26,25 +26,13 @@ from PySide6.QtWidgets import QMainWindow
 @dataclass
 class GroupBoxData:
     """
-    Class: GroupBoxData
     This class represents a group box widget for data selection. It provides functionality for creating labels and
     combo boxes for data files and a category combo box. The class has methods for setting up the layout,
     updating the category combo box, and initializing the widget.
+
     Attributes:
         _file_infos (list): A list of file information dictionaries.
         _category_info (dict): A dictionary containing information about the selected category.
-    Methods:
-        __init__(self): Initializes the GroupBoxData object.
-        get_file_infos(self): Returns the file information dictionaries.
-        append_file_info(self, file_info: dict): Appends a file information dictionary to the list of file information
-                                                 dictionaries.
-        get_category_info(self): Returns the category information dictionary.
-        update_category_list(self, categorylist, categoryindex): Updates the category information dictionary with the
-                                                                given category list and index.
-        update_category_index(self, categoryindex): Updates the category information dictionary with the given category
-                                                    index.
-        update_category_text(self, categorytext): Updates the category information dictionary with the given category
-                                                  text.
     """
     _file_infos = []
     _category_info = {
@@ -98,7 +86,16 @@ class GroupBoxData:
         return self._category_info
 
     def update_category_list(self, categorylist, categoryindex):
-        """Updates the category information dictionary with the given category list and index."""
+        """
+        Updates the category information dictionary with the given category list and index.
+
+        Args:
+            categorylist (list(str)): List of categories to add to the information dictionary
+            categoryindex (int): Index to set the current index to (and item in the category list)
+
+        Returns:
+            None
+        """
         self._category_info = {
             'current_text': categorylist[categoryindex],
             'current_index': categoryindex,
@@ -106,12 +103,28 @@ class GroupBoxData:
         }
 
     def update_category_index(self, categoryindex):
-        """Updates the category information dictionary with the given category index."""
+        """
+        Updates the category information dictionary with the given category index.
+
+        Args:
+            categoryindex (int): Index to set the current category to
+
+        Returns:
+            None
+        """
         self._category_info['current_index'] = categoryindex
         self._category_info['current_text'] = self._category_info['category_list'][categoryindex]
 
     def update_category_text(self, categorytext):
-        """Updates the category information dictionary with the given category text."""
+        """
+        Updates the category information dictionary with the given category text.
+
+        Args:
+            categorytext (str): The category to set the current category text (and current index) to
+
+        Returns:
+            None
+        """
         category_list = self._category_info['category_list']
         if categorytext in category_list:
             self._category_info['current_text'] = categorytext
@@ -120,21 +133,14 @@ class GroupBoxData:
 
 class JsdViewBase(QObject):
     """
-    Class: JsdViewBase
     This class represents a base class for JSD views. It provides functionality for creating a data selection group box,
     updating the category combo box, and initializing the widget.
+
     Attributes:
         _data_selection_group_box (GroupBoxData): A data selection group box.
         _controller (JSDController): A JSDController object.
         update_view_on_controller_initialization (bool): A flag indicating whether the view should be updated on
                                                          controller initialization.
-    Methods:
-        __init__(self): Initializes the JsdViewBase object.
-        open_excel_file(self, data_source_dict): Opens an Excel file and adds it to the data selection group box.
-        update_pie_chart_dock(self, sheet_dict): Updates the pie chart dock with the given sheet dict.
-        update_spider_chart(self, spider_plot_values_dict): Updates the spider chart with new values.
-        update_jsd_timeline_plot(self, jsd_model): Updates the JSD timeline plot with the specified JSD model.
-        update_area_chart(self, sheet_dict): Updates the area chart with new data.
     """
     _data_selection_group_box = GroupBoxData()
     _controller = None
@@ -189,7 +195,7 @@ class JsdViewBase(QObject):
 
         Args:
             spider_plot_values_dict (dict): A dictionary of dictionaries where each dictionary contains
-            the values for one series on the spider chart.
+                the values for one series on the spider chart.
         """
         pass  # pylint: disable=unnecessary-pass
 
