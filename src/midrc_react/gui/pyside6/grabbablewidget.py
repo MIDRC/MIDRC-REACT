@@ -34,22 +34,6 @@ class GrabbableWidgetMixin(QObject):
         DEFAULT_SAVE_FILE_PREFIX (str): Default prefix for save file names.
         DATE_TIME_FORMAT (str): The datetime format for appending to default filenames when saving snapshots
         save_dialog_open (bool): Indicates if the save dialog is currently open.
-
-    Methods:
-        __init__(self, parent: QWidget = None, save_file_prefix: str = DEFAULT_SAVE_FILE_PREFIX):
-            Initialize the class instance with optional parent QWidget and a save file prefix.
-        eventFilter(self, source, event):
-            Filters events for the widget to handle context menu events.
-        showContextMenu(self, pos):
-            Display a context menu for capturing snapshots of the widget.
-        copyToClipboard(self):
-            Copy the snapshot of the parent widget to the clipboard.
-        default_filename(self, suffix=".png"):
-            Generate a default filename for saving snapshots.
-        saveToDisk(self):
-            Save a snapshot of the parent widget to disk.
-        saveHighResToDisk(self):
-            Save a high-resolution snapshot of the parent widget to disk.
     """
     DEFAULT_SAVE_FILE_PREFIX = "MIDRC-REACT_plot_"
     DATE_TIME_FORMAT = "yyyyMMddhhmmss"  # Constant for date-time format
@@ -209,11 +193,6 @@ class SaveWidgetAsImageDialog(QDialog):
 
     Attributes:
         widget: The widget to be saved as an image.
-
-    Methods:
-        restore_widget: Restore the original widget by removing the temporary widget.
-        cancel_save: Restore the original widget and reject the save operation.
-        save_image: Save the image of the widget with a specified ratio.
     """
     WINDOW_TITLE = "Save High Resolution Image"
     WINDOW_WIDTH = 400

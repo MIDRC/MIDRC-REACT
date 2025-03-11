@@ -29,10 +29,10 @@ from midrc_react.gui.common.utils import create_data_source_dict, create_file_in
 # Define the data selection group box
 class DataSelectionGroupBox(QObject, GroupBoxData):
     """
-    Class: DataSelectionGroupBox
     This class represents a group box widget for data selection. It provides functionality for creating labels and
     combo boxes for data files and a category combo box. The class has methods for setting up the layout,
     updating the category combo box, and initializing the widget.
+
     Attributes:
         _file_comboboxes (list): A list of file comboboxes.
         _category_combobox (widgets.Dropdown): A category combo box.
@@ -42,14 +42,6 @@ class DataSelectionGroupBox(QObject, GroupBoxData):
         _jsd_model (JSDTableModel): The JSDTableModel object.
         _num_fileboxes (int): The number of file boxes.
         _raw_data_available (bool): A flag indicating whether raw data is available.
-    Methods:
-        __init__(self, jsd_model): Initializes the DataSelectionGroupBox object.
-        on_num_fileboxes_changed(self, change): Handles the number of file boxes changing.
-        update_filebox_layout(self, num_fileboxes): Updates the filebox layout based on the number of file boxes.
-        update_file_comboboxes(self): Updates the file comboboxes based on the data sources.
-        on_category_changed(self, change): Handles the category changing.
-        on_file_selection_changed(self, change=None): Handles the file selection changing.
-        display(self): Returns the layout of the group box.
     """
     category_changed = Signal()
     file_selection_changed = Signal(str)

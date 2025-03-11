@@ -26,8 +26,6 @@ from midrc_react.gui.common.jsdview_base import GroupBoxData
 
 class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
     """
-    Class: JsdDataSelectionGroupBox
-
     This class represents a group box widget for data selection. It provides functionality for creating labels and
     combo boxes for data files and a category combo box. The class has methods for setting up the layout,
     updating the category combo box, and initializing the widget.
@@ -35,21 +33,12 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
     Attributes:
         num_data_items_changed (Signal): A signal emitted when the number of data items in the JsdDataSelectionGroupBox
                                          changes.
+        file_checkbox_state_changed (Signal): A signal emitted when the state of a file checkbox changes.
         NUM_DEFAULT_DATA_ITEMS (int): The default number of data items.
-
-    Methods:
-        __init__(self, data_sources): Initializes the JsdDataSelectionGroupBox object.
-        set_layout(self, data_sources): Sets the layout for the given data sources.
-        add_file_combobox_to_layout(self, auto_populate: bool = True): Adds a file combobox to the layout.
-        remove_file_combobox_from_layout(self): Removes a file combobox from the layout.
-        set_num_data_items(self, count: int): Sets the number of data items in the JsdDataSelectionGroupBox.
-        add_file_to_comboboxes(self, description: str, name: str): Adds a file to the file comboboxes.
-        update_category_combo_box(self, categorylist, categoryindex): Updates the category combo box with the given
-                                                                      category list and selected index.
     """
-    num_data_items_changed = Signal(int)
-    file_checkbox_state_changed = Signal(bool)
-    NUM_DEFAULT_DATA_ITEMS = 2
+    num_data_items_changed: Signal = Signal(int)
+    file_checkbox_state_changed: Signal = Signal(bool)
+    NUM_DEFAULT_DATA_ITEMS: int = 2
 
     def __init__(self, data_sources):
         """
@@ -74,10 +63,10 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         Set the layout for the given data sources.
 
         Parameters:
-        - data_sources: A list of data sources.
+            data_sources: A list of data sources.
 
         Returns:
-        None
+            None
         """
         # Create the form layout
         form_layout = self.form_layout
@@ -137,10 +126,10 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         Add a file combobox to the layout.
 
         Parameters:
-        - auto_populate (bool): If True, the combobox will be populated with items from the first combobox.
+            auto_populate (bool): If True, the combobox will be populated with items from the first combobox.
 
         Returns:
-        None
+            None
         """
         new_hbox = QHBoxLayout()
         new_combobox = QComboBox()
@@ -171,10 +160,10 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         respective lists.
 
         Parameters:
-        - None
+            None
 
         Returns:
-        - None
+            None
         """
         index = len(self.file_comboboxes) - 1
         self.form_layout.removeRow(index)
@@ -186,6 +175,7 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         Set the number of data items in the JsdDataSelectionGroupBox.
 
         This method adjusts the number of file comboboxes in the layout based on the given count.
+
         * If the current number of file comboboxes is equal to the count, the method returns without making any changes.
         * If the current number of file comboboxes is less than the count, the method adds file comboboxes to the layout
           using the add_file_combobox_to_layout method.
@@ -194,10 +184,10 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         * Finally, the method emits the num_data_items_changed signal with the updated count.
 
         Parameters:
-        - count (int): The desired number of data items.
+            count (int): The desired number of data items.
 
         Returns:
-        None
+            None
         """
         if len(self.file_comboboxes) == count:
             return
@@ -216,11 +206,11 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         The description is displayed in the combobox as the item text, and the name is stored as the item data.
 
         Parameters:
-        - description (str): The description of the file.
-        - name (str): The name of the file.
+            description (str): The description of the file.
+            name (str): The name of the file.
 
         Returns:
-        None
+            None
         """
         for combobox in self.file_comboboxes:
             combobox.addItem(description, userData=name)
@@ -231,11 +221,11 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         category index.
 
         Parameters:
-        - categorylist (list): The list of categories to populate the combo box.
-        - categoryindex (int): The index of the category to select in the combo box.
+            categorylist (list): The list of categories to populate the combo box.
+            categoryindex (int): The index of the category to select in the combo box.
 
         Returns:
-        None
+            None
         """
         with QSignalBlocker(self.category_combobox):
             self.category_combobox.clear()

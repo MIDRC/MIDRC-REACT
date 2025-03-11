@@ -34,8 +34,7 @@ from midrc_react.gui.ipython.dataselectiongroupbox import DataSelectionGroupBox
 
 
 class JsdViewIPython(JsdViewBase):
-    """Class: JsdViewIPython
-
+    """
     This class represents a Jupyter Notebook view for JSD. It provides functionality for creating a Jupyter Notebook
     app and handling file uploads. The class has methods for setting up the layout, updating the category combo box,
     and initializing the widget.

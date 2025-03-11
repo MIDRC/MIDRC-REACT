@@ -39,7 +39,6 @@ class JSDConfig:
     Methods:
         __init__(self, filename='jsdconfig.yaml'): Initializes a new instance of JSDConfig.
         __post_init__(self): Loads the YAML data from the current filename.
-        set_filename(self, new_filename: str): Sets a new filename and reloads the data.
     """
     filename: str = 'jsdconfig.yaml'
     data: dict = field(init=False)

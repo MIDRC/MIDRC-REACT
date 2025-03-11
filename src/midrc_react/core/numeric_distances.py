@@ -34,13 +34,13 @@ def calc_numerical_metric_by_feature(df, feature: str, dataset_column: str, metr
     Calculate a specified metric based on a single feature for input datasets.
 
     Parameters:
-    - df: pandas DataFrame containing the data
-    - feature: a string representing the feature to calculate the metric for
-    - sampling_data: an instance of SamplingData class with dataset information
-    - metric_function: a function to calculate the desired metric (e.g., cucconi, ks_2samp)
+        df: pandas DataFrame containing the data
+        feature: a string representing the feature to calculate the metric for
+        sampling_data: an instance of SamplingData class with dataset information
+        metric_function: a function to calculate the desired metric (e.g., cucconi, ks_2samp)
 
     Returns:
-    - A dictionary containing metric results for each dataset combination.
+        dict: A dictionary containing metric results for each dataset combination.
     """
     dataset_names = df[dataset_column].unique()
     metric_dict = {}
@@ -159,10 +159,10 @@ def scale_values(values, method: str = 'standard'):
     Normalize a feature to mean 0 and standard deviation 1.
 
     Parameters:
-    - values: a list of values to normalize
+        values: a list of values to normalize
 
     Returns:
-    - A copy of the DataFrame with the feature normalized.
+        A copy of the DataFrame with the feature normalized.
     """
     if method is None or not method.strip():
         logging.warning("No scaling method specified. Returning original DataFrame.")
@@ -189,11 +189,11 @@ def scale_feature(df, feature: str, method: str = 'standard'):
     Normalize a feature to mean 0 and standard deviation 1.
 
     Parameters:
-    - df: pandas DataFrame containing the data
-    - feature: a string representing the feature to normalize
+        df: pandas DataFrame containing the data
+        feature: a string representing the feature to normalize
 
     Returns:
-    - A copy of the DataFrame with the feature normalized.
+        A copy of the DataFrame with the feature normalized.
     """
     if method is None or not method.strip():
         logging.warning("No scaling method specified. Returning original DataFrame.")
@@ -208,16 +208,16 @@ def generate_histogram(df, dataset_column, dataset_name, feature_column, bin_wid
     """
     Generate a histogram for a specific dataset within a DataFrame.
 
-    Parameters:
-    - df: DataFrame containing the dataset.
-    - x_coordinates: Array of x-coordinates for the histogram.
-    - dataset_name: Name of the dataset within the DataFrame.
-    - feature_column: Name of the feature column within the DataFrame.
-    - bin_width: Width of each histogram bin (default is 0.01).
+    Args:
+        df: DataFrame containing the dataset.
+        x_coordinates: Array of x-coordinates for the histogram.
+        dataset_name: Name of the dataset within the DataFrame.
+        feature_column: Name of the feature column within the DataFrame.
+        bin_width: Width of each histogram bin (default is 0.01).
 
     Returns:
-    - hist: Array of histogram values.
-    - bins: Array of bin edges.
+        hist: Array of histogram values.
+        bins: Array of bin edges.
 
     Enhance readability by generating a histogram for a specific dataset based on the provided x-coordinates and bin
     width.
@@ -233,15 +233,15 @@ def build_histogram_dict(df, dataset_column, datasets, feature_column, bin_width
     """
     Build a dictionary of histogram data for a specific dataset.
 
-    Parameters:
-    - df: DataFrame containing the dataset.
-    - dataset_column: Name of the dataset column within the DataFrame.
-    - feature_column: Name of the feature column within the DataFrame.
-    - bin_width: Width of each histogram bin (default is 0.01).
-    - scaling_method: Method to use for scaling the feature column (default is None).
+    Args:
+        df: DataFrame containing the dataset.
+        dataset_column: Name of the dataset column within the DataFrame.
+        feature_column: Name of the feature column within the DataFrame.
+        bin_width: Width of each histogram bin (default is 0.01).
+        scaling_method: Method to use for scaling the feature column (default is None).
 
     Returns:
-    - hist_dict: Dictionary containing histogram data for the specified dataset.
+        hist_dict: Dictionary containing histogram data for the specified dataset.
     """
     hist_dict = {}
     for dataset in datasets:
@@ -265,21 +265,21 @@ def calc_distances_via_df(famd_df, feature_column, dataset_column: str = '_datas
     Wasserstein and KS distances. The results are returned as a
     dictionary where keys represent the metric names.
 
-    Parameters:
-    - famd_df (DataFrame): A DataFrame containing FAMD (Factorial Analysis of Mixed Data) results.
-    - hist_dict (dict): A dictionary containing histogram data for each dataset.
-    - sampling_data: An object containing dataset sampling information, including
-                     dataset_column and datasets attributes.
-    - distance_metric (tuple): A tuple of strings specifying which distance metrics to compute.
-                               Use 'all' to compute all available metrics or specify individual metrics
-                               (e.g., 'jsd', 'wass', 'ks2', 'cuc') along with optional scaling
-                               options (e.g., 'wass(std)', 'ks2(rob)', etc.).
+    Args:
+        famd_df (DataFrame): A DataFrame containing FAMD (Factorial Analysis of Mixed Data) results.
+        hist_dict (dict): A dictionary containing histogram data for each dataset.
+        sampling_data: An object containing dataset sampling information, including
+                       dataset_column and datasets attributes.
+        distance_metric (tuple): A tuple of strings specifying which distance metrics to compute.
+                                 Use 'all' to compute all available metrics or specify individual metrics
+                                 (e.g., 'jsd', 'wass', 'ks2', 'cuc') along with optional scaling
+                                 options (e.g., 'wass(std)', 'ks2(rob)', etc.).
 
     Returns:
-    - dict: A dictionary with keys as distance metric names and values as the computed metrics.
-            For example, output could include keys like 'jsd', 'wass', 'ks2', 'cuc', etc.
-            If specific scaling options are computed, keys would include these as well,
-            such as 'wass(std)', 'jsd(rob)', etc.
+        dict: A dictionary with keys as distance metric names and values as the computed metrics.
+              For example, output could include keys like 'jsd', 'wass', 'ks2', 'cuc', etc.
+              If specific scaling options are computed, keys would include these as well,
+              such as 'wass(std)', 'jsd(rob)', etc.
     """
     output = {}
     calc_all = 'all' in distance_metrics

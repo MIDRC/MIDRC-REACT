@@ -29,12 +29,13 @@ from midrc_react.core.data_preprocessing import combine_datasets_from_list
 def calc_jsd_from_counts_dict(counts_dict, dataset_names):
     """
     Calculates the Jensen-Shannon Distance (JSD) between each pair of datasets in a dictionary.
+
     Args:
-        counts_dict:
-        dataset_names:
+        counts_dict: dictionary of counts for each dataset
+        dataset_names: list of dataset names to compare
 
     Returns:
-
+        dict: dictionary of JSD values for each dataset combination
     """
     output_dict = {}
 
@@ -67,12 +68,11 @@ def calc_jsd_by_features(df_list: list[pd.DataFrame], cols_to_use: list[str]) ->
     Calculate Jensen-Shannon Distance (JSD) based on features based on input datasets.
 
     Parameters:
-    - df: pandas DataFrame containing the data
-    - sampling_data: an instance of SamplingData class with dataset information
-    - age_bins: a boolean indicating whether to consider age bins in the calculation
+        df_list: list of pandas DataFrames containing the datasets
+        cols_to_use: list of columns to use for the JSD calculation
 
     Returns:
-    - dictionary of JSD values for each dataset combination
+        dict: dictionary of JSD values for each dataset combination
     """
     dataset_column = '_dataset_'  # Temporary column name to store dataset information
     combined_df = combine_datasets_from_list(df_list, dataset_column)
@@ -98,12 +98,12 @@ def calc_jsd_by_features_2df(df1: pd.DataFrame, df2: pd.DataFrame, cols_to_use: 
     Calculate Jensen-Shannon Distance (JSD) based on features between two datasets.
 
     Parameters:
-    - df1: pandas DataFrame containing the first dataset
-    - df2: pandas DataFrame containing the second dataset
-    - cols_to_use: list of columns to use for the JSD calculation
+        df1: pandas DataFrame containing the first dataset
+        df2: pandas DataFrame containing the second dataset
+        cols_to_use: list of columns to use for the JSD calculation
 
     Returns:
-    - dictionary of JSD values for each feature
+        dict: dictionary of JSD values for each feature
     """
     jsd_dict = calc_jsd_by_features([df1, df2], cols_to_use)
 
@@ -115,13 +115,13 @@ def calc_aggregate_jsd_at_date(df1: pd.DataFrame, df2: pd.DataFrame, cols_to_use
     Calculate Jensen-Shannon Distance (JSD) based on features between two datasets at a specific date.
 
     Parameters:
-    - df1: pandas DataFrame containing the first dataset
-    - df2: pandas DataFrame containing the second dataset
-    - cols_to_use: list of columns to use for the JSD calculation
-    - date: date at which to calculate the JSD
+        df1: pandas DataFrame containing the first dataset
+        df2: pandas DataFrame containing the second dataset
+        cols_to_use: list of columns to use for the JSD calculation
+        date: date at which to calculate the JSD
 
     Returns:
-    - dictionary of JSD values for each feature
+        dict: dictionary of JSD values for each feature
     """
     df1_at_date = df1[df1['date'] <= date]
     df2_at_date = df2[df2['date'] <= date]

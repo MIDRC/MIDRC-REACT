@@ -36,12 +36,6 @@ class NumericColumnSelectorDialog(QDialog):
         layout (QVBoxLayout): The layout of the dialog.
         column_settings (dict): A dictionary containing the checkbox, min_input, max_input, and step_input widgets.
         button_box (QDialogButtonBox): The button box containing the OK and Cancel buttons.
-
-    Methods:
-        __init__(self, columns, parent=None): Initialize the NumericColumnSelectorDialog object.
-        toggle_inputs(self, checked, min_input, max_input, step_input): Toggle the visibility of the min, max, and step
-                                                                        inputs based on the checkbox state.
-        get_selected_columns_with_bins(self): Return a dictionary of selected columns with their bin settings.
     """
     def __init__(self, columns, parent=None):
         """
@@ -124,6 +118,7 @@ class NumericColumnSelectorDialog(QDialog):
     def get_selected_columns_with_bins(self):
         """
         Return a dictionary of selected columns with their bin settings.
+
         Returns:
             dict: keys are the target string column names; values are tuples
                   (raw column, bins, labels) where labels is None.

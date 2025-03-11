@@ -34,7 +34,6 @@ from midrc_react.gui.dash.dataselectiongroupbox import DataSelectionGroupBox
 
 class JSDViewDash(JsdViewBase):
     """
-    Class: JSDViewDash
     This class represents a Dash view for JSD. It provides functionality for creating a Dash app and handling file
     uploads. The class has methods for setting up the layout, updating the category combo box, and initializing the
     widget.
