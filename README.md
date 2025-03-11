@@ -1,6 +1,6 @@
 # MIDRC-REACT Representativeness Exploration and Comparison Tool
 
-[Technologies](#technologies) | [Getting Started](#getting-started) | [Collaborators](#collaborators) | [References](#references) | [Contribute](#contribute)
+[Technologies](#technologies) | [Getting Started](#getting-started) | [Collaborators](#collaborators) | [References](#references) | [Contribute](#contribute) | [Documentation](https://midrc.github.io/MIDRC-REACT/)
 
 [📱 Visit MIDRC Website](https://www.midrc.org/)
 
@@ -175,7 +175,11 @@ git clone https://github.com/MIDRC/MIDRC_Diversity_Calculator.git
 
 ### Documentation That Might Help
 
-[📝 How to create a Pull Request](https://www.atlassian.com/br/git/tutorials/making-a-pull-request)
+[MIDRC-REACT Documentation](https://midrc.github.io/MIDRC-REACT/)
+
+[📝 How to create a new branch](https://www.atlassian.com/git/tutorials/using-branches)
+
+[📝 How to create a Pull Request](https://www.atlassian.com/git/tutorials/making-a-pull-request)
 
 ## :heavy_check_mark: License
 
