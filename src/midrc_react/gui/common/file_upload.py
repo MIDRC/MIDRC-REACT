@@ -33,5 +33,5 @@ def process_file_upload(view, data_source_dict):
     print("Excel file loaded, try to update layout")
     if hasattr(view, 'data_selection_group_box'):
         view.data_selection_group_box.update_filebox_layout(
-            view.data_selection_group_box.num_fileboxes
+            view.data_selection_group_box.num_fileboxes,
         )

@@ -369,7 +369,7 @@ class JSDController(QObject):
                     df2=ds2.sheets[category].df,
                     cols_to_use=cols_to_use,
                     calc_date=calc_date,
-                )
+                ),
             )
             data_frames.append(df)
 

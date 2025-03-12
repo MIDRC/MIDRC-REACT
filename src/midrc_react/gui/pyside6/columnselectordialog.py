@@ -81,7 +81,7 @@ class NumericColumnSelectorDialog(QDialog):
             # Connect the checkbox to show/hide the min, max, and step inputs
             checkbox.toggled.connect(
                 lambda checked, label_ed=label_edit, min_in=min_input, max_in=max_input, step_in=step_input:
-                self.toggle_inputs(checked, label_ed, min_in, max_in, step_in)
+                self.toggle_inputs(checked, label_ed, min_in, max_in, step_in),
             )
 
             row_layout = QHBoxLayout()

@@ -128,7 +128,7 @@ class DataSelectionGroupBox(GroupBoxData):
                 self._file_upload,
                 html.Div(id='output-data-upload'),
                 html.Div(id='filebox-container'),  # This will hold the fileboxes dynamically
-            ])
+            ]),
         ]
 
     def _initialize_data_sources(self):

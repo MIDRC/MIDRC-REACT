@@ -22,6 +22,7 @@ import logging
 from types import SimpleNamespace
 
 import numpy as np
+import pandas as pd
 from scipy.stats import ks_2samp, wasserstein_distance
 from sklearn.preprocessing import MaxAbsScaler, MinMaxScaler, RobustScaler, StandardScaler
 
@@ -254,7 +255,7 @@ def build_histogram_dict(df, dataset_column, datasets, feature_column, bin_width
     return hist_dict
 
 
-def calc_distances_via_df(famd_df, feature_column, dataset_column: str = '_dataset_', *,
+def calc_distances_via_df(famd_df: pd.DataFrame, feature_column: str, dataset_column: str = '_dataset_', *,
                           distance_metrics: tuple[str] = ('all'), jsd_scaled_bin_width=0.01):
     """
     Calculate various distance metrics based on histogram data.
@@ -266,14 +267,14 @@ def calc_distances_via_df(famd_df, feature_column, dataset_column: str = '_datas
     dictionary where keys represent the metric names.
 
     Args:
-        famd_df (DataFrame): A DataFrame containing FAMD (Factorial Analysis of Mixed Data) results.
-        hist_dict (dict): A dictionary containing histogram data for each dataset.
-        sampling_data: An object containing dataset sampling information, including
-                       dataset_column and datasets attributes.
-        distance_metric (tuple): A tuple of strings specifying which distance metrics to compute.
-                                 Use 'all' to compute all available metrics or specify individual metrics
-                                 (e.g., 'jsd', 'wass', 'ks2', 'cuc') along with optional scaling
-                                 options (e.g., 'wass(std)', 'ks2(rob)', etc.).
+        famd_df (pd.DataFrame): A DataFrame containing FAMD (Factorial Analysis of Mixed Data) results.
+        feature_column (str): The name of the column containing the feature data.
+        dataset_column (str): The name of the column containing the dataset information.
+        distance_metrics (tuple): A tuple of strings specifying which distance metrics to compute.
+                                  Use 'all' to compute all available metrics or specify individual metrics
+                                  (e.g., 'jsd', 'wass', 'ks2', 'cuc') along with optional scaling
+                                  options (e.g., 'wass(std)', 'ks2(rob)', etc.).
+        jsd_scaled_bin_width (float): The bin width to use for the JSD calculation.
 
     Returns:
         dict: A dictionary with keys as distance metric names and values as the computed metrics.

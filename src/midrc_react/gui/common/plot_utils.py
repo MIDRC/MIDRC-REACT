@@ -54,7 +54,7 @@ def create_stacked_area_figure(df, cols_to_use, cumulative_percents, individual_
                 line={'width': 0.5},
                 opacity=0.5,
                 hoverinfo='none',
-            )
+            ),
         )
 
         # Trace for hover information with actual percentages.
@@ -68,7 +68,7 @@ def create_stacked_area_figure(df, cols_to_use, cumulative_percents, individual_
                 line={'width': 0.5, 'color': 'rgba(0,0,0,0)'},
                 hovertemplate='%{text:.2f}%',
                 showlegend=False,
-            )
+            ),
         )
 
     # Update the layout. Customize as needed.
