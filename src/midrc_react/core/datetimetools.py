@@ -24,6 +24,12 @@ from PySide6.QtCore import QDate, QDateTime, QTime, QTimeZone
 def convert_date_to_milliseconds(date: QDate):
     """
     Converts a date to milliseconds since epoch.
+
+    Parameters:
+        date (QDate): PySide6 QDate object.
+
+    Returns:
+        int: Milliseconds since epoch.
     """
     if date is None:
         return None

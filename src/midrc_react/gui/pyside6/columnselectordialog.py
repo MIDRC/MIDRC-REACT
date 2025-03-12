@@ -31,12 +31,11 @@ class NumericColumnSelectorDialog(QDialog):
     It inherits from the QDialog class provided by the PySide6.QtWidgets module.
 
     Attributes:
-        columns (list): A list of column names.
-        parent (QWidget): The parent widget of the dialog.
         layout (QVBoxLayout): The layout of the dialog.
         column_settings (dict): A dictionary containing the checkbox, min_input, max_input, and step_input widgets.
         button_box (QDialogButtonBox): The button box containing the OK and Cancel buttons.
     """
+
     def __init__(self, columns, parent=None):
         """
         Initialize the NumericColumnSelectorDialog object.
@@ -81,7 +80,7 @@ class NumericColumnSelectorDialog(QDialog):
             # Connect the checkbox to show/hide the min, max, and step inputs
             checkbox.toggled.connect(
                 lambda checked, label_ed=label_edit, min_in=min_input, max_in=max_input, step_in=step_input:
-                self.toggle_inputs(checked, label_ed, min_in, max_in, step_in),
+                NumericColumnSelectorDialog.toggle_inputs(checked, [label_ed, min_in, max_in, step_in]),
             )
 
             row_layout = QHBoxLayout()
@@ -108,12 +107,17 @@ class NumericColumnSelectorDialog(QDialog):
 
         self.setLayout(self.layout)
 
-    def toggle_inputs(self, checked, label_ed, min_input, max_input, step_input):
-        """Toggle the visibility of the min, max, and step inputs based on the checkbox state."""
-        label_ed.setVisible(checked)
-        min_input.setVisible(checked)
-        max_input.setVisible(checked)
-        step_input.setVisible(checked)
+    @staticmethod
+    def toggle_inputs(checked, widgets: list[QWidget]):
+        """
+        Toggle the visibility of the min, max, and step inputs based on the checkbox state.
+
+        Args:
+            checked (bool): The state of the checkbox.
+            widgets (list[QWidget]): A list of input widgets to toggle.
+        """
+        for widget in widgets:
+            widget.setVisible(checked)
 
     def get_selected_columns_with_bins(self):
         """

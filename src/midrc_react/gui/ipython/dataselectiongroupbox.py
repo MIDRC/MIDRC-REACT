@@ -38,10 +38,9 @@ class DataSelectionGroupBox(QObject, GroupBoxData):
         _category_combobox (widgets.Dropdown): A category combo box.
         _num_fileboxes_combobox (widgets.Dropdown): A number of fileboxes combo box.
         _file_upload (widgets.FileUpload): A file upload component.
-        _layout (widgets.VBox): The layout of the group box.
-        _jsd_model (JSDTableModel): The JSDTableModel object.
-        _num_fileboxes (int): The number of file boxes.
-        _raw_data_available (bool): A flag indicating whether raw data is available.
+        layout (widgets.VBox): The layout of the group box.
+        jsd_model (JSDTableModel): The JSDTableModel object.
+        num_fileboxes (int): The number of file boxes.
     """
     category_changed = Signal()
     file_selection_changed = Signal(str)

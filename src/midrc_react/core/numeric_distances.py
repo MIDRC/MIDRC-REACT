@@ -37,7 +37,7 @@ def calc_numerical_metric_by_feature(df, feature: str, dataset_column: str, metr
     Parameters:
         df: pandas DataFrame containing the data
         feature: a string representing the feature to calculate the metric for
-        sampling_data: an instance of SamplingData class with dataset information
+        dataset_column: a string representing the column containing the dataset information
         metric_function: a function to calculate the desired metric (e.g., cucconi, ks_2samp)
 
     Returns:
@@ -82,6 +82,10 @@ def calc_cucconi_by_feature(df, feature: str, dataset_column: str = '_dataset_',
         scaling (str, optional): The scaling method to use for the feature. Defaults to None.
                                  (e.g., 'standard', 'minmax', 'maxabs', or 'robust')
 
+    See Also:
+        :func:`calc_ks2_samp_by_feature` :
+            Calculates the Kolmogorov-Smirnov test for a feature.
+
     Returns:
         dict: A dictionary containing the metric results for each dataset combination.
     """
@@ -106,6 +110,10 @@ def calc_ks2_samp_by_feature(df, feature: str, dataset_column: str = '_dataset_'
         scaling (str, optional): The scaling method to use for the feature. Defaults to None.
                                 (e.g., 'standard', 'minmax', 'maxabs', or 'robust')
 
+    See Also:
+        :func:`calc_wasserstein_by_feature` :
+            Calculates the Wasserstein distance for a feature.
+
     Returns:
         dict: A dictionary containing the metric results for each dataset combination.
     """
@@ -126,6 +134,12 @@ def calc_wasserstein_by_feature(df, feature: str, dataset_column: str = '_datase
                                         Defaults to '_dataset_'.
         scaling (str, optional): The scaling method to use for the feature. Defaults to None.
                                 (e.g., 'standard', 'minmax', 'maxabs', or 'robust')
+
+    See Also:
+        :func:`calc_ks2_samp_by_feature` :
+            Calculates the Kolmogorov-Smirnov test for a feature.
+        :func:`get_supported_scaling_methods` :
+            Returns the list of scaling methods that can be used.
 
     Returns:
         dict: A dictionary containing the metric results for each dataset combination.
@@ -161,6 +175,11 @@ def scale_values(values, method: str = 'standard'):
 
     Parameters:
         values: a list of values to normalize
+        method: a string representing the normalization method to use
+
+    See Also:
+        :func:`get_supported_scaling_methods` :
+            Returns the list of scaling methods that can be used.
 
     Returns:
         A copy of the DataFrame with the feature normalized.
@@ -192,6 +211,11 @@ def scale_feature(df, feature: str, method: str = 'standard'):
     Parameters:
         df: pandas DataFrame containing the data
         feature: a string representing the feature to normalize
+        method: a string representing the normalization method to use
+
+    See Also:
+        :func:`get_supported_scaling_methods` :
+            Returns the list of scaling methods that can be used.
 
     Returns:
         A copy of the DataFrame with the feature normalized.
@@ -211,7 +235,7 @@ def generate_histogram(df, dataset_column, dataset_name, feature_column, bin_wid
 
     Args:
         df: DataFrame containing the dataset.
-        x_coordinates: Array of x-coordinates for the histogram.
+        dataset_column: Name of the dataset column within the DataFrame.
         dataset_name: Name of the dataset within the DataFrame.
         feature_column: Name of the feature column within the DataFrame.
         bin_width: Width of each histogram bin (default is 0.01).
@@ -237,9 +261,14 @@ def build_histogram_dict(df, dataset_column, datasets, feature_column, bin_width
     Args:
         df: DataFrame containing the dataset.
         dataset_column: Name of the dataset column within the DataFrame.
+        datasets: List of dataset names within the DataFrame.
         feature_column: Name of the feature column within the DataFrame.
         bin_width: Width of each histogram bin (default is 0.01).
         scaling_method: Method to use for scaling the feature column (default is None).
+
+    See Also:
+        :func:`get_supported_scaling_methods` :
+            Returns the list of scaling methods that can be used.
 
     Returns:
         hist_dict: Dictionary containing histogram data for the specified dataset.

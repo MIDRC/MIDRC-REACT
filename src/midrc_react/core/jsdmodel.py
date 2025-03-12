@@ -35,6 +35,7 @@ class JSDTableModel(QAbstractTableModel):
 
     Attributes:
         HEADER_MAPPING (List[str]): A list of header labels for the table columns.
+        data_source_added (Signal): A signal emitted when a data source is added to the model.
 
     """
     HEADER_MAPPING = [

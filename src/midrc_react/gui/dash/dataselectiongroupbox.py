@@ -39,10 +39,9 @@ class DataSelectionGroupBox(GroupBoxData):
         _category_combobox (dcc.Dropdown): A category combo box.
         _num_fileboxes_combobox (dcc.Dropdown): A number of fileboxes combo box.
         _file_upload (dcc.Upload): A file upload component.
-        _layout (html.Div): The layout of the group box.
-        _jsd_model (JSDTableModel): The JSDTableModel object.
-        _num_fileboxes (int): The number of file boxes.
-        _raw_data_available (bool): A flag indicating whether raw data is available.
+        layout (html.Div): The layout of the group box.
+        jsd_model (JSDTableModel): The JSDTableModel object.
+        num_fileboxes (int): The number of file boxes.
     """
 
     def __init__(self, jsd_model, app: Dash):
@@ -121,6 +120,7 @@ class DataSelectionGroupBox(GroupBoxData):
         )(self.update_filebox_layout)
 
     def _setup_layout(self):
+        """ Set up the main layout for the group box """
         self.layout.children = [
             html.Div([
                 self._category_combobox,
@@ -132,7 +132,7 @@ class DataSelectionGroupBox(GroupBoxData):
         ]
 
     def _initialize_data_sources(self):
-        # Initialize file comboboxes based on data sources from JSDController
+        """ Initialize file comboboxes based on data sources from JSDController """
         data_sources = self.jsd_model.data_sources
         for index, data_source_key in enumerate(list(data_sources.keys())[len(self.file_comboboxes):self.num_fileboxes],
                                                 start=len(self.file_comboboxes)):
@@ -166,11 +166,16 @@ class DataSelectionGroupBox(GroupBoxData):
         """
         if value is None:
             return previous_value
-        self.change_number_of_fileboxes(value)
+        self._change_number_of_fileboxes(value)
         return value
 
-    def update_filebox_layout(self, num_fileboxes):
-        """Dynamically updates the displayed fileboxes when the number changes."""
+    def update_filebox_layout(self, num_fileboxes: int):
+        """
+        Dynamically updates the displayed fileboxes based on new data sources being available
+
+        Args:
+            num_fileboxes (int): The number of file boxes to display in the GUI
+        """
         self.num_fileboxes = num_fileboxes
         data_sources = self.jsd_model.data_sources
         print(f"Updating fileboxes to {num_fileboxes} using data sources: {data_sources.keys()}")
@@ -192,9 +197,9 @@ class DataSelectionGroupBox(GroupBoxData):
 
         return filebox_dropdowns
 
-    def update_file_comboboxes(self):
+    def _update_file_comboboxes(self):
         """
-        Update the file comboboxes based on the data sources.
+        Update the file combo boxes based on the data sources.
         """
         data_sources = self.jsd_model.data_sources
         for combobox in self._file_comboboxes:
@@ -205,10 +210,10 @@ class DataSelectionGroupBox(GroupBoxData):
     @property
     def file_comboboxes(self):
         """
-        Get the file comboboxes.
+        Get the file combo boxes.
 
         Returns:
-            list: A list of file comboboxes.
+            list: A list of file combo boxes.
         """
         return self._file_comboboxes
 
@@ -222,7 +227,7 @@ class DataSelectionGroupBox(GroupBoxData):
         """
         return self._category_combobox
 
-    def change_number_of_fileboxes(self, num_fileboxes):
+    def _change_number_of_fileboxes(self, num_fileboxes):
         """
         Change the number of file boxes.
 
@@ -233,7 +238,7 @@ class DataSelectionGroupBox(GroupBoxData):
 
         # Add file comboboxes if num_fileboxes is greater than the current number
         if self.num_fileboxes > len(self.file_comboboxes):
-            self.update_file_comboboxes()
+            self._update_file_comboboxes()
 
         # Remove file comboboxes if num_fileboxes is less than the current number
         elif self.num_fileboxes < len(self.file_comboboxes):

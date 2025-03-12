@@ -35,6 +35,8 @@ def preprocess_data_for_famd(raw_df, features, numeric_features, scaling_method=
     Parameters:
         raw_df (DataFrame): The raw data to be preprocessed.
         features (List): List of features to be included in the preprocessing.
+        numeric_features (List): List of numeric features to be scaled.
+        scaling_method (str): The scaling method to use for numeric features.
 
     Returns:
         c_data (DataFrame): Preprocessed data with selected features.
@@ -149,7 +151,9 @@ def calc_famd_distances(df, cols_to_use, numeric_cols, dataset_column='_dataset_
 
     Args:
         df (DataFrame): The DataFrame containing the data.
-        sampling_data (SamplingData): Object containing dataset information.
+        cols_to_use (list): List of columns to use for the calculation.
+        numeric_cols (list): List of numeric columns to use for the calculation.
+        dataset_column (str): The name of the column to be used for the dataset name.
         distance_metrics (tuple): A tuple of strings specifying which distance metrics to compute.
                                    Use 'all' to compute all available metrics or specify individual metrics
                                    (e.g., 'jsd', 'wass', 'ks2', 'cuc') along with optional scaling

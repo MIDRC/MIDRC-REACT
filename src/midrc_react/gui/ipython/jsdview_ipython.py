@@ -63,16 +63,25 @@ class JsdViewIPython(JsdViewBase):
         self._dataselectiongroupbox.excel_file_uploaded.connect(self.open_excel_file)
 
     def open_excel_file(self, data_source_dict):
-        """Open an Excel file and add it as a data source."""
+        """
+        Open an Excel file and add it as a data source.
+
+        Args:
+            data_source_dict (dict): The data source information used for loading the data.
+        """
         super().open_excel_file(data_source_dict)
         self.add_data_source.emit(data_source_dict)
 
-    def update_jsd_timeline_plot(self, jsd_model):
-        """Update the JSD timeline plot."""
+    def update_jsd_timeline_plot(self, jsd_model: JSDTableModel = None):
+        """
+        Update the JSD timeline plot.
+        """
+        if jsd_model is None:
+            jsd_model = self.jsd_model
         if self.plot_method == 'interactive_plotly':
-            return self.update_jsd_timeline_plot_interactive_plotly(jsd_model)
+            return self.update_jsd_timeline_plot_interactive_plotly()
         if self.plot_method == 'interactive_matlib':
-            return self.update_jsd_timeline_plot_interactive(jsd_model)
+            return self.update_jsd_timeline_plot_interactive()
         # Initialize plot_data to None for proper handling of the first iteration
         plot_data = None
 
@@ -134,7 +143,7 @@ class JsdViewIPython(JsdViewBase):
 
         return None
 
-    def update_jsd_timeline_plot_interactive(self, jsd_model):
+    def update_jsd_timeline_plot_interactive(self):
         """Update the JSD timeline plot using interactive plotting."""
         print("Plotting interactive timeline chart using Matplotlib with ipympl...")
 
@@ -142,12 +151,12 @@ class JsdViewIPython(JsdViewBase):
         plot_data = None
 
         # Iterate over `column_infos` to get each pair as its own series
-        for c, column_info in enumerate(jsd_model.column_infos):
+        for c, column_info in enumerate(self.jsd_model.column_infos):
             try:
                 # Access every other column, as per your PySide6 logic
                 col = c * 2
-                date_column = jsd_model.input_data[col]
-                value_column = jsd_model.input_data[col + 1]
+                date_column = self.jsd_model.input_data[col]
+                value_column = self.jsd_model.input_data[col + 1]
 
                 # Convert QDate to datetime strings if necessary
                 if isinstance(date_column[0], QDate):
@@ -206,19 +215,19 @@ class JsdViewIPython(JsdViewBase):
 
         print("Interactive plotting complete.")
 
-    def update_jsd_timeline_plot_interactive_plotly(self, jsd_model):
+    def update_jsd_timeline_plot_interactive_plotly(self):
         """Update the JSD timeline plot using interactive plotting with Plotly."""
         # Initialize plot_data to None for proper handling of the first iteration
         plot_data = None
         plot_title_suffix = ""
 
         # Iterate over `column_infos` to get each pair as its own series
-        for c, column_info in enumerate(jsd_model.column_infos):
+        for c, column_info in enumerate(self.jsd_model.column_infos):
             try:
                 # Access every other column, as per your PySide6 logic
                 col = c * 2
-                date_column = jsd_model.input_data[col]
-                value_column = jsd_model.input_data[col + 1]
+                date_column = self.jsd_model.input_data[col]
+                value_column = self.jsd_model.input_data[col + 1]
 
                 # Convert QDate to datetime strings if necessary
                 if isinstance(date_column[0], QDate):
@@ -282,11 +291,11 @@ class JsdViewIPython(JsdViewBase):
         Update the area chart. This method is called when the area chart is clicked.
 
         Args:
-            category (dict): A dictionary of index keys and sheets.
+            category (dict): NOT USED
 
         """
         if self.plot_method == 'interactive_plotly':
-            return self.update_area_chart_interactive_plotly(category)
+            return self.update_area_chart_interactive_plotly()
 
         category = self.dataselectiongroupbox.get_category_info()['current_text']
 
@@ -339,8 +348,10 @@ class JsdViewIPython(JsdViewBase):
 
         return None
 
-    def update_area_chart_interactive_plotly(self, category):
-        """Update the area chart using interactive plotting with Plotly."""
+    def update_area_chart_interactive_plotly(self):
+        """
+        Update the area chart using interactive plotting with Plotly.
+        """
         category = self.dataselectiongroupbox.get_category_info()['current_text']
 
         # Find the global minimum and maximum date
