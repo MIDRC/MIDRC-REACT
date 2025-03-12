@@ -44,7 +44,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">midrc_react</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="midrc_react.html">midrc_react package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="midrc_react.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="midrc_react.core.html">midrc_react.core package</a><ul>
@@ -249,14 +249,12 @@
 <li class="toctree-l7"><a class="reference internal" href="#module-midrc_react.gui.dash.dataselectiongroupbox">midrc_react.gui.dash.dataselectiongroupbox module</a><ul>
 <li class="toctree-l8"><a class="reference internal" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox"><code class="docutils literal notranslate"><span class="pre">DataSelectionGroupBox</span></code></a><ul>
 <li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.category_combobox"><code class="docutils literal notranslate"><span class="pre">DataSelectionGroupBox.category_combobox</span></code></a></li>
-<li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.change_number_of_fileboxes"><code class="docutils literal notranslate"><span class="pre">DataSelectionGroupBox.change_number_of_fileboxes()</span></code></a></li>
 <li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.display"><code class="docutils literal notranslate"><span class="pre">DataSelectionGroupBox.display()</span></code></a></li>
 <li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.file_comboboxes"><code class="docutils literal notranslate"><span class="pre">DataSelectionGroupBox.file_comboboxes</span></code></a></li>
 <li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.on_category_changed"><code class="docutils literal notranslate"><span class="pre">DataSelectionGroupBox.on_category_changed()</span></code></a></li>
 <li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.on_file_selection_changed"><code class="docutils literal notranslate"><span class="pre">DataSelectionGroupBox.on_file_selection_changed()</span></code></a></li>
 <li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.on_num_fileboxes_changed"><code class="docutils literal notranslate"><span class="pre">DataSelectionGroupBox.on_num_fileboxes_changed()</span></code></a></li>
 <li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.update_category_combobox"><code class="docutils literal notranslate"><span class="pre">DataSelectionGroupBox.update_category_combobox()</span></code></a></li>
-<li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.update_file_comboboxes"><code class="docutils literal notranslate"><span class="pre">DataSelectionGroupBox.update_file_comboboxes()</span></code></a></li>
 <li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.update_filebox_layout"><code class="docutils literal notranslate"><span class="pre">DataSelectionGroupBox.update_filebox_layout()</span></code></a></li>
 </ul>
 </li>
@@ -264,6 +262,7 @@
 </li>
 <li class="toctree-l7"><a class="reference internal" href="#module-midrc_react.gui.dash.jsdview_dash">midrc_react.gui.dash.jsdview_dash module</a><ul>
 <li class="toctree-l8"><a class="reference internal" href="#midrc_react.gui.dash.jsdview_dash.JSDViewDash"><code class="docutils literal notranslate"><span class="pre">JSDViewDash</span></code></a><ul>
+<li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.jsdview_dash.JSDViewDash.__init__"><code class="docutils literal notranslate"><span class="pre">JSDViewDash.__init__()</span></code></a></li>
 <li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.jsdview_dash.JSDViewDash.get_categories"><code class="docutils literal notranslate"><span class="pre">JSDViewDash.get_categories()</span></code></a></li>
 <li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.jsdview_dash.JSDViewDash.handle_excel_file_uploaded"><code class="docutils literal notranslate"><span class="pre">JSDViewDash.handle_excel_file_uploaded()</span></code></a></li>
 <li class="toctree-l9"><a class="reference internal" href="#midrc_react.gui.dash.jsdview_dash.JSDViewDash.run"><code class="docutils literal notranslate"><span class="pre">JSDViewDash.run()</span></code></a></li>
@@ -514,7 +513,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">midrc_react</a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
           <li class="breadcrumb-item"><a href="midrc_react.html">midrc_react package</a></li>
           <li class="breadcrumb-item"><a href="midrc_react.gui.html">midrc_react.gui package</a></li>
       <li class="breadcrumb-item active">midrc_react.gui.dash package</li>
@@ -549,10 +548,9 @@ updating the category combo box, and initializing the widget.</p>
 <li><p><strong>_category_combobox</strong> (<em>dcc.Dropdown</em>) – A category combo box.</p></li>
 <li><p><strong>_num_fileboxes_combobox</strong> (<em>dcc.Dropdown</em>) – A number of fileboxes combo box.</p></li>
 <li><p><strong>_file_upload</strong> (<em>dcc.Upload</em>) – A file upload component.</p></li>
-<li><p><strong>_layout</strong> (<em>html.Div</em>) – The layout of the group box.</p></li>
-<li><p><strong>_jsd_model</strong> (<a class="reference internal" href="midrc_react.core.html#midrc_react.core.jsdmodel.JSDTableModel" title="midrc_react.core.jsdmodel.JSDTableModel"><em>JSDTableModel</em></a>) – The JSDTableModel object.</p></li>
-<li><p><strong>_num_fileboxes</strong> (<em>int</em>) – The number of file boxes.</p></li>
-<li><p><strong>_raw_data_available</strong> (<em>bool</em>) – A flag indicating whether raw data is available.</p></li>
+<li><p><strong>layout</strong> (<em>html.Div</em>) – The layout of the group box.</p></li>
+<li><p><strong>jsd_model</strong> (<a class="reference internal" href="midrc_react.core.html#midrc_react.core.jsdmodel.JSDTableModel" title="midrc_react.core.jsdmodel.JSDTableModel"><em>JSDTableModel</em></a>) – The JSDTableModel object.</p></li>
+<li><p><strong>num_fileboxes</strong> (<em>int</em>) – The number of file boxes.</p></li>
 </ul>
 </dd>
 </dl>
@@ -566,17 +564,6 @@ updating the category combo box, and initializing the widget.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>dcc.Dropdown</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.change_number_of_fileboxes">
-<span class="sig-name descname"><span class="pre">change_number_of_fileboxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_fileboxes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.change_number_of_fileboxes" title="Link to this definition"></a></dt>
-<dd><p>Change the number of file boxes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>num_fileboxes</strong> (<em>int</em>) – The new number of file boxes.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -598,10 +585,10 @@ updating the category combo box, and initializing the widget.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.file_comboboxes">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">file_comboboxes</span></span><a class="headerlink" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.file_comboboxes" title="Link to this definition"></a></dt>
-<dd><p>Get the file comboboxes.</p>
+<dd><p>Get the file combo boxes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A list of file comboboxes.</p>
+<dd class="field-odd"><p>A list of file combo boxes.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>list</p>
@@ -676,15 +663,14 @@ updating the category combo box, and initializing the widget.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.update_file_comboboxes">
-<span class="sig-name descname"><span class="pre">update_file_comboboxes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.update_file_comboboxes" title="Link to this definition"></a></dt>
-<dd><p>Update the file comboboxes based on the data sources.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.update_filebox_layout">
-<span class="sig-name descname"><span class="pre">update_filebox_layout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_fileboxes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.update_filebox_layout" title="Link to this definition"></a></dt>
-<dd><p>Dynamically updates the displayed fileboxes when the number changes.</p>
+<span class="sig-name descname"><span class="pre">update_filebox_layout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_fileboxes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.dash.dataselectiongroupbox.DataSelectionGroupBox.update_filebox_layout" title="Link to this definition"></a></dt>
+<dd><p>Dynamically updates the displayed fileboxes based on new data sources being available</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_fileboxes</strong> (<em>int</em>) – The number of file boxes to display in the GUI</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -695,11 +681,25 @@ updating the category combo box, and initializing the widget.</p>
 <p>This module contains the JSDViewDash class, which represents a Dash view for JSD.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="midrc_react.gui.dash.jsdview_dash.JSDViewDash">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.dash.jsdview_dash.</span></span><span class="sig-name descname"><span class="pre">JSDViewDash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jsd_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.dash.jsdview_dash.JSDViewDash" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">midrc_react.gui.dash.jsdview_dash.</span></span><span class="sig-name descname"><span class="pre">JSDViewDash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jsd_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="midrc_react.core.html#midrc_react.core.jsdmodel.JSDTableModel" title="midrc_react.core.jsdmodel.JSDTableModel"><span class="pre">JSDTableModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.dash.jsdview_dash.JSDViewDash" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="midrc_react.gui.common.html#midrc_react.gui.common.jsdview_base.JsdViewBase" title="midrc_react.gui.common.jsdview_base.JsdViewBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">JsdViewBase</span></code></a></p>
 <p>This class represents a Dash view for JSD. It provides functionality for creating a Dash app and handling file
 uploads. The class has methods for setting up the layout, updating the category combo box, and initializing the
 widget.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="midrc_react.gui.dash.jsdview_dash.JSDViewDash.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jsd_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="midrc_react.core.html#midrc_react.core.jsdmodel.JSDTableModel" title="midrc_react.core.jsdmodel.JSDTableModel"><span class="pre">JSDTableModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.dash.jsdview_dash.JSDViewDash.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the JSDViewDash main GUI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jsd_model</strong> (<a class="reference internal" href="midrc_react.core.html#midrc_react.core.jsdmodel.JSDTableModel" title="midrc_react.core.jsdmodel.JSDTableModel"><em>JSDTableModel</em></a>) – The data model used for displaying graphs and tables</p></li>
+<li><p><strong>config</strong> (<em>dict</em>) – A dict from JSDConfig that contains the configuration info</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="midrc_react.gui.dash.jsdview_dash.JSDViewDash.get_categories">
 <span class="sig-name descname"><span class="pre">get_categories</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#midrc_react.gui.dash.jsdview_dash.JSDViewDash.get_categories" title="Link to this definition"></a></dt>
