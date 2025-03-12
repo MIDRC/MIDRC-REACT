@@ -38,7 +38,14 @@ class JSDViewDash(JsdViewBase):
     uploads. The class has methods for setting up the layout, updating the category combo box, and initializing the
     widget.
     """
-    def __init__(self, jsd_model, config):
+    def __init__(self, jsd_model: JSDTableModel, config: dict):
+        """
+        Initialize the JSDViewDash main GUI
+
+        Args:
+            jsd_model (JSDTableModel): The data model used for displaying graphs and tables
+            config (dict): A dict from JSDConfig that contains the configuration info
+        """
         super().__init__()
         self.jsd_model = jsd_model
         self.controller = JSDController(self, jsd_model, config)

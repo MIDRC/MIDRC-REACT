@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 setup(
     name='midrc_react',
@@ -14,8 +14,6 @@ setup(
     entry_points={
         'console_scripts': [
             'midrc-react=midrc_react.gui.pyside6.launch_react:launch_react',
-        ],
-        'console_scripts': [
             'MIDRC-REACT=midrc_react.gui.pyside6.launch_react:launch_react',
         ],
     },

@@ -21,12 +21,11 @@ author = 'MIDRC'
 extensions = [
     'sphinx.ext.autodoc',        # Extracts documentation from docstrings
     'sphinx.ext.autosummary',    # Generates summary tables for modules, classes, functions, etc.
-    'sphinx.ext.napoleon'        # Supports Google and NumPy style docstrings
+    'sphinx.ext.napoleon',       # Supports Google and NumPy style docstrings
 ]
 
 templates_path = ['_templates']
 exclude_patterns = []
-
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -49,12 +48,12 @@ napoleon_include_init_with_doc = True
 # Use :ivar: style for class attributes so they’re only listed once in the Attributes section.
 napoleon_use_ivar = True
 
+
 def skip_member(app, what, name, obj, skip, options):
     if name in ("staticMetaObject", "FlowStyleListDumper"):
         return True
     return skip
 
+
 def setup(app):
     app.connect("autodoc-skip-member", skip_member)
-
-

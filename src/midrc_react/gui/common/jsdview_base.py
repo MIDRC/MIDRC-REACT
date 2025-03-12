@@ -61,7 +61,12 @@ class GroupBoxData:
         return self._file_infos
 
     def append_file_info(self, file_info: dict):
-        """Appends a file information dictionary to the list of file information dictionaries."""
+        """
+        Appends a file information dictionary to the list of file information dictionaries.
+
+        Args:
+            file_info (dict): file information dictionary to append to the list
+        """
         file_info['checked'] = file_info.get('checked', True)
         self._file_infos.append(file_info)
         # TODO: Update the category list too?
@@ -204,7 +209,7 @@ class JsdViewBase(QObject):
         Updates the JSD timeline plot with the specified JSD model.
 
         Args:
-            jsd_model (JSDTableModel): The JSDTableModel object.
+            jsd_model (JSDTableModel): The JSDTableModel that contains the data for generating the timeline plot.
         """
         pass  # pylint: disable=unnecessary-pass
 
@@ -213,6 +218,6 @@ class JsdViewBase(QObject):
         Updates the area chart with new data.
 
         Args:
-            sheet_dict (dict): A dictionary of index keys and sheets containing data for the chart.
+            category: The category to use for updating the area charts.
         """
         pass  # pylint: disable=unnecessary-pass

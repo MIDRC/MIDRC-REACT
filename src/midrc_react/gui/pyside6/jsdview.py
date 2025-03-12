@@ -531,12 +531,12 @@ class JsdWindow(QMainWindow, JsdViewBase):
             series.attachAxis(axis_x)
             series.attachAxis(axis_y)
 
-    def update_jsd_timeline_plot(self, jsd_model: Any) -> bool:
+    def update_jsd_timeline_plot(self, jsd_model) -> bool:
         """
         Update the JSD timeline plot using the provided model.
 
         Args:
-            jsd_model (Any): The data model containing JSD timeline data.
+            jsd_model (JsdTableModel): The data model containing the JSD timeline data.
 
         Returns:
             bool: True if the timeline plot was updated successfully.

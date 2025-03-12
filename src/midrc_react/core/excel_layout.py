@@ -56,7 +56,7 @@ class DataSource:
         if 'plugin' in data_source and data_source['plugin']:
             plugin_name = data_source['plugin']
             plugin_path = os.path.join("plugins", f"{plugin_name}.py")
-            self.preprocessor = self.load_plugin(plugin_path)
+            self.preprocessor = DataSource.load_plugin(plugin_path)
 
         # Load data
         if self.datatype == 'file' and self.filename:
@@ -86,7 +86,8 @@ class DataSource:
         """
         return self._numeric_cols
 
-    def load_plugin(self, plugin_path):
+    @staticmethod
+    def load_plugin(plugin_path):
         """
         Dynamically loads a preprocessing plugin from the given path.
 
@@ -319,7 +320,12 @@ class DataSheet:
         return list(self.columns.keys())[1:]
 
     def _process_date_column(self, data_source: dict):
-        """Process and format the date column."""
+        """
+        Process and format the date column.
+
+        Args:
+            data_source (dict): The data source object.
+        """
 
         # This assumes that the first column is either the date column or does not have useful data
         if data_source.get('date'):
@@ -331,7 +337,12 @@ class DataSheet:
         self._columns['date'] = self._df.columns[0]
 
     def _process_columns(self, data_source: dict):
-        """Process and rename columns according to the data source settings."""
+        """
+        Process and rename columns according to the data source settings.
+
+        Args:
+            data_source (dict): The data source object.
+        """
         for col in self._df.columns[1:]:
             col_name = col
             if 'remove column name text' in data_source:
@@ -375,7 +386,7 @@ class DataSheet:
                 col and col[0].isdigit() and '(%)' not in col and '(CUSUM)' not in col]
         cols_used = []
 
-        def should_include(col, age_range):
+        def should_include(_col, _age_range):
             """
             Returns True if the column should be included for the given age_range.
 
@@ -383,16 +394,20 @@ class DataSheet:
               - Its lower bound (first number) is within the age range.
               - If a second number exists (upper bound), then age_range[1] must be at least that value.
               - If no upper bound exists, the column is only included when age_range[1] is infinite.
+
+            Args:
+                _col (str): The column name.
+                _age_range (tuple): The age range (min_age, max_age).
             """
-            nums = re.findall(r'\d+', col)
+            nums = re.findall(r'\d+', _col)
             lower = int(nums[0])
-            if age_range[0] > lower or age_range[1] < lower:
+            if _age_range[0] > lower or _age_range[1] < lower:
                 return False
             if len(nums) == 1:
-                return math.isinf(age_range[1])
+                return math.isinf(_age_range[1])
             # else:
             upper = int(nums[1])
-            return not age_range[1] < upper
+            return not _age_range[1] < upper
 
         # Create custom age columns.
         for age_range in age_ranges:

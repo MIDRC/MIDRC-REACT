@@ -108,6 +108,9 @@ the configuration.
     q_app.processEvents()
 
     config = JSDConfig()
+    if 'data sources' not in config.data:
+        raise ValueError(f"No data sources found in the configuration file. \n"
+                         f"            Check that the file < {config.filename} > exists and is in the correct format.")
     data_source_list = config.data['data sources']
     w = JsdWindow(data_source_list)  # Note: We should have the controller populate this once the tablemodel is loaded
     w.jsd_controller = JSDController(w,

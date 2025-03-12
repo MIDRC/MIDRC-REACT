@@ -42,6 +42,10 @@ class GrabbableWidgetMixin(QObject):
         """
         Initialize the class instance with optional parent QWidget and a save file prefix.
         Set the save dialog status to False by default.
+
+        Args:
+            parent (QWidget): The parent widget for the mixin.
+            save_file_prefix (str): The prefix for save file names.
         """
         self.save_dialog_open = False  # Indicates if the save dialog is currently open
         super().__init__(parent)

@@ -22,6 +22,7 @@ import logging
 from types import SimpleNamespace
 
 import numpy as np
+import pandas as pd
 from scipy.stats import ks_2samp, wasserstein_distance
 from sklearn.preprocessing import MaxAbsScaler, MinMaxScaler, RobustScaler, StandardScaler
 
@@ -36,7 +37,7 @@ def calc_numerical_metric_by_feature(df, feature: str, dataset_column: str, metr
     Parameters:
         df: pandas DataFrame containing the data
         feature: a string representing the feature to calculate the metric for
-        sampling_data: an instance of SamplingData class with dataset information
+        dataset_column: a string representing the column containing the dataset information
         metric_function: a function to calculate the desired metric (e.g., cucconi, ks_2samp)
 
     Returns:
@@ -81,6 +82,10 @@ def calc_cucconi_by_feature(df, feature: str, dataset_column: str = '_dataset_',
         scaling (str, optional): The scaling method to use for the feature. Defaults to None.
                                  (e.g., 'standard', 'minmax', 'maxabs', or 'robust')
 
+    See Also:
+        :func:`calc_ks2_samp_by_feature` :
+            Calculates the Kolmogorov-Smirnov test for a feature.
+
     Returns:
         dict: A dictionary containing the metric results for each dataset combination.
     """
@@ -105,6 +110,10 @@ def calc_ks2_samp_by_feature(df, feature: str, dataset_column: str = '_dataset_'
         scaling (str, optional): The scaling method to use for the feature. Defaults to None.
                                 (e.g., 'standard', 'minmax', 'maxabs', or 'robust')
 
+    See Also:
+        :func:`calc_wasserstein_by_feature` :
+            Calculates the Wasserstein distance for a feature.
+
     Returns:
         dict: A dictionary containing the metric results for each dataset combination.
     """
@@ -125,6 +134,12 @@ def calc_wasserstein_by_feature(df, feature: str, dataset_column: str = '_datase
                                         Defaults to '_dataset_'.
         scaling (str, optional): The scaling method to use for the feature. Defaults to None.
                                 (e.g., 'standard', 'minmax', 'maxabs', or 'robust')
+
+    See Also:
+        :func:`calc_ks2_samp_by_feature` :
+            Calculates the Kolmogorov-Smirnov test for a feature.
+        :func:`get_supported_scaling_methods` :
+            Returns the list of scaling methods that can be used.
 
     Returns:
         dict: A dictionary containing the metric results for each dataset combination.
@@ -160,6 +175,11 @@ def scale_values(values, method: str = 'standard'):
 
     Parameters:
         values: a list of values to normalize
+        method: a string representing the normalization method to use
+
+    See Also:
+        :func:`get_supported_scaling_methods` :
+            Returns the list of scaling methods that can be used.
 
     Returns:
         A copy of the DataFrame with the feature normalized.
@@ -191,6 +211,11 @@ def scale_feature(df, feature: str, method: str = 'standard'):
     Parameters:
         df: pandas DataFrame containing the data
         feature: a string representing the feature to normalize
+        method: a string representing the normalization method to use
+
+    See Also:
+        :func:`get_supported_scaling_methods` :
+            Returns the list of scaling methods that can be used.
 
     Returns:
         A copy of the DataFrame with the feature normalized.
@@ -210,7 +235,7 @@ def generate_histogram(df, dataset_column, dataset_name, feature_column, bin_wid
 
     Args:
         df: DataFrame containing the dataset.
-        x_coordinates: Array of x-coordinates for the histogram.
+        dataset_column: Name of the dataset column within the DataFrame.
         dataset_name: Name of the dataset within the DataFrame.
         feature_column: Name of the feature column within the DataFrame.
         bin_width: Width of each histogram bin (default is 0.01).
@@ -236,9 +261,14 @@ def build_histogram_dict(df, dataset_column, datasets, feature_column, bin_width
     Args:
         df: DataFrame containing the dataset.
         dataset_column: Name of the dataset column within the DataFrame.
+        datasets: List of dataset names within the DataFrame.
         feature_column: Name of the feature column within the DataFrame.
         bin_width: Width of each histogram bin (default is 0.01).
         scaling_method: Method to use for scaling the feature column (default is None).
+
+    See Also:
+        :func:`get_supported_scaling_methods` :
+            Returns the list of scaling methods that can be used.
 
     Returns:
         hist_dict: Dictionary containing histogram data for the specified dataset.
@@ -254,7 +284,7 @@ def build_histogram_dict(df, dataset_column, datasets, feature_column, bin_width
     return hist_dict
 
 
-def calc_distances_via_df(famd_df, feature_column, dataset_column: str = '_dataset_', *,
+def calc_distances_via_df(famd_df: pd.DataFrame, feature_column: str, dataset_column: str = '_dataset_', *,
                           distance_metrics: tuple[str] = ('all'), jsd_scaled_bin_width=0.01):
     """
     Calculate various distance metrics based on histogram data.
@@ -266,14 +296,14 @@ def calc_distances_via_df(famd_df, feature_column, dataset_column: str = '_datas
     dictionary where keys represent the metric names.
 
     Args:
-        famd_df (DataFrame): A DataFrame containing FAMD (Factorial Analysis of Mixed Data) results.
-        hist_dict (dict): A dictionary containing histogram data for each dataset.
-        sampling_data: An object containing dataset sampling information, including
-                       dataset_column and datasets attributes.
-        distance_metric (tuple): A tuple of strings specifying which distance metrics to compute.
-                                 Use 'all' to compute all available metrics or specify individual metrics
-                                 (e.g., 'jsd', 'wass', 'ks2', 'cuc') along with optional scaling
-                                 options (e.g., 'wass(std)', 'ks2(rob)', etc.).
+        famd_df (pd.DataFrame): A DataFrame containing FAMD (Factorial Analysis of Mixed Data) results.
+        feature_column (str): The name of the column containing the feature data.
+        dataset_column (str): The name of the column containing the dataset information.
+        distance_metrics (tuple): A tuple of strings specifying which distance metrics to compute.
+                                  Use 'all' to compute all available metrics or specify individual metrics
+                                  (e.g., 'jsd', 'wass', 'ks2', 'cuc') along with optional scaling
+                                  options (e.g., 'wass(std)', 'ks2(rob)', etc.).
+        jsd_scaled_bin_width (float): The bin width to use for the JSD calculation.
 
     Returns:
         dict: A dictionary with keys as distance metric names and values as the computed metrics.

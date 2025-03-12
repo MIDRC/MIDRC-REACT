@@ -21,9 +21,15 @@ import pandas as pd
 from PySide6.QtCore import QDate, QDateTime, QTime, QTimeZone
 
 
-def convert_date_to_milliseconds(date):
+def convert_date_to_milliseconds(date: QDate):
     """
     Converts a date to milliseconds since epoch.
+
+    Parameters:
+        date (QDate): PySide6 QDate object.
+
+    Returns:
+        int: Milliseconds since epoch.
     """
     if date is None:
         return None
@@ -32,13 +38,13 @@ def convert_date_to_milliseconds(date):
 
 def pandas_date_to_qdate(pandas_date):
     """
-    Convert a pandas Timestamp or datetime object to a PySide2 QDate object.
+    Convert a pandas Timestamp or datetime object to a PySide6 QDate object.
 
     Parameters:
         pandas_date (pd.Timestamp or datetime64): Pandas Timestamp or datetime object.
 
     Returns:
-        QDate: PySide2 QDate object representing the same date.
+        QDate: PySide6 QDate object representing the same date.
     """
     if isinstance(pandas_date, pd.Timestamp):
         return QDate(pandas_date.year, pandas_date.month, pandas_date.day)
@@ -65,15 +71,15 @@ def get_date_parts(date_val):
     return period.year, period.month, period.day
 
 
-def numpy_datetime64_to_qdate(numpy_datetime):
+def numpy_datetime64_to_qdate(numpy_datetime: np.datetime64):
     """
-    Convert a NumPy datetime64 object to a PySide2 QDate object.
+    Convert a NumPy datetime64 object to a PySide6 QDate object.
 
     Parameters:
         numpy_datetime (numpy.datetime64): NumPy datetime64 object.
 
     Returns:
-        QDate: PySide2 QDate object representing the same date.
+        QDate: PySide6 QDate object representing the same date.
     """
     # Extract year, month, and day from numpy datetime64
     # year = np.datetime64(numpy_datetime, 'Y').astype(int)

@@ -61,6 +61,11 @@ class JSDConfig:
         # print(dump(self.data))
 
     def set_filename(self, new_filename: str):
-        """Set a new filename and reload the data."""
+        """
+        Set a new filename and reload the data.
+
+        Args:
+            new_filename (str): The new filename to load.
+        """
         self.filename = new_filename
         self._load_data()

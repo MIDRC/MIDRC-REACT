@@ -42,6 +42,8 @@ class JSDController(QObject):
 
     Attributes:
         modelChanged: A Signal that is emitted when the model changes.
+        fileChangedSignal: A Signal that is emitted when the file changes.
+        NOT_REPORTED_COLUMN_NAME (str): A constant string representing the 'Not Reported' column name.
 
     """
     modelChanged = Signal()
@@ -55,6 +57,7 @@ class JSDController(QObject):
         Parameters:
             jsd_view (object): The JSD view object.
             jsd_model (object): The JSD model object.
+            config (JSDConfig): A dictionary containing configuration data.
 
         Returns:
             None
@@ -369,7 +372,7 @@ class JSDController(QObject):
                     df2=ds2.sheets[category].df,
                     cols_to_use=cols_to_use,
                     calc_date=calc_date,
-                )
+                ),
             )
             data_frames.append(df)
 

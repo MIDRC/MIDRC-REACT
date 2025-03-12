@@ -46,6 +46,9 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
 
         This method sets up the data selection group box by creating labels and combo boxes for data files and a
         category combo box.
+
+        Parameters:
+            data_sources (list): A list of data sources.
         """
         super().__init__()
 
@@ -158,9 +161,6 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         This method removes the last file combobox from the layout, including its corresponding label. It updates the
         form layout by removing the row at the specified index. It also removes the label and combobox from the
         respective lists.
-
-        Parameters:
-            None
 
         Returns:
             None
