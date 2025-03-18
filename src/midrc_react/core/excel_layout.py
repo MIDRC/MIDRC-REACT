@@ -153,7 +153,7 @@ class DataSource:
             None
         """
         delimiter = ',' if filename.endswith('.csv') else '\t'
-        df = pd.read_csv(filename, delimiter=delimiter)
+        df = pd.read_csv(filename, delimiter=delimiter, low_memory=False)
 
         # Apply preprocessing if a plugin is available
         if self.preprocessor:

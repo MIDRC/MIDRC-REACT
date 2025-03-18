@@ -71,7 +71,7 @@ def combine_race_ethnicity(df):
     def classify(row):
         race, ethnicity = row['race'], row['ethnicity']
 
-        if race == 'Not Reported' or ethnicity == 'Not Reported':
+        if race == 'Not Reported' or ethnicity == 'Not Reported' or pd.isna(race) or pd.isna(ethnicity):
             return 'Not Reported'
         if ethnicity == 'Hispanic or Latino':
             return ethnicity
@@ -103,14 +103,14 @@ def process_dataframe(df):
 
 def process_tsv_to_tsv(input_file, output_file):
     """Reads a TSV file, processes it, and writes back to a new TSV file."""
-    df = pd.read_csv(input_file, sep='\t')
+    df = pd.read_csv(input_file, sep='\t', low_memory=False)
     df = process_dataframe(df)
     df.to_csv(output_file, sep='\t', index=False)
 
 
 def process_tsv_to_dataframe(input_file):
     """Reads a TSV file, processes it, and returns a pandas DataFrame."""
-    df = pd.read_csv(input_file, sep='\t')
+    df = pd.read_csv(input_file, sep='\t', low_memory=False)
     return process_dataframe(df)
 
 

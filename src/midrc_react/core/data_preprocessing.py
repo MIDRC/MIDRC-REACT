@@ -56,7 +56,7 @@ def _adjust_outliers(df: pd.DataFrame, cut_column_name: str, column_name: str, b
     Returns:
         pd.DataFrame: DataFrame with the outliers adjusted in the cut column
     """
-    new_text = "Outlier"
+    new_text = "Not Reported"
     low_text = new_text + "_Low"
     high_text = new_text + "_High"
     print(f"WARNING: There are values outside the bins specified for the '{column_name}' column.")
