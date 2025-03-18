@@ -51,6 +51,20 @@ def adjust_age(df):
     df['age_at_index'] = df.apply(update_age, axis=1)
     return df
 
+def adjust_race(df):
+    """Modifies the race column to match the expected CDC/Census categories."""
+    def update_race(row):
+        if row['race'] == "Black or African American":
+            return "Black"
+        if row['race'] == "Other":
+            return "Multiple or Other"
+        if row['race'] == "Native Hawaiian or other Pacific Islander":
+            return "Native Hawaiian or Other Pacific Islander"
+        return row['race']
+
+    df['race'] = df.apply(update_race, axis=1)
+    return df
+
 
 def combine_race_ethnicity(df):
     """
@@ -71,10 +85,10 @@ def combine_race_ethnicity(df):
     def classify(row):
         race, ethnicity = row['race'], row['ethnicity']
 
-        if race == 'Not Reported' or ethnicity == 'Not Reported' or pd.isna(race) or pd.isna(ethnicity):
-            return 'Not Reported'
         if ethnicity == 'Hispanic or Latino':
             return ethnicity
+        if race == 'Not Reported' or ethnicity == 'Not Reported' or pd.isna(race) or pd.isna(ethnicity):
+            return 'Not Reported'
         return f'{race}, {ethnicity}'
 
     df['Race and Ethnicity'] = df.apply(classify, axis=1)
@@ -96,6 +110,7 @@ def process_dataframe(df):
     """Applies both transformations on a pandas DataFrame."""
     df['date'] = extract_earliest_date(df['datasets.submitter_id'])
     df = adjust_age(df)
+    df = adjust_race(df)
     df = combine_race_ethnicity(df)
     df = adjust_column_names(df)
     return df
