@@ -304,6 +304,17 @@ class JsdWindow(QMainWindow, JsdViewBase):
         clear_layout(self.pie_chart_layout)
         categorybox = self.dataselectiongroupbox.category_combobox
         categories: List[str] = [categorybox.itemText(i) for i in range(categorybox.count())]
+
+        # Create a mapping for a fixed ordering per category using the first sheet encountered that has it.
+        common_order: Dict[str, List[str]] = {}
+        for category in categories:
+            common_order[category] = []
+            for sheets in sheet_dict.values():
+                if category in sheets:
+                    for col in sheets[category].data_columns:
+                        if col not in common_order[category]:
+                            common_order[category].append(col)
+
         timepoint: int = -1
         file_comboboxes = self.dataselectiongroupbox.file_comboboxes
         labels: List[QLabel] = JsdWindow._create_pie_chart_labels(sheet_dict, file_comboboxes)
@@ -317,9 +328,17 @@ class JsdWindow(QMainWindow, JsdViewBase):
                 if category not in sheets:
                     continue
                 df = sheets[category].df
-                cols_to_use = sheets[category].data_columns
+                sheet_order = sheets[category].data_columns
+                # Use common order, but include only columns that exist in the current sheet.
+                final_order = [col for col in common_order.get(category, []) if col in sheet_order]
+                # Append any extra columns from the sheet that are not already in final_order.
+                final_order += [col for col in sheet_order if col not in final_order]
+                # Ensure 'Not Reported' is always the last column.
+                if "Not Reported" in final_order:
+                    final_order = [col for col in final_order if col != "Not Reported"] + ["Not Reported"]
+
                 series = QPieSeries()
-                for col in cols_to_use:
+                for col in final_order:
                     value = df[col].iloc[timepoint]
                     if value > 0:
                         series.append(col, value)
