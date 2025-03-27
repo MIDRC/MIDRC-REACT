@@ -1,0 +1,5 @@
+include README.md
+include LICENSE
+recursive-include src *
+include jsdconfig-example.yaml
+recursive-include data *.xls *.xlsx
