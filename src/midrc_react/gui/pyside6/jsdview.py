@@ -570,7 +570,7 @@ class JsdWindow(QMainWindow, JsdViewBase):
         for c, column_info in enumerate(jsd_model.column_infos):
             col: int = c * 2
             series: QLineSeries = QLineSeries()
-            series.setName(f"{column_info['file1']} vs {column_info['file2']} {column_info['category']} JSD")
+            series.setName(f"{column_info['file1']} vs {column_info['file2']} {column_info['category']} Distance")
             row_count: int = jsd_model.rowCount(jsd_model.createIndex(0, col))
             for i in range(row_count):
                 time_point: Optional[float] = convert_date_to_milliseconds(jsd_model.input_data[col][i])
