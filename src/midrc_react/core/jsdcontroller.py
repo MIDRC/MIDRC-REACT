@@ -327,8 +327,8 @@ class JSDController(QObject):
                 # remove the 'Not Reported' data before calculation
                 combined_df = combined_df[pd.to_numeric(combined_df[num_col], errors='coerce').notnull()]
 
-                input_data = [float(calc_ks2_samp_by_feature(combined_df[combined_df['date'] <= date],
-                                                             num_col)['Dataset 0 vs Dataset 1']) for date in date_list]
+                input_data = [calc_ks2_samp_by_feature(combined_df[combined_df['date'] <= date],
+                                                             num_col)['Dataset 0 vs Dataset 1'] for date in date_list]
 
             if input_data is not None:
                 model_input_data.append([pandas_date_to_qdate(calc_date) for calc_date in date_list])
