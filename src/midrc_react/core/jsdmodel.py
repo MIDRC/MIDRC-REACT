@@ -19,10 +19,17 @@ This module contains the JSDTableModel class, which is a subclass of QAbstractTa
 
 from typing import Any, Optional
 
+from numpy import float64 as np_float64
 from PySide6.QtCore import QAbstractTableModel, QModelIndex, Qt, Signal
 from PySide6.QtGui import QColor
 
 from midrc_react.core.excel_layout import DataSource
+
+
+def convert_to_builtin(val):
+    if isinstance(val, np_float64):
+        return float(val)
+    return val
 
 
 class JSDTableModel(QAbstractTableModel):
@@ -198,7 +205,7 @@ class JSDTableModel(QAbstractTableModel):
         """
         if role in (Qt.DisplayRole, Qt.EditRole):
             try:
-                return self._input_data[index.column()][index.row()]
+                return convert_to_builtin(self._input_data[index.column()][index.row()])
             except IndexError:
                 return None
         elif role == Qt.BackgroundRole:

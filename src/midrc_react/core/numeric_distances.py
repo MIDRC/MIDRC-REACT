@@ -29,6 +29,18 @@ from sklearn.preprocessing import MaxAbsScaler, MinMaxScaler, RobustScaler, Stan
 from midrc_react.core.aggregate_jsd_calc import calc_jsd_from_counts_dict
 from midrc_react.core.cucconi import cucconi_test
 
+def remove_nan_from_df(df, column_name):
+    """
+    Remove NaN values from a specific column in a DataFrame.
+
+    Args:
+        df (pd.DataFrame): The DataFrame to process.
+        column_name (str): The name of the column to check for NaN values.
+
+    Returns:
+        pd.DataFrame: A DataFrame with NaN values removed from the specified column.
+    """
+    return df[pd.to_numeric(df[column_name], errors='coerce').notnull()]
 
 def calc_numerical_metric_by_feature(df, feature: str, dataset_column: str, metric_function):
     """
@@ -91,7 +103,7 @@ def calc_cucconi_by_feature(df, feature: str, dataset_column: str = '_dataset_',
     """
     if scaling is not None:
         logging.warning('Cucconi test is not affected by scaling. Ignoring scaling method.')
-    calc_df = df  # if scaling is None else scale_feature(df, feature, method=scaling)
+    calc_df = remove_nan_from_df(df, feature)  # if scaling is None else scale_feature(df, feature, method=scaling)
 
     def cucconi_2samp_test(values1, values2):
         return cucconi_test(values1, values2, method='permutation')
@@ -119,7 +131,7 @@ def calc_ks2_samp_by_feature(df, feature: str, dataset_column: str = '_dataset_'
     """
     if scaling is not None:
         logging.warning('Kolmogorov-Smirnov test is not affected by scaling. Ignoring scaling method.')
-    calc_df = df  # if scaling is None else scale_feature(df, feature, method=scaling)
+    calc_df = remove_nan_from_df(df, feature)  # if scaling is None else scale_feature(df, feature, method=scaling)
     return calc_numerical_metric_by_feature(calc_df, feature, dataset_column, ks_2samp)
 
 
@@ -147,6 +159,7 @@ def calc_wasserstein_by_feature(df, feature: str, dataset_column: str = '_datase
     # We need to define a function that returns a SimpleNamespace with a 'statistic' attribute
     def w_d_calc(values1, values2):
         return SimpleNamespace(statistic=wasserstein_distance(values1, values2))
+    df = remove_nan_from_df(df, feature)
     calc_df = df if scaling is None else scale_feature(df, feature, method=scaling)
     return calc_numerical_metric_by_feature(calc_df, feature, dataset_column, w_d_calc)
 
