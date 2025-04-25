@@ -289,6 +289,7 @@ class JsdWindow(QMainWindow, JsdViewBase):
             self.spider_chart, save_file_prefix="MIDRC-REACT_spider_chart",
         )
         self.spider_chart_vbox.addWidget(spider_chart_view)
+        self.spider_chart_view = spider_chart_view  # store reference for copyable data
         return spider_chart_view
 
     def update_pie_chart_dock(self, sheet_dict: Dict[Any, Any]) -> None:
@@ -384,6 +385,26 @@ class JsdWindow(QMainWindow, JsdViewBase):
         chart.legend().setAlignment(Qt.AlignRight)
         return chart_view
 
+    def _set_spider_chart_copyable_data(self, spider_plot_values_dict: Dict[Any, Dict[str, float]]) -> None:
+        """
+        Set the copyable data for the spider chart.
+
+        Args:
+            spider_plot_values_dict (dict): Dictionary containing series values keyed by index pairs.
+
+        Returns:
+            None
+        """
+        if hasattr(self, 'spider_chart_view') and spider_plot_values_dict:
+            headers = sorted(next(iter(spider_plot_values_dict.values())).keys())
+            formatted_text = "File 1\tFile 2\t" + "\t".join(headers) + "\n"
+            for series_key, series in spider_plot_values_dict.items():
+                file1 = self._dataselectiongroupbox.file_comboboxes[series_key[0]].currentText()
+                file2 = self._dataselectiongroupbox.file_comboboxes[series_key[1]].currentText()
+                values = "\t".join(str(series[label]) for label in headers)
+                formatted_text += f"{file1}\t{file2}\t{values}\n"
+            self.spider_chart_view.grabbable_mixin.copyable_data = formatted_text
+
     def update_spider_chart(self, spider_plot_values_dict: Dict[Any, Dict[str, float]]) -> bool:
         """
         Update the spider chart with the provided plot values.
@@ -396,6 +417,8 @@ class JsdWindow(QMainWindow, JsdViewBase):
         """
         if not spider_plot_values_dict:
             return False
+
+        self._set_spider_chart_copyable_data(spider_plot_values_dict)
 
         self.spider_chart.removeAllSeries()
         for axis in self.spider_chart.axes():
@@ -570,7 +593,7 @@ class JsdWindow(QMainWindow, JsdViewBase):
         for c, column_info in enumerate(jsd_model.column_infos):
             col: int = c * 2
             series: QLineSeries = QLineSeries()
-            series.setName(f"{column_info['file1']} vs {column_info['file2']} {column_info['category']} JSD")
+            series.setName(f"{column_info['file1']} vs {column_info['file2']} {column_info['category']} Distance")
             row_count: int = jsd_model.rowCount(jsd_model.createIndex(0, col))
             for i in range(row_count):
                 time_point: Optional[float] = convert_date_to_milliseconds(jsd_model.input_data[col][i])
@@ -712,3 +735,6 @@ def clear_layout(layout: Optional[QLayout]) -> bool:
         layout.removeItem(child)
 
     return True
+
+
+
