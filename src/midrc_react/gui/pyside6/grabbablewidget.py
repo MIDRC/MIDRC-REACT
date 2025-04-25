@@ -49,6 +49,7 @@ class GrabbableWidgetMixin(QObject):
         """
         self.save_dialog_open = False  # Indicates if the save dialog is currently open
         super().__init__(parent)
+        self.copyable_data: str | None = None  # new attribute for copyable text data
         self.save_file_prefix = save_file_prefix
         parent.setContextMenuPolicy(Qt.CustomContextMenu)
         parent.customContextMenuRequested.connect(self.show_context_menu)
@@ -82,8 +83,13 @@ class GrabbableWidgetMixin(QObject):
             None
         """
         context_menu = QMenu(self.parent)
-        copy_action = QAction("Copy", self.parent)
-        save_action = QAction("Save", self.parent)
+        # New action: Copy Data, enabled only if copyable_data is set
+        copy_data_action = QAction("Copy Data", self.parent)
+        copy_data_action.setEnabled(bool(self.copyable_data))
+        copy_data_action.triggered.connect(self.copy_data_to_clipboard)
+        context_menu.addAction(copy_data_action)
+        copy_action = QAction("Copy Image", self.parent)
+        save_action = QAction("Save Image", self.parent)
 
         copy_action.triggered.connect(self.copy_to_clipboard)
         save_action.triggered.connect(self.save_to_disk)
@@ -93,7 +99,7 @@ class GrabbableWidgetMixin(QObject):
 
         # Only display this action if we don't have the high-res save dialog open for this widget
         if not self.save_dialog_open:
-            save_high_res_action = QAction("Save High Resolution", self.parent)
+            save_high_res_action = QAction("Save High Resolution Image", self.parent)
             save_high_res_action.triggered.connect(self.save_high_res_to_disk)
             context_menu.addAction(save_high_res_action)
 
@@ -189,6 +195,14 @@ class GrabbableWidgetMixin(QObject):
                 high_res_snapshot.save(file_name)
 
         self.save_dialog_open = False
+
+    def copy_data_to_clipboard(self):
+        """
+        Copy the stored copyable_data text to the clipboard.
+        """
+        if self.copyable_data:
+            clipboard = QApplication.clipboard()
+            clipboard.setText(self.copyable_data)
 
 
 class SaveWidgetAsImageDialog(QDialog):
@@ -366,3 +380,4 @@ class GrabbableChartView(QChartView):
             None
         """
         self.grabbable_mixin.save_to_disk()
+
