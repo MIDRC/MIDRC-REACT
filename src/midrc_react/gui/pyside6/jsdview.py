@@ -455,7 +455,7 @@ class JsdWindow(QMainWindow, JsdViewBase):
 
     def update_area_chart(self, category: Dict[Any, Any]) -> bool:
         """
-        Update the area chart with new data from the provided sheets.
+        Update the area chart with new data from the provided sheets, ensuring the series follow a common order.
 
         Args:
             category (dict): A dictionary where each key maps to a sheet containing chart data.
@@ -466,36 +466,80 @@ class JsdWindow(QMainWindow, JsdViewBase):
         category_str: str = self._dataselectiongroupbox.category_combobox.currentText()
         clear_layout(self.area_chart_widget.layout())
 
+        # Compute the global minimum and maximum dates across all sheets
+        global_min = None
+        global_max = None
+        for sheets in category.values():
+            cat = category_str[:-6] if category_str.endswith(" (ks2)") else category_str
+            if cat in sheets:
+                df = sheets[cat].df
+                dates_list = [
+                    QDateTime(numpy_datetime64_to_qdate(date), QTime())
+                    for date in df.date.values
+                ]
+                if dates_list:
+                    local_min = min(dates_list, key=lambda d: d.toMSecsSinceEpoch())
+                    local_max = max(dates_list, key=lambda d: d.toMSecsSinceEpoch())
+                    if global_min is None or local_min < global_min:
+                        global_min = local_min
+                    if global_max is None or local_max > global_max:
+                        global_max = local_max
+
+        # If no dates found, return early.
+        if global_min is None or global_max is None:
+            return False
+
+        # Compute the union order (common order) for the category across all sheets.
+        common_order: List[str] = []
+        for sheets in category.values():
+            cat = category_str[:-6] if category_str.endswith(" (ks2)") else category_str
+            if cat in sheets:
+                for col in sheets[cat].data_columns:
+                    if col not in common_order:
+                        common_order.append(col)
+
         for index, sheets in category.items():
+            cat = category_str[:-6] if category_str.endswith(" (ks2)") else category_str
             area_chart: QChart = QChart()
             filename: str = self.dataselectiongroupbox.file_comboboxes[index].currentData()
-            area_chart.setTitle(f'{filename} {category_str} distribution over time')
+            area_chart.setTitle(f"{filename} {cat} distribution over time")
 
-            if category_str.endswith(' (ks2)'):
-                category_str = category_str[:-6]
-            if category_str not in sheets:
+            if cat not in sheets:
                 continue
 
-            df = sheets[category_str].df
-            cols_to_use = sheets[category_str].data_columns
-            dates: List[QDateTime] = [QDateTime(numpy_datetime64_to_qdate(date), QTime()) for date in df.date.values]
+            df = sheets[cat].df
+            sheet_order = sheets[cat].data_columns
+            # Compute final order with common ordering
+            final_order = [col for col in common_order if col in sheet_order]
+            final_order += [col for col in sheet_order if col not in final_order]
+            if "Not Reported" in final_order:
+                final_order = [col for col in final_order if col != "Not Reported"] + ["Not Reported"]
 
-            JsdWindow._add_area_chart_series(area_chart, df, cols_to_use, dates)
-            JsdWindow._attach_axes_to_area_chart(area_chart, dates)
+            dates: List[QDateTime] = [
+                QDateTime(numpy_datetime64_to_qdate(date), QTime())
+                for date in df.date.values
+            ]
+            # Call the modified helper with the global max date.
+            JsdWindow._add_area_chart_series(area_chart, df, final_order, dates, global_max)
+            # Attach axes using global min and max so that x-axis is consistent.
+            JsdWindow._attach_axes_to_area_chart(area_chart, global_min, global_max)
             self.add_area_chart_view(area_chart)
 
         return True
 
     @staticmethod
-    def _add_area_chart_series(area_chart: QChart, df: Any, cols_to_use: List[str], dates: List[QDateTime]) -> None:
+    def _add_area_chart_series(area_chart: QChart, df: Any, cols_to_use: List[str],
+                               dates: List[QDateTime], global_max: QDateTime) -> None:
         """
         Add series to an area chart based on provided data.
+        If the last date is before global_max, an additional data point is appended with the same series value.
 
         Args:
             area_chart (QChart): The chart to update.
             df (DataFrame): Data source for the series.
             cols_to_use (List[str]): List of columns to plot.
             dates (List[QDateTime]): X-axis dates for the chart.
+            global_max (QDateTime): The global maximum date.
 
         Returns:
             None
@@ -504,6 +548,7 @@ class JsdWindow(QMainWindow, JsdViewBase):
         total_counts = df_cols.sum(axis=1)
         cumulative_percents = 100.0 * df_cols.cumsum(axis=1).div(total_counts, axis=0)
         lower_series = None
+        global_max_msecs = global_max.toMSecsSinceEpoch()
 
         for col in cols_to_use:
             if df_cols[col].iloc[-1] == 0:
@@ -512,8 +557,12 @@ class JsdWindow(QMainWindow, JsdViewBase):
                 QPointF(dates[i].toMSecsSinceEpoch(), cumulative_percents.iloc[i][col])
                 for i in range(len(dates))
             ]
-            if len(dates) == 1:
-                points.append(QPointF(dates[0].toMSecsSinceEpoch() + 1, cumulative_percents.iloc[0][col]))
+            # If the last data point is before global_max, add an extra point.
+            if points and points[-1].x() < global_max_msecs:
+                points.append(QPointF(global_max_msecs, points[-1].y()))
+            # In case only one date exists, also add a second point slightly offset if needed.
+            if len(points) == 1:
+                points.append(QPointF(points[0].x() + 1, points[0].y()))
             upper_series: QLineSeries = QLineSeries(area_chart)
             upper_series.append(points)
             area_series: QAreaSeries = QAreaSeries(upper_series, lower_series)
@@ -522,13 +571,15 @@ class JsdWindow(QMainWindow, JsdViewBase):
             lower_series = upper_series
 
     @staticmethod
-    def _attach_axes_to_area_chart(area_chart: QChart, dates: List[QDateTime]) -> None:
+    def _attach_axes_to_area_chart(area_chart: QChart, global_min: QDateTime,
+                               global_max: QDateTime) -> None:
         """
-        Attach X and Y axes to an area chart.
+        Attach X and Y axes to an area chart using global min and max dates for the X-axis.
 
         Args:
             area_chart (QChart): The chart to attach axes to.
-            dates (List[QDateTime]): List of dates for the X-axis.
+            global_min (QDateTime): The global minimum date.
+            global_max (QDateTime): The global maximum date.
 
         Returns:
             None
@@ -537,7 +588,7 @@ class JsdWindow(QMainWindow, JsdViewBase):
         axis_x.setTickCount(10)
         axis_x.setFormat("MMM yyyy")
         axis_x.setTitleText("Date")
-        axis_x.setRange(dates[0], dates[-1] if len(dates) > 1 else dates[0].addMSecs(1))
+        axis_x.setRange(global_min, global_max)
         area_chart.addAxis(axis_x, Qt.AlignBottom)
 
         axis_y: QValueAxis = QValueAxis()

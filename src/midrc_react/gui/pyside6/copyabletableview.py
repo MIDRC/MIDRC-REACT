@@ -23,7 +23,7 @@ from typing import List
 
 from PySide6.QtCore import QDate, QEvent, QObject, Qt
 from PySide6.QtGui import QGuiApplication, QKeySequence
-from PySide6.QtWidgets import QTableView
+from PySide6.QtWidgets import QTableView, QMenu
 
 
 class CopyableTableView(QTableView):
@@ -78,3 +78,23 @@ class CopyableTableView(QTableView):
             stream = io.StringIO()
             csv.writer(stream, delimiter='\t').writerows(table)
             QGuiApplication.clipboard().setText(stream.getvalue())
+
+    def contextMenuEvent(self, event) -> None:
+        """
+        Create a context menu with 'Select All' and 'Copy' options on right-click.
+
+        Args:
+            event (QContextMenuEvent): The context menu event.
+
+        Returns:
+            None
+        """
+        menu = QMenu(self)
+        select_all_action = menu.addAction("Select All")
+        copy_action = menu.addAction("Copy")
+
+        action = menu.exec(event.globalPos())
+        if action == select_all_action:
+            self.selectAll()
+        elif action == copy_action:
+            self.copy_selection()
