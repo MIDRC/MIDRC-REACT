@@ -87,7 +87,7 @@ def combine_race_ethnicity(df):
 
         if ethnicity == 'Hispanic or Latino':
             return ethnicity
-        if race == 'Not Reported' or ethnicity == 'Not Reported' or pd.isna(race) or pd.isna(ethnicity):
+        if race == 'Not Reported' or ethnicity == 'Not Reported': # or pd.isna(race) or pd.isna(ethnicity):
             return 'Not Reported'
         return f'{race}, {ethnicity}'
 
