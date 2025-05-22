@@ -165,7 +165,11 @@ def calc_famd_distances(df, cols_to_use, numeric_cols, dataset_column='_dataset_
         dict: Dictionary of distance values specified in distance_metrics for each dataset combination.
 
     """
-    return calc_distances_via_df(calc_famd_df(df, cols_to_use, numeric_cols, print_outliers=print_outliers),
+    return calc_distances_via_df(calc_famd_df(df,
+                                              cols_to_use,
+                                              numeric_cols,
+                                              dataset_column,
+                                              print_outliers=print_outliers),
                                  'famd_x_coordinates',
                                  dataset_column,
                                  distance_metrics=distance_metrics,
