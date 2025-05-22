@@ -62,6 +62,22 @@ def calc_jsd_from_counts_dict(counts_dict, dataset_names):
 
     return output_dict
 
+def calc_jsd_by_features_combined(combined_df: pd.DataFrame, cols_to_use: list[str], dataset_column) -> dict[str, float]:
+    # Pivot table to get counts for each combination
+    pivot_table = combined_df.pivot_table(index=cols_to_use, columns=dataset_column, aggfunc='size', fill_value=0)
+    pivot_table = pivot_table.reset_index()
+
+    # Convert dataset columns to string in case they are integers
+    pivot_table.columns = pivot_table.columns.astype(str)
+
+    labels = combined_df[dataset_column].unique().astype(str)
+
+    # Create a dictionary to hold counts for each dataset
+    counts_dict = {dataset: pivot_table[dataset].values if dataset in pivot_table else np.zeros(len(pivot_table)) for
+                   dataset in labels}
+
+    return calc_jsd_from_counts_dict(counts_dict, labels)
+
 
 def calc_jsd_by_features(df_list: list[pd.DataFrame], cols_to_use: list[str]) -> dict[str, float]:
     """
@@ -76,21 +92,7 @@ def calc_jsd_by_features(df_list: list[pd.DataFrame], cols_to_use: list[str]) ->
     """
     dataset_column = '_dataset_'  # Temporary column name to store dataset information
     combined_df = combine_datasets_from_list(df_list, dataset_column)
-
-    # Pivot table to get counts for each combination
-    pivot_table = combined_df.pivot_table(index=cols_to_use, columns=dataset_column, aggfunc='size', fill_value=0)
-    pivot_table = pivot_table.reset_index()
-
-    # Convert dataset columns to string in case they are integers
-    pivot_table.columns = pivot_table.columns.astype(str)
-
-    labels = combined_df[dataset_column].unique()
-
-    # Create a dictionary to hold counts for each dataset
-    counts_dict = {dataset: pivot_table[dataset].values if dataset in pivot_table else np.zeros(len(pivot_table)) for
-                   dataset in labels}
-
-    return calc_jsd_from_counts_dict(counts_dict, labels)
+    return calc_jsd_by_features_combined(combined_df, cols_to_use, dataset_column)
 
 
 def calc_jsd_by_features_2df(df1: pd.DataFrame, df2: pd.DataFrame, cols_to_use: list[str]) -> float:
