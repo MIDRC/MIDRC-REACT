@@ -60,8 +60,12 @@ def _adjust_outliers(df: pd.DataFrame, cut_column_name: str, column_name: str, b
     low_text = "Outlier_Low"
     high_text = "Outlier_High"
     print(f"WARNING: There are values outside the bins specified for the '{column_name}' column.")
-    df.loc[df[cut_column_name].isna() & (df[column_name] < bins[0]), cut_column_name] = low_text
-    df.loc[df[cut_column_name].isna() & (df[column_name] >= bins[-1]), cut_column_name] = high_text
+
+    # Only compare numeric values, ignore strings or other types
+    col_numeric = pd.to_numeric(df[column_name], errors='coerce')
+
+    df.loc[df[cut_column_name].isna() & (col_numeric < bins[0]), cut_column_name] = low_text
+    df.loc[df[cut_column_name].isna() & (col_numeric >= bins[-1]), cut_column_name] = high_text
     df.loc[df[cut_column_name].isna(), cut_column_name] = new_text
     if (df[cut_column_name] == low_text).sum() > 0:
         print(f"         {(df[cut_column_name] == low_text).sum()} values are below the min bin value.\n"
