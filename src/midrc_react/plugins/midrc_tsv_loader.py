@@ -106,19 +106,32 @@ def adjust_column_names(df):
     return df
 
 def fix_nan(df):
-    """Replaces NaN values with 'Not Reported'."""
-    cols_to_nr = ['sex', 'race', 'ethnicity', 'covid19_positive', 'study_modalities', 'loinc_methods']
-    for col in cols_to_nr:
+    """Replaces NaN values with e.g. 'Not Reported'."""
+    cols_to_nr = {
+        'sex': 'Not Reported',
+        'race': 'Not Reported',
+        'ethnicity': 'Not Reported',
+        'covid19_positive': 'Not Reported',
+        'study_modalities': 'Missing Data',
+        'loinc_methods': 'Missing LOINC',
+        'loinc_methods_xr': 'Missing LOINC',
+    }
+    for col, fill in cols_to_nr.items():
         if col in df.columns:
-            df[col] = df[col].fillna('Not Reported')
-    if 'loinc_methods_xr' in df.columns:
-        df['loinc_methods_xr'] = df['loinc_methods_xr'].fillna('None')
+            df[col] = df[col].fillna(fill)
     return df
 
+
+def adjust_loinc_methods(df):
+    if 'loinc_methods_xr' in df.columns and 'study_modality' in df.columns:
+        mask = df['study_modality'].notna() & df['loinc_methods_xr'].isna()
+        df.loc[mask, 'loinc_methods_xr'] = 'None'
+    return df
 
 def process_dataframe(df):
     """Applies both transformations on a pandas DataFrame."""
     df['date'] = extract_earliest_date(df['datasets.submitter_id'])
+    df = adjust_loinc_methods(df)  # Optional: Adjust loinc_methods_xr based on study_modality
     df = fix_nan(df)
     df = adjust_age(df)
     df = adjust_race(df)
