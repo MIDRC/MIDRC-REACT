@@ -671,6 +671,13 @@ class JsdWindow(QMainWindow, JsdViewBase):
                         date_min = time_point
                     if i == row_count - 1 and time_point > date_max:
                         date_max = time_point
+            # If series has only one point, add a point one day later with same y-value.
+            pts = series.points()
+            if len(pts) == 1:
+                new_x = pts[0].x() + 86400000  # one day later in milliseconds
+                series.append(new_x, pts[0].y())
+                if new_x > date_max:
+                    date_max = new_x
             series_list.append(series)
             self.jsd_timeline_chart.addSeries(series)
             jsd_model.add_color_mapping(series.pen().color().name(), QRect(col, 0, 2, row_count))
