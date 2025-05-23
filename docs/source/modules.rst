@@ -1,7 +1,7 @@
-midrc_react
-===========
+src
+===
 
 .. toctree::
-   :maxdepth: 8
+   :maxdepth: 7
 
    midrc_react

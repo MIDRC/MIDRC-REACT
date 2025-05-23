@@ -96,10 +96,9 @@ class JSDController(QObject):
         dataselectiongroupbox_class_name = type(jsd_view.dataselectiongroupbox).__name__
 
         if dataselectiongroupbox_class_name == 'JsdDataSelectionGroupBox':
-            for f_c in jsd_view.dataselectiongroupbox.file_comboboxes:
-                f_c.currentIndexChanged.connect(self.file_changed)
             jsd_view.dataselectiongroupbox.num_data_items_changed.connect(self.file_changed)
             jsd_view.dataselectiongroupbox.file_checkbox_state_changed.connect(self.file_changed)
+            jsd_view.dataselectiongroupbox.file_combobox_changed.connect(self.file_changed)
             jsd_view.dataselectiongroupbox.category_combobox.currentIndexChanged.connect(self.category_changed)
 
         elif dataselectiongroupbox_class_name == 'DataSelectionGroupBox':
@@ -399,12 +398,15 @@ class JSDController(QObject):
                 sheet_dict[i] = self.get_file_sheets_from_index(i)
 
         spider_plot_values = self.get_spider_plot_values(spider_plot_date)
-        self.jsd_view.update_spider_chart(spider_plot_values)
+        try:
+            self.jsd_view.update_spider_chart(spider_plot_values)
+        except (ValueError, KeyError, TypeError):
+            print('An error occurred during the update of the spider chart.')
 
         try:
             self.jsd_view.update_pie_chart_dock(sheet_dict)
         except (ValueError, KeyError, TypeError):
-            return False
+            print('An error occurred during the update of file-based charts.')
 
         return True
 

@@ -165,15 +165,20 @@ def calc_famd_distances(df, cols_to_use, numeric_cols, dataset_column='_dataset_
         dict: Dictionary of distance values specified in distance_metrics for each dataset combination.
 
     """
-    return calc_distances_via_df(calc_famd_df(df, cols_to_use, numeric_cols, print_outliers=print_outliers),
+    return calc_distances_via_df(calc_famd_df(df,
+                                              cols_to_use,
+                                              numeric_cols,
+                                              dataset_column,
+                                              print_outliers=print_outliers
+                                              ),
                                  'famd_x_coordinates',
-                                 dataset_column,
+                                 dataset_column=dataset_column,
                                  distance_metrics=distance_metrics,
                                  jsd_scaled_bin_width=jsd_scaled_bin_width,
                                  )
 
 
-def calc_famd_ks2_at_date(df1, df2, cols_to_use, numeric_cols, calc_date):
+def calc_famd_ks2_at_date(df1, df2, cols_to_use, numeric_cols, calc_date, dataset_column='_dataset_'):
     """
     Calculate the KS2 distance between two datasets at a specific date.
 
@@ -190,7 +195,6 @@ def calc_famd_ks2_at_date(df1, df2, cols_to_use, numeric_cols, calc_date):
     df1_at_date = df1[df1['date'] <= calc_date]
     df2_at_date = df2[df2['date'] <= calc_date]
 
-    dataset_column = '_dataset_'
     combined_df = combine_datasets_from_list([df1_at_date, df2_at_date], dataset_column=dataset_column)
 
     distance_metrics = ['ks2']
@@ -199,7 +203,7 @@ def calc_famd_ks2_at_date(df1, df2, cols_to_use, numeric_cols, calc_date):
     return distance_dict['ks2']['Dataset 0 vs Dataset 1']
 
 
-def calc_famd_ks2_at_dates(df1, df2, cols_to_use, numeric_cols, calc_date_list):
+def calc_famd_ks2_at_dates(df1, df2, cols_to_use, numeric_cols, calc_date_list, dataset_column='_dataset_'):
     """
     Calculate the KS2 distance between two datasets at multiple dates.
 
@@ -213,10 +217,9 @@ def calc_famd_ks2_at_dates(df1, df2, cols_to_use, numeric_cols, calc_date_list):
     Returns:
         list(float): list of KS2 distances at each date
     """
-    dataset_column = '_dataset_'
     combined_df = combine_datasets_from_list([df1, df2], dataset_column=dataset_column)
 
-    famd_df = calc_famd_df(combined_df, cols_to_use, numeric_cols)
+    famd_df = calc_famd_df(combined_df, cols_to_use, numeric_cols, dataset_column=dataset_column)
 
     # Add date column to the DataFrame after FAMD fitting
     famd_df['date'] = combined_df['date']

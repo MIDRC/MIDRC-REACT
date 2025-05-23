@@ -162,6 +162,11 @@ class DataSource:
         # Apply numeric column adjustments
         df = self.apply_numeric_column_adjustments(df)
 
+        # Convert all non-numeric columns to string
+        for col in self._columns:
+            if col in df.columns:
+                df[col] = df[col].astype(str)
+
         self.raw_data = df
         self.create_sheets_from_df(df)
 

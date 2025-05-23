@@ -87,7 +87,7 @@ def combine_race_ethnicity(df):
 
         if ethnicity == 'Hispanic or Latino':
             return ethnicity
-        if race == 'Not Reported' or ethnicity == 'Not Reported' or pd.isna(race) or pd.isna(ethnicity):
+        if race == 'Not Reported' or ethnicity == 'Not Reported': # or pd.isna(race) or pd.isna(ethnicity):
             return 'Not Reported'
         return f'{race}, {ethnicity}'
 
@@ -105,10 +105,34 @@ def adjust_column_names(df):
     })
     return df
 
+def fix_nan(df):
+    """Replaces NaN values with e.g. 'Not Reported'."""
+    cols_to_nr = {
+        'sex': 'Not Reported',
+        'race': 'Not Reported',
+        'ethnicity': 'Not Reported',
+        'covid19_positive': 'Not Reported',
+        'study_modalities': 'Missing Data',
+        'loinc_methods': 'Missing LOINC',
+        'loinc_methods_xr': 'Missing LOINC',
+    }
+    for col, fill in cols_to_nr.items():
+        if col in df.columns:
+            df[col] = df[col].fillna(fill)
+    return df
+
+
+def adjust_loinc_methods(df):
+    if 'loinc_methods_xr' in df.columns and 'study_modality' in df.columns:
+        mask = df['study_modality'].notna() & df['loinc_methods_xr'].isna()
+        df.loc[mask, 'loinc_methods_xr'] = 'None'
+    return df
 
 def process_dataframe(df):
     """Applies both transformations on a pandas DataFrame."""
     df['date'] = extract_earliest_date(df['datasets.submitter_id'])
+    df = adjust_loinc_methods(df)  # Optional: Adjust loinc_methods_xr based on study_modality
+    df = fix_nan(df)
     df = adjust_age(df)
     df = adjust_race(df)
     df = combine_race_ethnicity(df)
