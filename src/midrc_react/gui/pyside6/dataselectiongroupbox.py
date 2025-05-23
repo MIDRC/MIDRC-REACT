@@ -38,6 +38,7 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
     """
     num_data_items_changed: Signal = Signal(int)
     file_checkbox_state_changed: Signal = Signal(bool)
+    file_combobox_changed: Signal = Signal(int)
     NUM_DEFAULT_DATA_ITEMS: int = 2
 
     def __init__(self, data_sources):
@@ -145,6 +146,7 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         self.form_layout.insertRow(index - 1, new_label, new_hbox)
 
         self.file_comboboxes.append(new_combobox)
+        new_combobox.currentIndexChanged.connect(self.file_combobox_changed.emit)
         self.file_checkboxes.append(new_checkbox)
         new_checkbox.toggled.connect(self.file_checkbox_state_changed.emit)
 

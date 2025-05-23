@@ -310,9 +310,10 @@ class JsdWindow(QMainWindow, JsdViewBase):
         common_order: Dict[str, List[str]] = {}
         for category in categories:
             common_order[category] = []
+
             for sheets in sheet_dict.values():
                 if category in sheets:
-                    for col in sheets[category].data_columns:
+                    for col in sorted(sheets[category].data_columns, key=str.lower):
                         if col not in common_order[category]:
                             common_order[category].append(col)
 
@@ -335,8 +336,7 @@ class JsdWindow(QMainWindow, JsdViewBase):
                 # Append any extra columns from the sheet that are not already in final_order.
                 final_order += [col for col in sheet_order if col not in final_order]
                 # Ensure 'Not Reported' is always the last column.
-                if "Not Reported" in final_order:
-                    final_order = [col for col in final_order if col != "Not Reported"] + ["Not Reported"]
+                final_order.sort(key=lambda x: x.lower() in ['nan', 'not reported', 'none'])
 
                 series = QPieSeries()
                 for col in final_order:
@@ -517,7 +517,7 @@ class JsdWindow(QMainWindow, JsdViewBase):
         for sheets in category.values():
             cat = category_str[:-6] if category_str.endswith(" (ks2)") else category_str
             if cat in sheets:
-                for col in sheets[cat].data_columns:
+                for col in sorted(sheets[cat].data_columns, key=str.lower):
                     if col not in common_order:
                         common_order.append(col)
 
@@ -535,8 +535,7 @@ class JsdWindow(QMainWindow, JsdViewBase):
             # Compute final order with common ordering
             final_order = [col for col in common_order if col in sheet_order]
             final_order += [col for col in sheet_order if col not in final_order]
-            if "Not Reported" in final_order:
-                final_order = [col for col in final_order if col != "Not Reported"] + ["Not Reported"]
+            final_order.sort(key=lambda x: x.lower() in ['nan', 'not reported', 'none'])
 
             dates: List[QDateTime] = [
                 QDateTime(numpy_datetime64_to_qdate(date), QTime())
