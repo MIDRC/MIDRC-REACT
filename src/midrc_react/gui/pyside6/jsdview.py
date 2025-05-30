@@ -418,7 +418,7 @@ class JsdWindow(QMainWindow, JsdViewBase):
                 file2 = self._dataselectiongroupbox.file_comboboxes[series_key[1]].currentText()
                 values = "\t".join(str(series[label]) for label in headers)
                 formatted_text += f"{file1}\t{file2}\t{values}\n"
-            self.spider_chart_view.grabbable_mixin.copyable_data = formatted_text
+            self.spider_chart_view.copyable_data = formatted_text
 
     def update_spider_chart(self, spider_plot_values_dict: Dict[Any, Dict[str, float]]) -> bool:
         """
