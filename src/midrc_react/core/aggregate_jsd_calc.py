@@ -70,7 +70,7 @@ def calc_jsd_by_features_combined(combined_df: pd.DataFrame, cols_to_use: list[s
     # Convert dataset columns to string in case they are integers
     pivot_table.columns = pivot_table.columns.astype(str)
 
-    labels = combined_df[dataset_column].unique().astype(str)
+    labels = sorted(combined_df[dataset_column].unique().astype(str))
 
     # Create a dictionary to hold counts for each dataset
     counts_dict = {dataset: pivot_table[dataset].values if dataset in pivot_table else np.zeros(len(pivot_table)) for
