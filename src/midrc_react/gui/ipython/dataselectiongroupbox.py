@@ -191,7 +191,7 @@ class DataSelectionGroupBox(QObject, GroupBoxData):
         """
         Update the category combobox based on the selected data sources.
         """
-        previous_value = self.get_category_info()['current_text']
+        previous_value = self.get_category_info().current_text
 
         file_infos = self.get_file_infos()
 

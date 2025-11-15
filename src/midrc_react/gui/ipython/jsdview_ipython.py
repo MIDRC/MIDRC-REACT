@@ -297,7 +297,7 @@ class JsdViewIPython(JsdViewBase):
         if self.plot_method == 'interactive_plotly':
             return self.update_area_chart_interactive_plotly()
 
-        category = self.dataselectiongroupbox.get_category_info()['current_text']
+        category = self.dataselectiongroupbox.get_category_info().current_text
 
         # Set up the figure with multiple subplots
         _fig, axes = plt.subplots(len(category), 1, figsize=(10, 6 * len(category)), sharex=True)
@@ -335,7 +335,7 @@ class JsdViewIPython(JsdViewBase):
             # Final plot settings for each subplot
             ax.set_xlabel('Date')
             ax.set_ylabel(f'{category} Distribution Over Time')
-            source_id = self.dataselectiongroupbox.file_infos[index]['source_id']
+            source_id = self.dataselectiongroupbox.file_infos[index].source_id
             ax.set_title(f"{source_id} {category} Distribution Over Time")
             ax.grid(True)
             ax.legend()
@@ -352,7 +352,7 @@ class JsdViewIPython(JsdViewBase):
         """
         Update the area chart using interactive plotting with Plotly.
         """
-        category = self.dataselectiongroupbox.get_category_info()['current_text']
+        category = self.dataselectiongroupbox.get_category_info().current_text
 
         # Find the global minimum and maximum date
         global_min_date = min(sheets[category].df['date'].min() for sheets in category.values())
@@ -376,7 +376,7 @@ class JsdViewIPython(JsdViewBase):
 
             # Update the layout for each individual figure
             fig.update_layout(
-                title=f"{self.dataselectiongroupbox.file_infos[index]['source_id']} {category} Distribution Over Time",
+                title=f"{self.dataselectiongroupbox.file_infos[index].source_id} {category} Distribution Over Time",
                 xaxis_title="Date",
                 yaxis_title="Percentage (%)",
                 height=400,

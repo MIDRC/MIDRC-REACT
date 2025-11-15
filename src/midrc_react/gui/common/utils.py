@@ -17,6 +17,8 @@
 This module contains utility functions for file handling and data processing.
 """
 
+from jsdview_base import FileInfo
+
 
 def create_file_info(data_source, index):
     """
@@ -29,12 +31,12 @@ def create_file_info(data_source, index):
     Returns:
         dict: A dictionary with description, source_id, index and checked flag.
     """
-    return {
-        'description': data_source.get('description'),
-        'source_id': data_source.get('name'),
-        'index': index,
-        'checked': True,
-    }
+    return FileInfo(
+        description = data_source.get('description'),
+        source_id = data_source.get('name'),
+        index = index,
+        checked = True,
+    )
 
 
 def get_common_categories(file_infos, jsd_model):
@@ -53,11 +55,11 @@ def get_common_categories(file_infos, jsd_model):
 
     # Get the initial set of categories from the first file info.
     cbox0 = file_infos[0]
-    common_categories = list(jsd_model.data_sources[cbox0['source_id']].sheets.keys())
+    common_categories = list(jsd_model.data_sources[cbox0.source_id].sheets.keys())
 
     # Intersect with the categories from subsequent file infos.
     for cbox in file_infos[1:]:
-        categorylist = jsd_model.data_sources[cbox['source_id']].sheets.keys()
+        categorylist = jsd_model.data_sources[cbox.source_id].sheets.keys()
         common_categories = [value for value in common_categories if value in categorylist]
 
     return common_categories
