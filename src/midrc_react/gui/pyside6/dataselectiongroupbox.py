@@ -22,7 +22,7 @@ from PySide6.QtCore import QSignalBlocker, Signal
 from PySide6.QtWidgets import QCheckBox, QComboBox, QFormLayout, QGroupBox, QHBoxLayout, QLabel
 
 from midrc_react.gui.common.jsdview_base import GroupBoxData, FileInfo
-from midrc_react.core.jsdconfig import DataSourceList
+from midrc_react.core.jsdconfig import DataSourceConfigList
 
 
 class JsdDataSelectionGroupBox(QGroupBox):
@@ -65,7 +65,7 @@ class JsdDataSelectionGroupBox(QGroupBox):
         self.category_combobox = QComboBox()
         self.set_layout(data_sources)
 
-    def set_layout(self, data_sources: DataSourceList):
+    def set_layout(self, data_sources: DataSourceConfigList):
         """
         Set the layout for the given data sources.
 

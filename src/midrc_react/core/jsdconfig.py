@@ -38,7 +38,7 @@ class NumericColumnConfig(BaseModel):
     labels: Optional[List[str]] = None
     adjust_outliers: bool = Field(False, alias='adjust outliers')
 
-class DataSource(BaseModel):
+class DataSourceConfig(BaseModel):
     """
     DataSource model to represent individual data sources in the YAML configuration.
     """
@@ -59,14 +59,14 @@ class DataSource(BaseModel):
         validate_by_name = True
         extra = 'allow'
 
-DataSourceList = List[DataSource]
+DataSourceConfigList = List[DataSourceConfig]
 
 class ConfigData(BaseModel):
     """
     ConfigData model to represent the structure of the YAML configuration data.
     """
     # Define fields based on expected YAML structure
-    data_sources: DataSourceList = Field(..., alias='data sources')
+    data_sources: DataSourceConfigList = Field(..., alias='data sources')
     custom_age_ranges: Optional[Dict[str, List[Union[int, float]]]] = Field(None, alias='custom_age_range')
 
     class Config:

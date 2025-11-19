@@ -126,7 +126,6 @@ class DataSource:
             pd.DataFrame: The DataFrame with numeric column adjustments.
         """
         for str_col, col_dict in self._numeric_cols.items():
-            print(f"Applying numeric adjustments for column: {str_col} with settings: {col_dict}")
             num_col = col_dict.raw_column if hasattr(col_dict, 'raw_column') else str_col
             bins = col_dict.bins if hasattr(col_dict, 'bins') else None
             labels = col_dict.labels if hasattr(col_dict, 'labels') else None
@@ -140,7 +139,6 @@ class DataSource:
                 # else:
                 #     # Default "N-N" format conversion
                 #     df[str_col] = df[num_col].apply(lambda x: f'{int(x)}-{int(x)}' if pd.notna(x) else x)
-        print(f"Data after numeric column adjustments has columns: {df.columns.tolist()}")
         return df
 
     def build_data_frames_from_csv(self, filename: str):
@@ -156,11 +154,9 @@ class DataSource:
         delimiter = ',' if filename.endswith('.csv') else '\t'
         df = pd.read_csv(filename, delimiter=delimiter, low_memory=False)
 
-        print(f"Loaded data from {filename} with columns: {df.columns.tolist()}")
         # Apply preprocessing if a plugin is available
         if self.preprocessor:
             df = self.preprocessor(df)
-        print(f"Data after preprocessing has columns: {df.columns.tolist()}")
 
         # Apply numeric column adjustments
         df = self.apply_numeric_column_adjustments(df)

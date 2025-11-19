@@ -24,7 +24,7 @@ from PySide6.QtCore import QAbstractTableModel, QModelIndex, Qt, Signal
 from PySide6.QtGui import QColor
 
 from midrc_react.core.excel_layout import DataSource
-from midrc_react.core.jsdconfig import DataSourceList
+from midrc_react.core.jsdconfig import DataSourceConfigList
 
 
 def convert_to_builtin(val):
@@ -52,7 +52,7 @@ class JSDTableModel(QAbstractTableModel):
     ]
     data_source_added = Signal()
 
-    def __init__(self, data_source_list: DataSourceList=None, custom_age_ranges=None):
+    def __init__(self, data_source_list: DataSourceConfigList=None, custom_age_ranges=None):
         """
         Initialize the JSDTableModel.
 
