@@ -67,7 +67,7 @@ class JsdViewIPython(JsdViewBase):
         Open an Excel file and add it as a data source.
 
         Args:
-            data_source_dict (dict): The data source information used for loading the data.
+            data_source_dict (DataSource): The data source information used for loading the data.
         """
         super().open_excel_file(data_source_dict)
         self.add_data_source.emit(data_source_dict)

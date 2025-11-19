@@ -22,6 +22,7 @@ from PySide6.QtCore import QSignalBlocker, Signal
 from PySide6.QtWidgets import QCheckBox, QComboBox, QFormLayout, QGroupBox, QHBoxLayout, QLabel
 
 from midrc_react.gui.common.jsdview_base import GroupBoxData, FileInfo
+from midrc_react.core.jsdconfig import DataSourceList
 
 
 class JsdDataSelectionGroupBox(QGroupBox):
@@ -49,7 +50,7 @@ class JsdDataSelectionGroupBox(QGroupBox):
         category combo box.
 
         Parameters:
-            data_sources (list): A list of data sources.
+            data_sources (DataSourceList): A list of data sources.
         """
         super().__init__()
 
@@ -64,7 +65,7 @@ class JsdDataSelectionGroupBox(QGroupBox):
         self.category_combobox = QComboBox()
         self.set_layout(data_sources)
 
-    def set_layout(self, data_sources):
+    def set_layout(self, data_sources: DataSourceList):
         """
         Set the layout for the given data sources.
 
@@ -87,7 +88,7 @@ class JsdDataSelectionGroupBox(QGroupBox):
         self.add_file_combobox_to_layout(auto_populate=False)
 
         # Add the file comboboxes and labels to the form layout
-        items = [(d['description'], d['name']) for d in data_sources]
+        items = [(d.description, d.name) for d in data_sources]
         for combobox_item in items:
             self.add_file_to_comboboxes(combobox_item[0], combobox_item[1])
         self.file_comboboxes[0].setCurrentIndex(0)
@@ -101,9 +102,9 @@ class JsdDataSelectionGroupBox(QGroupBox):
         Get the file information for all files.
 
         Returns:
-            List[dict]: A list of dictionaries containing information about each file.
+            FileInfoList: A list of dictionaries containing information about each file.
         """
-        self.data.file_infos = []
+        self.data.file_infos: FileInfoList = []
         for i, cbox in enumerate(self.file_comboboxes):
             self.data.append_file_info(FileInfo(
                 description = cbox.currentText(),

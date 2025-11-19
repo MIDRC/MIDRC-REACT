@@ -37,6 +37,7 @@ from PySide6.QtWidgets import (
 )
 
 from midrc_react.core.datetimetools import convert_date_to_milliseconds, numpy_datetime64_to_qdate
+from midrc_react.core.jsdconfig import DataSourceList
 from midrc_react.gui.common.jsdview_base import JsdViewBase
 from midrc_react.gui.pyside6.copyabletableview import CopyableTableView
 from midrc_react.gui.pyside6.dataselectiongroupbox import JsdDataSelectionGroupBox
@@ -69,12 +70,12 @@ class JsdWindow(QMainWindow, JsdViewBase):
                                 "#fb9a99", "#e31a1c", "#fdbf6f", "#ff7f00",
                                 "#cab2d6", "#6a3d9a"]
 
-    def __init__(self, data_sources: Any) -> None:
+    def __init__(self, data_sources: DataSourceList) -> None:
         """
         Initialize the JsdWindow with provided data sources and set up the GUI.
 
         Args:
-            data_sources (Any): Data sources used to initialize the data selection group box.
+            data_sources (DataSourceList): Data sources used to initialize the data selection group box.
         """
         super().__init__()
         # Set up the data selection group box

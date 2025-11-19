@@ -95,6 +95,7 @@ def bin_dataframe_column(df_to_bin: pd.DataFrame, column_name: str, cut_column_n
     Returns:
         pd.DataFrame: pandas DataFrame with the binned column and the labels
     """
+    print(f"Binning column '{column_name}' into '{cut_column_name}' with bins: {bins} and labels: {labels}")
     if column_name not in df_to_bin.columns:
         return df_to_bin
 
@@ -112,6 +113,8 @@ def bin_dataframe_column(df_to_bin: pd.DataFrame, column_name: str, cut_column_n
             right=right,
         ).astype("string"),
     })
+
+    print(f"Completed binning column '{column_name}' into '{cut_column_name}'.")
 
     if df_out[cut_column_name].isna().any():
         df_out = _adjust_outliers(df_out, cut_column_name, column_name, bins)

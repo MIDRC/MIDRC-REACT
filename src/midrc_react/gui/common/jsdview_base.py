@@ -30,6 +30,8 @@ class FileInfo(BaseModel):
     index: Optional[int] = None
     checked: bool = True
 
+FileInfoList = List[FileInfo]
+
 class CategoryInfo(BaseModel):
     current_text: Optional[str] = None
     current_index: Optional[int] = None
@@ -45,10 +47,10 @@ class GroupBoxData(BaseModel):
         file_infos (list): A list of file information dictionaries.
         category_info (dict): A dictionary containing information about the selected category.
     """
-    file_infos: List[FileInfo] = Field(default_factory=list)
+    file_infos: FileInfoList = Field(default_factory=list)
     category_info: CategoryInfo = Field(default_factory=CategoryInfo)
 
-    def get_file_infos(self) -> List[FileInfo]:
+    def get_file_infos(self) -> FileInfoList:
         """
         Get the file information dictionaries.
 
@@ -171,11 +173,11 @@ class JsdViewBase(QObject):
         Opens an Excel file and adds it to the data selection group box.
 
         Args:
-            data_source_dict (dict): The data source dictionary.
+            data_source_dict (DataSource): The data source dictionary.
         """
         self._dataselectiongroupbox.append_file_info(FileInfo(
-            description = data_source_dict['description'],
-            source_id = data_source_dict['name'],
+            description = data_source_dict.description,
+            source_id = data_source_dict.name,
             index = len(self._dataselectiongroupbox.file_infos),
             checked = True,
         ))

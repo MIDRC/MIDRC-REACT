@@ -18,6 +18,7 @@ This module contains utility functions for file handling and data processing.
 """
 
 from jsdview_base import FileInfo
+from midrc_react.core.jsdconfig import DataSource
 
 
 def create_file_info(data_source, index):
@@ -25,15 +26,15 @@ def create_file_info(data_source, index):
     Create a file info dictionary from a data source.
 
     Args:
-        data_source (dict): Dictionary containing file info.
+        data_source (DataSource): Dictionary containing file info.
         index (int): The index to assign.
 
     Returns:
         dict: A dictionary with description, source_id, index and checked flag.
     """
     return FileInfo(
-        description = data_source.get('description'),
-        source_id = data_source.get('name'),
+        description = data_source.description,
+        source_id = data_source.name,
         index = index,
         checked = True,
     )
@@ -78,10 +79,10 @@ def create_data_source_dict(filename, file_content, data_type='content', content
     Returns:
         dict: A dictionary with file details.
     """
-    return {
-        'description': filename,
-        'name': filename,
-        'content': file_content,
-        'data type': data_type,
-        'content type': content_type,
-    }
+    return DataSource(
+        description = filename,
+        name = filename,
+        content = file_content,
+        data_type = data_type,
+        content_type = content_type,
+    )

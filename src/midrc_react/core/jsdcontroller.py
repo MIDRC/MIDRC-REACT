@@ -187,6 +187,7 @@ class JSDController(QObject):
         category_set = None
         for cbox in file_infos:
             ds = self.jsd_model.data_sources[cbox.source_id]
+            print(f"Data source '{ds.name}' has categories: {list(ds.sheets.keys())}")
             if category_set is None:
                 category_set = set(ds.sheets.keys())
             else:
@@ -305,7 +306,7 @@ class JSDController(QObject):
                 numeric_cols = []
                 for str_col, col_info in data_source_1.numeric_cols.items():
                     cols_to_use.remove(str_col)
-                    num_col = col_info['raw column']
+                    num_col = col_info.raw_column
                     cols_to_use.append(num_col)
                     numeric_cols.append(num_col)
                 input_data = calc_famd_ks2_at_dates(
@@ -321,7 +322,7 @@ class JSDController(QObject):
                 combined_df = combine_datasets_from_list([raw_df1, raw_df2])
                 date_list = build_date_list(raw_df1, raw_df2)
                 str_col = category[:-6]
-                num_col = data_source_1.numeric_cols[str_col]['raw column']
+                num_col = data_source_1.numeric_cols[str_col].raw_column
 
                 input_data = [calc_ks2_samp_by_feature(combined_df[combined_df['date'] <= date],
                                                              num_col)['Dataset 0 vs Dataset 1'] for date in date_list]
@@ -448,7 +449,7 @@ class JSDController(QObject):
         """
         cols_to_use = self.jsd_model.data_sources[source_id].sheets[category].data_columns
 
-        custom_age_ranges = self._config.data.get('custom age ranges', None)
+        custom_age_ranges = self._config.data.custom_age_ranges
         if custom_age_ranges and category in custom_age_ranges:
             cols_to_use = [f'{age_range[0]}-{age_range[1]} Custom' for
                            age_range in custom_age_ranges[category]] + [JSDController.NOT_REPORTED_COLUMN_NAME]
@@ -525,7 +526,7 @@ class JSDController(QObject):
                         numeric_cols = []
                         for str_col, col_info in data_source_1.numeric_cols.items():
                             cols_to_use.remove(str_col)
-                            num_col = col_info['raw column']
+                            num_col = col_info.raw_column
                             cols_to_use.append(num_col)
                             numeric_cols.append(num_col)
                         jsd_dict[(index1, idx2)][category] = calc_famd_ks2_at_date(
@@ -540,7 +541,7 @@ class JSDController(QObject):
                         raw_df2 = data_source_2.raw_data
                         combined_df = combine_datasets_from_list([raw_df1, raw_df2])
                         str_col = category[:-6]
-                        num_col = data_source_1.numeric_cols[str_col]['raw column']
+                        num_col = data_source_1.numeric_cols[str_col].raw_column
                         jsd_dict[(index1, idx2)][category] = calc_ks2_samp_by_feature(
                             combined_df[combined_df['date'] <= calc_date],
                             num_col,

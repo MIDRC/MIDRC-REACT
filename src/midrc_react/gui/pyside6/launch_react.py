@@ -108,13 +108,13 @@ the configuration.
     q_app.processEvents()
 
     config = JSDConfig()
-    if 'data sources' not in config.data:
+    if config.data is None or config.data.data_sources is None or len(config.data.data_sources) == 0:
         raise ValueError(f"No data sources found in the configuration file. \n"
                          f"            Check that the file < {config.filename} > exists and is in the correct format.")
-    data_source_list = config.data['data sources']
+    data_source_list = config.data.data_sources
     w = JsdWindow(data_source_list)  # Note: We should have the controller populate this once the tablemodel is loaded
     w.jsd_controller = JSDController(w,
-                                     JSDTableModel(data_source_list, config.data.get('custom age ranges', None)),
+                                     JSDTableModel(data_source_list, config.data.custom_age_ranges),
                                      config)
 
     # Set the default widget sizes, show the window, then reset the minimum sizes
