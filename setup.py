@@ -38,7 +38,6 @@ setup(
         "ipywidgets>=8.1.5",
         "ipython>=8.28.0",
         "python-dateutil>=2.9.0.post0",
-        "tabulate>=0.9.0",
         "scikit-learn>=1.6.1",
     ],
     python_requires=">=3.10",

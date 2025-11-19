@@ -95,7 +95,6 @@ class GroupBoxData(BaseModel):
         Returns:
             None
         """
-        print("Updating category list to:", categorylist, "with index:", categoryindex)
         self.category_info = CategoryInfo(
             current_text = categorylist[categoryindex],
             current_index = categoryindex,

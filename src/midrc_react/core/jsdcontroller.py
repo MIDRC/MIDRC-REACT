@@ -187,7 +187,6 @@ class JSDController(QObject):
         category_set = None
         for cbox in file_infos:
             ds = self.jsd_model.data_sources[cbox.source_id]
-            print(f"Data source '{ds.name}' has categories: {list(ds.sheets.keys())}")
             if category_set is None:
                 category_set = set(ds.sheets.keys())
             else:

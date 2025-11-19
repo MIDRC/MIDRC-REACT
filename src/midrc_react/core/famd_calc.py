@@ -22,7 +22,6 @@ import warnings
 import numpy as np
 import pandas as pd
 import prince
-from tabulate import tabulate
 
 from midrc_react.core.data_preprocessing import combine_datasets_from_list
 from midrc_react.core.numeric_distances import calc_distances_via_df, scale_feature
@@ -132,7 +131,11 @@ def calc_famd_df(raw_df, cols_to_use, numeric_cols, dataset_column='_dataset_', 
         if len(outlier_df) > 0:
             outlier_df = outlier_df.sort_values(by=famd_column, ascending=False)
             print(f"Outliers in FAMD fitting: {outlier_df.shape[0]}")
-            print(tabulate(outlier_df, headers='keys', tablefmt='psql'))
+            try:
+                from tabulate import tabulate
+                print(tabulate(outlier_df, headers='keys', tablefmt='psql'))
+            except ImportError:
+                print(outlier_df)
 
     return c_df
 
