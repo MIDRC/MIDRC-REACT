@@ -24,6 +24,7 @@ from PySide6.QtCore import QAbstractTableModel, QModelIndex, Qt, Signal
 from PySide6.QtGui import QColor
 
 from midrc_react.core.excel_layout import DataSource
+from midrc_react.core.jsdconfig import DataSourceConfigList
 
 
 def convert_to_builtin(val):
@@ -51,18 +52,18 @@ class JSDTableModel(QAbstractTableModel):
     ]
     data_source_added = Signal()
 
-    def __init__(self, data_source_list=None, custom_age_ranges=None):
+    def __init__(self, data_source_list: DataSourceConfigList=None, custom_age_ranges=None):
         """
         Initialize the JSDTableModel.
 
         This method initializes the JSDTableModel by setting up the input data, mapping, and raw data sources.
 
         Args:
-            data_source_list (List[dict], optional): A list of data sources. Each data source is a dictionary with the\
-                                                     following keys:
+            data_source_list (List[DataSource], optional): A list of data sources. Each data source has the following
+                                                                attributes (plus others):
 
                 - 'name' (str): The name of the data source.
-                - 'data type' (str): The type of the data source.
+                - 'data_type' (str): The type of the data source.
                 - 'filename' (str): The filename of the data source.
 
             custom_age_ranges (Any, optional): Custom age ranges for the data sources.
@@ -79,9 +80,12 @@ class JSDTableModel(QAbstractTableModel):
         self.max_row_count = 0
 
         self.data_sources = {}
+
         if data_source_list is not None:
             for data_source_dict in data_source_list:
                 self.add_data_source(data_source_dict)
+        else:
+            print("No data sources provided to JSDTableModel")
 
     def add_data_source(self, data_source_dict):
         """
@@ -104,7 +108,7 @@ class JSDTableModel(QAbstractTableModel):
         Returns:
             None
         """
-        self.data_sources[data_source_dict['name']] = DataSource(data_source_dict, self.custom_age_ranges)
+        self.data_sources[data_source_dict.name] = DataSource(data_source_dict, self.custom_age_ranges)
         self.data_source_added.emit()
 
     def rowCount(self, parent: QModelIndex = None) -> int:

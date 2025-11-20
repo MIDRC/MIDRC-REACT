@@ -206,13 +206,13 @@ class JSDViewDash(JsdViewBase):
 if __name__ == '__main__':
     # Example usage:
     my_config = JSDConfig()
-    my_data_source_list = my_config.data['data sources']
-    my_jsd_model = JSDTableModel(my_data_source_list, my_config.data.get('custom age ranges', None))
+    my_data_source_list = my_config.data.data_sources
+    my_jsd_model = JSDTableModel(my_data_source_list, my_config.data.custom_age_ranges)
     dash_view = JSDViewDash(my_jsd_model, my_config)
 
     # Load data sources
     for my_data_source in my_data_source_list:
-        print(f"Loading: {my_data_source['description']}...")
+        print(f"Loading: {my_data_source.description}...")
         dash_view.open_excel_file(my_data_source)
 
     print("Done Loading Files")

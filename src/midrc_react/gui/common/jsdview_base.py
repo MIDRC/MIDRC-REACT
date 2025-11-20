@@ -17,32 +17,40 @@
 This module contains the JsdViewBase class, which serves as a base class for JSD views.
 """
 
-from dataclasses import dataclass
+from typing import List, Optional, Union
 
+from pydantic import BaseModel, Field
 from PySide6.QtCore import QObject, Signal
 from PySide6.QtWidgets import QMainWindow
 
 
-@dataclass
-class GroupBoxData:
+class FileInfo(BaseModel):
+    description: Optional[str] = None
+    source_id: Optional[str] = None
+    index: Optional[int] = None
+    checked: bool = True
+
+FileInfoList = List[FileInfo]
+
+class CategoryInfo(BaseModel):
+    current_text: Optional[str] = None
+    current_index: Optional[int] = None
+    category_list: List[str] = Field(default_factory=list)
+
+class GroupBoxData(BaseModel):
     """
     This class represents a group box widget for data selection. It provides functionality for creating labels and
     combo boxes for data files and a category combo box. The class has methods for setting up the layout,
     updating the category combo box, and initializing the widget.
 
     Attributes:
-        _file_infos (list): A list of file information dictionaries.
-        _category_info (dict): A dictionary containing information about the selected category.
+        file_infos (list): A list of file information dictionaries.
+        category_info (dict): A dictionary containing information about the selected category.
     """
-    _file_infos = []
-    _category_info = {
-        'current_text': None,
-        'current_index': None,
-        'category_list': [],
-    }
+    file_infos: FileInfoList = Field(default_factory=list)
+    category_info: CategoryInfo = Field(default_factory=CategoryInfo)
 
-    @property
-    def file_infos(self):
+    def get_file_infos(self) -> FileInfoList:
         """
         Get the file information dictionaries.
 
@@ -51,46 +59,32 @@ class GroupBoxData:
         """
         return self._file_infos
 
-    def get_file_infos(self):
-        """
-        Get the file information dictionaries.
-
-        Returns:
-            list: A list of file information dictionaries.
-        """
-        return self._file_infos
-
-    def append_file_info(self, file_info: dict):
+    def append_file_info(self, file_info: Union[dict, FileInfo]):
         """
         Appends a file information dictionary to the list of file information dictionaries.
 
         Args:
             file_info (dict): file information dictionary to append to the list
         """
-        file_info['checked'] = file_info.get('checked', True)
-        self._file_infos.append(file_info)
+        if isinstance(file_info, dict):
+            file_info.setdefault('checked', True)
+            file_info = FileInfo(**file_info)
+        elif isinstance(file_info, FileInfo):
+            # ensure checked is set
+            file_info.checked = bool(file_info.checked)
+        self.file_infos.append(file_info)
         # TODO: Update the category list too?
 
-    @property
-    def category_info(self):
+    def get_category_info(self) -> CategoryInfo:
         """
         Get the category information dictionary.
 
         Returns:
             dict: A dictionary containing information about the selected category.
         """
-        return self._category_info
+        return self.category_info
 
-    def get_category_info(self):
-        """
-        Get the category information dictionary.
-
-        Returns:
-            dict: A dictionary containing information about the selected category.
-        """
-        return self._category_info
-
-    def update_category_list(self, categorylist, categoryindex):
+    def update_category_list(self, categorylist: List[str], categoryindex: int):
         """
         Updates the category information dictionary with the given category list and index.
 
@@ -101,13 +95,13 @@ class GroupBoxData:
         Returns:
             None
         """
-        self._category_info = {
-            'current_text': categorylist[categoryindex],
-            'current_index': categoryindex,
-            'category_list': categorylist,
-        }
+        self.category_info = CategoryInfo(
+            current_text = categorylist[categoryindex],
+            current_index = categoryindex,
+            category_list = categorylist,
+        )
 
-    def update_category_index(self, categoryindex):
+    def update_category_index(self, categoryindex: int):
         """
         Updates the category information dictionary with the given category index.
 
@@ -117,10 +111,13 @@ class GroupBoxData:
         Returns:
             None
         """
-        self._category_info['current_index'] = categoryindex
-        self._category_info['current_text'] = self._category_info['category_list'][categoryindex]
+        self.category_info.current_index = categoryindex
+        if 0 <= categoryindex < len(self.category_info.category_list):
+            self.category_info.current_text = self.category_info.category_list[categoryindex]
+        else:
+            self.category_info.current_text = None
 
-    def update_category_text(self, categorytext):
+    def update_category_text(self, categorytext: str):
         """
         Updates the category information dictionary with the given category text.
 
@@ -130,10 +127,9 @@ class GroupBoxData:
         Returns:
             None
         """
-        category_list = self._category_info['category_list']
-        if categorytext in category_list:
-            self._category_info['current_text'] = categorytext
-            self._category_info['current_index'] = category_list.index(categorytext)
+        if categorytext in self.category_info.category_list:
+            self.category_info.current_text = categorytext
+            self.category_info.current_index = self.category_info.category_list.index(categorytext)
 
 
 class JsdViewBase(QObject):
@@ -176,14 +172,14 @@ class JsdViewBase(QObject):
         Opens an Excel file and adds it to the data selection group box.
 
         Args:
-            data_source_dict (dict): The data source dictionary.
+            data_source_dict (DataSource): The data source dictionary.
         """
-        self._dataselectiongroupbox.append_file_info({
-            'description': data_source_dict['description'],
-            'source_id': data_source_dict['name'],
-            'index': len(self._dataselectiongroupbox.file_infos),
-            'checked': True,
-        })
+        self._dataselectiongroupbox.append_file_info(FileInfo(
+            description = data_source_dict.description,
+            source_id = data_source_dict.name,
+            index = len(self._dataselectiongroupbox.file_infos),
+            checked = True,
+        ))
 
     def update_pie_chart_dock(self, sheet_dict):
         """

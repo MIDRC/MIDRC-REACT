@@ -55,7 +55,7 @@ def calc_numerical_metric_by_feature(df, feature: str, dataset_column: str, metr
     Returns:
         dict: A dictionary containing metric results for each dataset combination.
     """
-    dataset_names = df[dataset_column].unique()
+    dataset_names = sorted(df[dataset_column].unique())
     metric_dict = {}
 
     # Compare each dataset combination
@@ -330,10 +330,10 @@ def calc_distances_via_df(famd_df: pd.DataFrame, feature_column: str, dataset_co
     # Mapping of distance metrics to their respective functions
     distance_metric_functions = {
         'jsd': {'func': lambda scaling=None: calc_jsd_from_counts_dict(
-                                 build_histogram_dict(famd_df, dataset_column, famd_df[dataset_column].unique(),
+                                 build_histogram_dict(famd_df, dataset_column, sorted(famd_df[dataset_column].unique()),
                                                       feature_column, bin_width=jsd_scaled_bin_width,
                                                       scaling_method=scaling),
-                                 famd_df[dataset_column].unique()),
+                                 sorted(famd_df[dataset_column].unique())),
                 'scaling': True},
         'wass': {'func': lambda scaling=None: calc_wasserstein_by_feature(famd_df, feature_column, dataset_column,
                                                                           scaling=scaling),

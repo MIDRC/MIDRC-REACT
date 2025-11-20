@@ -381,3 +381,26 @@ class GrabbableChartView(QChartView):
         """
         self.grabbable_mixin.save_to_disk()
 
+    @property
+    def copyable_data(self) -> str:
+        """
+        Get the copyable data for the chart view.
+
+        Returns:
+            str: The data to be copied to the clipboard when requested.
+        """
+        return self.grabbable_mixin.copyable_data
+
+    @copyable_data.setter
+    def copyable_data(self, data: str):
+        """
+        Set the copyable data for the chart view.
+
+        Args:
+            data (str): The data to be copied to the clipboard when requested.
+
+        Returns:
+            None
+        """
+        self.grabbable_mixin.copyable_data = data
+

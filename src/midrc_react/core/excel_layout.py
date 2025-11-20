@@ -41,20 +41,20 @@ class DataSource:
             data_source (dict): The data source configuration.
             custom_age_ranges (dict, optional): A dictionary of custom age ranges.
         """
-        self.name = data_source['name']
+        self.name = data_source.name
         self.sheets = {}
-        self.datatype = data_source['data type']
-        self.filename = data_source['filename']
+        self.datatype = data_source.data_type
+        self.filename = data_source.filename
         self.data_source = data_source
         self.custom_age_ranges = custom_age_ranges
-        self._numeric_cols = data_source.get('numeric_cols', {})  # Extract numeric columns from config
-        self._columns = data_source.get('columns', [])
+        self._numeric_cols = data_source.numeric_cols  # Extract numeric columns from config
+        self._columns = data_source.columns
         self.raw_data = None
 
         # Load preprocessing plugin if specified
         self.preprocessor = None
-        if 'plugin' in data_source and data_source['plugin']:
-            plugin_name = data_source['plugin']
+        if data_source.plugin:
+            plugin_name = data_source.plugin
             plugin_path = os.path.join("plugins", f"{plugin_name}.py")
             self.preprocessor = DataSource.load_plugin(plugin_path)
 
@@ -64,8 +64,8 @@ class DataSource:
                 self.build_data_frames_from_csv(self.filename)
             else:
                 self.build_data_frames_from_file(self.filename)
-        if self.datatype == 'content' and 'content' in data_source:
-            self.build_data_frames_from_content(data_source['content'])
+        if self.datatype == 'content' and hasattr(data_source, 'content') and data_source.content is not None:
+            self.build_data_frames_from_content(data_source.content)
 
     def raw_columns_to_use(self):
         """
@@ -126,9 +126,9 @@ class DataSource:
             pd.DataFrame: The DataFrame with numeric column adjustments.
         """
         for str_col, col_dict in self._numeric_cols.items():
-            num_col = col_dict['raw column'] if 'raw column' in col_dict else str_col
-            bins = col_dict['bins'] if 'bins' in col_dict else None
-            labels = col_dict['labels'] if 'labels' in col_dict else None
+            num_col = col_dict.raw_column if hasattr(col_dict, 'raw_column') else str_col
+            bins = col_dict.bins if hasattr(col_dict, 'bins') else None
+            labels = col_dict.labels if hasattr(col_dict, 'labels') else None
 
             if num_col in df.columns:
                 df = bin_dataframe_column(df, num_col, str_col, bins=bins, labels=labels)
@@ -139,7 +139,6 @@ class DataSource:
                 # else:
                 #     # Default "N-N" format conversion
                 #     df[str_col] = df[num_col].apply(lambda x: f'{int(x)}-{int(x)}' if pd.notna(x) else x)
-
         return df
 
     def build_data_frames_from_csv(self, filename: str):
@@ -226,7 +225,7 @@ class DataSource:
             if col in df.columns:
                 df_cumsum = self.calculate_cumulative_sums(df, col)
                 if col in self._numeric_cols:
-                    labels = self._numeric_cols[col].get('labels', None)
+                    labels = self._numeric_cols[col].labels if hasattr(self._numeric_cols[col], 'labels') else None
                     if labels:
                         # The first column (e.g., date) remains at index 0.
                         date_column = df_cumsum.columns[0]
@@ -333,25 +332,28 @@ class DataSheet:
         """
 
         # This assumes that the first column is either the date column or does not have useful data
-        if data_source.get('date'):
+        date_value = getattr(data_source, 'date', None)
+        if date_value:
             self._df.drop(self._df.columns[0], axis=1, inplace=True)
-            self._df.insert(0, 'date', data_source['date'], False)
+            self._df.insert(0, 'date', date_value, False)
 
         self._df['date'] = pd.to_datetime(self._df['date'], errors='coerce')
 
         self._columns['date'] = self._df.columns[0]
 
-    def _process_columns(self, data_source: dict):
+    def _process_columns(self, data_source):
         """
         Process and rename columns according to the data source settings.
 
         Args:
-            data_source (dict): The data source object.
+            data_source (DataSource): The data source object.
         """
         for col in self._df.columns[1:]:
             col_name = col
-            if 'remove column name text' in data_source:
-                for txt in data_source['remove column name text']:
+            # Access remove_column_name_text from pydantic model
+            remove_text = getattr(data_source, 'remove_column_name_text', None)
+            if remove_text:
+                for txt in remove_text:
                     col_name = col.split(txt)[0]
             col_name = col_name.rstrip()
             self._columns[col_name] = col

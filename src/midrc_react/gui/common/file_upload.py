@@ -26,9 +26,9 @@ def process_file_upload(view, data_source_dict):
     Args:
         view: An instance that implements open_excel_file and holds a
               data_selection_group_box attribute.
-        data_source_dict (dict): Contains the uploaded file information.
+        data_source_dict (DataSource): Contains the uploaded file information.
     """
-    print(f"handle_excel_file_uploaded() triggered with file: {data_source_dict['name']}")
+    print(f"handle_excel_file_uploaded() triggered with file: {data_source_dict.name}")
     view.open_excel_file(data_source_dict)
     print("Excel file loaded, try to update layout")
     if hasattr(view, 'data_selection_group_box'):

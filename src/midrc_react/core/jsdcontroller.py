@@ -179,14 +179,14 @@ class JSDController(QObject):
             return
 
         category_info = dataselectiongroupbox.get_category_info()
-        category_index = category_info['current_index']
+        category_index = category_info.current_index
         if new_category_index is not None:
             category_index = new_category_index
 
         # Compute the intersection of category keys across all file_infos.
         category_set = None
         for cbox in file_infos:
-            ds = self.jsd_model.data_sources[cbox['source_id']]
+            ds = self.jsd_model.data_sources[cbox.source_id]
             if category_set is None:
                 category_set = set(ds.sheets.keys())
             else:
@@ -196,7 +196,7 @@ class JSDController(QObject):
 
         # Compute has_raw_data using all() with a generator expression.
         has_raw_data = all(
-            self.jsd_model.data_sources[cbox['source_id']].raw_data is not None
+            self.jsd_model.data_sources[cbox.source_id].raw_data is not None
             for cbox in file_infos
         )
 
@@ -206,7 +206,7 @@ class JSDController(QObject):
             category_list.append('Aggregate')
             category_list.append('FAMD')
             for category in category_list:
-                if category in self.jsd_model.data_sources[file_infos[0]['source_id']].numeric_cols:
+                if category in self.jsd_model.data_sources[file_infos[0].source_id].numeric_cols:
                     category_list.append(f'{category} (ks2)')
 
         dataselectiongroupbox.update_category_list(category_list, category_index)
@@ -224,7 +224,7 @@ class JSDController(QObject):
             dict: A dictionary containing the sheets from the selected file.
         """
         try:
-            current_data = self.jsd_view.dataselectiongroupbox.get_file_infos()[index]['source_id']
+            current_data = self.jsd_view.dataselectiongroupbox.get_file_infos()[index].source_id
         except IndexError as exc:
             raise IndexError("Index out of range") from exc
 
@@ -252,7 +252,7 @@ class JSDController(QObject):
         """
         dataselectiongroupbox = self.jsd_view.dataselectiongroupbox
         file_infos = dataselectiongroupbox.get_file_infos()
-        category = dataselectiongroupbox.get_category_info()['current_text']
+        category = dataselectiongroupbox.get_category_info().current_text
 
         # Try to avoid a race condition where the category is changed before the file is changed
         if not category:
@@ -267,8 +267,8 @@ class JSDController(QObject):
         column_infos = []
 
         for (i, cbox1), (j, cbox2) in itertools.combinations(enumerate(file_infos), 2):
-            file1 = cbox1['source_id']
-            file2 = cbox2['source_id']
+            file1 = cbox1.source_id
+            file2 = cbox2.source_id
             data_source_1 = self.jsd_model.data_sources[file1]
             data_source_2 = self.jsd_model.data_sources[file2]
 
@@ -305,7 +305,7 @@ class JSDController(QObject):
                 numeric_cols = []
                 for str_col, col_info in data_source_1.numeric_cols.items():
                     cols_to_use.remove(str_col)
-                    num_col = col_info['raw column']
+                    num_col = col_info.raw_column
                     cols_to_use.append(num_col)
                     numeric_cols.append(num_col)
                 input_data = calc_famd_ks2_at_dates(
@@ -321,7 +321,7 @@ class JSDController(QObject):
                 combined_df = combine_datasets_from_list([raw_df1, raw_df2])
                 date_list = build_date_list(raw_df1, raw_df2)
                 str_col = category[:-6]
-                num_col = data_source_1.numeric_cols[str_col]['raw column']
+                num_col = data_source_1.numeric_cols[str_col].raw_column
 
                 input_data = [calc_ks2_samp_by_feature(combined_df[combined_df['date'] <= date],
                                                              num_col)['Dataset 0 vs Dataset 1'] for date in date_list]
@@ -394,7 +394,7 @@ class JSDController(QObject):
         sheet_dict = {}
         file_infos = self.jsd_view.dataselectiongroupbox.get_file_infos()
         for i, file_info in enumerate(file_infos):
-            if file_info['checked']:
+            if file_info.checked:
                 sheet_dict[i] = self.get_file_sheets_from_index(i)
 
         spider_plot_values = self.get_spider_plot_values(spider_plot_date)
@@ -422,7 +422,7 @@ class JSDController(QObject):
         sheet_dict = {}
         file_infos = self.jsd_view.dataselectiongroupbox.get_file_infos()
         for i, file_info in enumerate(file_infos):
-            if file_info['checked']:
+            if file_info.checked:
                 sheet_dict[i] = self.get_file_sheets_from_index(i)
 
         try:
@@ -448,7 +448,7 @@ class JSDController(QObject):
         """
         cols_to_use = self.jsd_model.data_sources[source_id].sheets[category].data_columns
 
-        custom_age_ranges = self._config.data.get('custom age ranges', None)
+        custom_age_ranges = self._config.data.custom_age_ranges
         if custom_age_ranges and category in custom_age_ranges:
             cols_to_use = [f'{age_range[0]}-{age_range[1]} Custom' for
                            age_range in custom_age_ranges[category]] + [JSDController.NOT_REPORTED_COLUMN_NAME]
@@ -469,11 +469,11 @@ class JSDController(QObject):
             calc_date = np.datetime64('today')
 
         dataselectiongroupbox = self.jsd_view.dataselectiongroupbox
-        categories = dataselectiongroupbox.get_category_info()['category_list']
+        categories = dataselectiongroupbox.get_category_info().category_list
 
         # Determine indexes to use based on checked boxes or default to all
         file_infos = dataselectiongroupbox.get_file_infos()
-        indexes_to_use = [i for i, file_info in enumerate(file_infos) if file_info['checked']]
+        indexes_to_use = [i for i, file_info in enumerate(file_infos) if file_info.checked]
         if not indexes_to_use:
             indexes_to_use = list(range(len(file_infos)))
         if len(indexes_to_use) == 1:
@@ -490,8 +490,8 @@ class JSDController(QObject):
                 index2_candidates = [index2]
 
             for idx2 in index2_candidates:
-                source_id1 = file_infos[index1]['source_id']
-                source_id2 = file_infos[idx2]['source_id']
+                source_id1 = file_infos[index1].source_id
+                source_id2 = file_infos[idx2].source_id
 
                 data_source_1 = self.jsd_model.data_sources[source_id1]
                 data_source_2 = self.jsd_model.data_sources[source_id2]
@@ -525,7 +525,7 @@ class JSDController(QObject):
                         numeric_cols = []
                         for str_col, col_info in data_source_1.numeric_cols.items():
                             cols_to_use.remove(str_col)
-                            num_col = col_info['raw column']
+                            num_col = col_info.raw_column
                             cols_to_use.append(num_col)
                             numeric_cols.append(num_col)
                         jsd_dict[(index1, idx2)][category] = calc_famd_ks2_at_date(
@@ -540,7 +540,7 @@ class JSDController(QObject):
                         raw_df2 = data_source_2.raw_data
                         combined_df = combine_datasets_from_list([raw_df1, raw_df2])
                         str_col = category[:-6]
-                        num_col = data_source_1.numeric_cols[str_col]['raw column']
+                        num_col = data_source_1.numeric_cols[str_col].raw_column
                         jsd_dict[(index1, idx2)][category] = calc_ks2_samp_by_feature(
                             combined_df[combined_df['date'] <= calc_date],
                             num_col,

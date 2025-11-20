@@ -21,10 +21,11 @@ categories in a graphical user interface (GUI) using PySide6.
 from PySide6.QtCore import QSignalBlocker, Signal
 from PySide6.QtWidgets import QCheckBox, QComboBox, QFormLayout, QGroupBox, QHBoxLayout, QLabel
 
-from midrc_react.gui.common.jsdview_base import GroupBoxData
+from midrc_react.gui.common.jsdview_base import GroupBoxData, FileInfo
+from midrc_react.core.jsdconfig import DataSourceConfigList
 
 
-class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
+class JsdDataSelectionGroupBox(QGroupBox):
     """
     This class represents a group box widget for data selection. It provides functionality for creating labels and
     combo boxes for data files and a category combo box. The class has methods for setting up the layout,
@@ -49,9 +50,11 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         category combo box.
 
         Parameters:
-            data_sources (list): A list of data sources.
+            data_sources (DataSourceList): A list of data sources.
         """
         super().__init__()
+
+        self.data = GroupBoxData()
 
         self.setTitle('Data Selection')
 
@@ -62,7 +65,7 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         self.category_combobox = QComboBox()
         self.set_layout(data_sources)
 
-    def set_layout(self, data_sources):
+    def set_layout(self, data_sources: DataSourceConfigList):
         """
         Set the layout for the given data sources.
 
@@ -85,7 +88,7 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         self.add_file_combobox_to_layout(auto_populate=False)
 
         # Add the file comboboxes and labels to the form layout
-        items = [(d['description'], d['name']) for d in data_sources]
+        items = [(d.description, d.name) for d in data_sources]
         for combobox_item in items:
             self.add_file_to_comboboxes(combobox_item[0], combobox_item[1])
         self.file_comboboxes[0].setCurrentIndex(0)
@@ -99,17 +102,17 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         Get the file information for all files.
 
         Returns:
-            List[dict]: A list of dictionaries containing information about each file.
+            FileInfoList: A list of dictionaries containing information about each file.
         """
-        self._file_infos = []
+        self.data.file_infos: FileInfoList = []
         for i, cbox in enumerate(self.file_comboboxes):
-            self._file_infos.append({
-                'description': cbox.currentText(),
-                'source_id': cbox.currentData(),
-                'index': i,
-                'checked': self.file_checkboxes[i].isChecked(),
-            })
-        return self._file_infos
+            self.data.append_file_info(FileInfo(
+                description = cbox.currentText(),
+                source_id = cbox.currentData(),
+                index = i,
+                checked = self.file_checkboxes[i].isChecked(),
+            ))
+        return self.data.file_infos
 
     def get_category_info(self):
         """
@@ -118,12 +121,9 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
         Returns:
             dict: A dictionary containing the category information.
         """
-        self._category_info = {
-            'current_text': self.category_combobox.currentText(),
-            'current_index': self.category_combobox.currentIndex(),
-            'category_list': [self.category_combobox.itemText(i) for i in range(self.category_combobox.count())],
-        }
-        return self._category_info
+        category_list = [self.category_combobox.itemText(i) for i in range(self.category_combobox.count())]
+        category_index = self.category_combobox.currentIndex()
+        return self.data.category_info
 
     def add_file_combobox_to_layout(self, auto_populate: bool = True):
         """
@@ -233,3 +233,4 @@ class JsdDataSelectionGroupBox(QGroupBox, GroupBoxData):
             self.category_combobox.clear()
             self.category_combobox.addItems(categorylist)
             self.category_combobox.setCurrentIndex(categoryindex)
+        self.data.update_category_list(categorylist, categoryindex)
