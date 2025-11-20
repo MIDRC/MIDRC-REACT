@@ -28,18 +28,33 @@ setup(
         "PySide6>=6.6.0",
         "scipy>=1.12.0",
         "openpyxl>=3.1.0",
-        "pytest>=8.1.0",
         "PyYAML>=6.0.0",
         "prince>=0.15.0",
-        "dash>=2.18.2",
-        "plotly>=5.24.1",
-        "matplotlib>=3.9.0",
-        "seaborn>=0.13.2",
-        "ipywidgets>=8.1.5",
-        "ipython>=8.28.0",
+        "pydantic>=2.7.0",
         "python-dateutil>=2.9.0.post0",
         "scikit-learn>=1.6.1",
     ],
+    optional_dependencies={
+        "ipython": [
+            "ipywidgets>=8.1.5",
+            "ipython>=8.28.0",
+            "matplotlib>=3.9.0",
+            "seaborn>=0.13.2",
+            "plotly>=5.24.1",
+        ],
+        "dash": [
+            "dash>=2.18.2",
+            "dash-bootstrap-components>=1.4.1",
+            "plotly>=5.24.1",
+        ],
+        "dev": [
+            "pytest>=8.1.0",
+            "black>=24.9.1",
+            "flake8>=6.1.0",
+            "mypy>=1.3.0",
+        ],
+    },
+
     python_requires=">=3.10",
     entry_points={
         "console_scripts": [
