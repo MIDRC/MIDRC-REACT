@@ -166,6 +166,10 @@ class CSVTSVOptionsDialog(BaseFileOptionsDialog):
         form_layout.addRow("Name (Plot Titles):", self.name_line_edit)
         form_layout.addRow("Description (Drop-Down Menu):", self.description_line_edit)
         form_layout.addRow("Date Column:", self.date_column_line_edit)
+        # add tooltip for date column
+        self.date_column_line_edit.setToolTip("Specify the column name to use for dates.\n"
+                                                "If the specified column is not found, the first column will be used by default.\n"
+                                                "This will internally rename the column to 'date' for processing.")
         top_layout.addLayout(form_layout)
 
         # Step 2: Plugin dropdown and Process Plugin button
