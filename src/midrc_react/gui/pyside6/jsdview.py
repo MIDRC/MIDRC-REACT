@@ -37,7 +37,7 @@ from PySide6.QtWidgets import (
 )
 
 from midrc_react.core.datetimetools import convert_date_to_milliseconds, numpy_datetime64_to_qdate
-from midrc_react.core.jsdconfig import DataSourceConfigList
+from midrc_react.core.jsdconfig import DataSourceConfigList, DataSourceConfig
 from midrc_react.gui.common.jsdview_base import JsdViewBase
 from midrc_react.gui.pyside6.copyabletableview import CopyableTableView
 from midrc_react.gui.pyside6.dataselectiongroupbox import JsdDataSelectionGroupBox
@@ -56,7 +56,7 @@ class JsdWindow(QMainWindow, JsdViewBase):
         WINDOW_TITLE (str): The window title.
         DOCK_TITLES (dict): Titles for various dock widgets.
     """
-    add_data_source = Signal(dict)
+    add_data_source = Signal(DataSourceConfig)
 
     WINDOW_TITLE: str = 'MIDRC-REACT Representativeness Exploration and Comparison Tool'
     DOCK_TITLES: Dict[str, str] = {

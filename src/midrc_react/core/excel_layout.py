@@ -50,6 +50,7 @@ class DataSource:
         self._numeric_cols = data_source.numeric_cols  # Extract numeric columns from config
         self._columns = data_source.columns
         self.raw_data = None
+        self._date_column = data_source.date_column
 
         # Load preprocessing plugin if specified
         self.preprocessor = None
@@ -221,6 +222,11 @@ class DataSource:
         Returns:
             None
         """
+        if self._date_column not in df.columns:
+            self._date_column = df.columns[0]
+        df.rename(columns={self._date_column: 'date'}, inplace=True)  # Ensure the date column is named 'date'
+        # make sure the date column is datetime
+        df['date'] = pd.to_datetime(df['date'])
         for col in self._columns:
             if col in df.columns:
                 df_cumsum = self.calculate_cumulative_sums(df, col)
@@ -228,19 +234,18 @@ class DataSource:
                     labels = self._numeric_cols[col].labels if hasattr(self._numeric_cols[col], 'labels') else None
                     if labels:
                         # The first column (e.g., date) remains at index 0.
-                        date_column = df_cumsum.columns[0]
                         # Keep only labels that are present in the DataFrame.
                         labels_in_df = [col for col in labels if col in df_cumsum.columns]
                         # The remaining columns are those not in labels_in_df and not the date column.
                         remaining_cols = [col for col in df_cumsum.columns if
-                                          col not in labels_in_df and col != date_column]
+                                          col not in labels_in_df and col != 'date']
                         # Build the new column order.
-                        new_order = [date_column] + labels_in_df + remaining_cols
+                        new_order = ['date'] + labels_in_df + remaining_cols
                         df_cumsum = df_cumsum[new_order]
                 self.sheets[col] = DataSheet(col, self.data_source, self.custom_age_ranges, is_excel=False,
                                              df=df_cumsum)
 
-    def calculate_cumulative_sums(self, df: pd.DataFrame, col: str):
+    def calculate_cumulative_sums(self, df: pd.DataFrame, col: str) -> pd.DataFrame:
         """
         Calculates cumulative sums for a given column.
 
