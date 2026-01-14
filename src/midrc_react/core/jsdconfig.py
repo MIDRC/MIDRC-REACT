@@ -50,6 +50,7 @@ class DataSourceConfig(BaseModel):
     numeric_cols: Optional[Dict[str, NumericColumnConfig]] = None
     plugin: Optional[str] = None
     date: Optional[str] = None
+    date_column: Optional[str] = Field('date', alias='date column')
     remove_column_name_text: Optional[List[str]] = Field(None, alias='remove column name text')
 
     content: Optional[Any] = None  # Placeholder for loaded content

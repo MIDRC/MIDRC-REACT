@@ -36,7 +36,7 @@ from PySide6.QtWidgets import (
 import yaml
 
 from midrc_react.gui.pyside6.columnselectordialog import ColumnSelectorDialog, NumericColumnSelectorDialog
-
+from midrc_react.core.jsdconfig import DataSourceConfig, NumericColumnConfig
 
 class BaseFileOptionsDialog(QDialog):
     """
@@ -162,8 +162,10 @@ class CSVTSVOptionsDialog(BaseFileOptionsDialog):
         form_layout = QFormLayout()
         self.name_line_edit = QLineEdit()
         self.description_line_edit = QLineEdit()
+        self.date_column_line_edit = QLineEdit()
         form_layout.addRow("Name (Plot Titles):", self.name_line_edit)
         form_layout.addRow("Description (Drop-Down Menu):", self.description_line_edit)
+        form_layout.addRow("Date Column:", self.date_column_line_edit)
         top_layout.addLayout(form_layout)
 
         # Step 2: Plugin dropdown and Process Plugin button
@@ -266,6 +268,7 @@ class CSVTSVOptionsDialog(BaseFileOptionsDialog):
             "plugin": settings.value("plugin", ""),
             "name": settings.value("name", ""),
             "description": settings.value("description", ""),
+            "date_column": settings.value("date_column", "date"),
             "columns": settings.value("columns", ""),
             "numeric_cols": settings.value("numeric_cols", ""),
         }
@@ -293,6 +296,7 @@ class CSVTSVOptionsDialog(BaseFileOptionsDialog):
         saved_description = (
             file_values.get("description") or last_values.get("description", self.default_base)
         )
+        saved_date_column = file_values.get("date_column") or last_values.get("date_column", "date")
         saved_columns = file_values.get("columns") or last_values.get("columns", "")
         saved_numeric = file_values.get("numeric_cols") or last_values.get("numeric_cols", "")
 
@@ -302,6 +306,7 @@ class CSVTSVOptionsDialog(BaseFileOptionsDialog):
                 self.plugin_combo.setCurrentIndex(idx)
         self.name_line_edit.setText(saved_name)
         self.description_line_edit.setText(saved_description)
+        self.date_column_line_edit.setText(saved_date_column)
         if saved_columns:
             self.columns_line_edit.setText(saved_columns)
         if saved_numeric:
@@ -319,6 +324,7 @@ class CSVTSVOptionsDialog(BaseFileOptionsDialog):
         settings.setValue("plugin", self.plugin_combo.currentText().strip())
         settings.setValue("name", self.name_line_edit.text())
         settings.setValue("description", self.description_line_edit.text())
+        settings.setValue("date_column", self.date_column_line_edit.text())
         settings.setValue("columns", self.columns_line_edit.text())
         settings.setValue("numeric_cols", self.numeric_cols_text_edit.toPlainText())
         settings.endGroup()
@@ -473,6 +479,7 @@ class CSVTSVOptionsDialog(BaseFileOptionsDialog):
         return {
             "name": self.name_line_edit.text(),
             "description": self.description_line_edit.text(),
+            "date_column": self.date_column_line_edit.text(),
             "columns": selected_cols,
             "numeric_cols": numeric_cols,
             "plugin": self.plugin_combo.currentText().strip(),
@@ -512,17 +519,13 @@ def open_excel_file_dialog(self: Any) -> None:
     if dialog.exec() != QDialog.Accepted:
         return  # User cancelled the dialog
 
-    data_source_dict: Dict[str, Union[str, Any]] = {
-        'name': dialog.name_line_edit.text(),
-        'description': dialog.description_line_edit.text(),
-        'data type': 'file',
-        'filename': file_name,
-        'remove column name text': dialog.remove_column_text_line_edit.text(),
-    }
-    self.add_data_source.emit(data_source_dict)
+    data_source_dict = dialog.get_data()
+    data_source_config = DataSourceConfig(**data_source_dict, filename=file_name, data_type='file')
+    self.add_data_source.emit(data_source_config)
+
     self.dataselectiongroupbox.add_file_to_comboboxes(
-        data_source_dict['description'],
-        data_source_dict['name'],
+        data_source_config.description,
+        data_source_config.name,
     )
 
 
@@ -565,10 +568,11 @@ def open_yaml_input_dialog(self: Any) -> None:
 
         # Save the current YAML content as default
         settings.setValue("yaml_input/default_yaml", yaml_content)
-        self.add_data_source.emit(data_source_dict)
+        data_source_config = DataSourceConfig(**data_source_dict)
+        self.add_data_source.emit(data_source_config)
         self.dataselectiongroupbox.add_file_to_comboboxes(
-            data_source_dict.get("description", ""),
-            data_source_dict.get("name", ""),
+            data_source_config.description,
+            data_source_config.name,
         )
 
 
@@ -591,17 +595,10 @@ def open_csv_tsv_file_dialog(self: Any) -> None:
         return  # User cancelled the dialog
 
     data = dialog.get_data()
-    data_source_dict: Dict[str, Any] = {
-        'name': data['name'],
-        'description': data['description'],
-        'data type': 'file',
-        'filename': file_name,
-        'columns': data['columns'],
-        'numeric_cols': data['numeric_cols'],  # Caller can later parse this as YAML if desired
-        'plugin': data['plugin'],
-    }
-    self.add_data_source.emit(data_source_dict)
+    data_source_config = DataSourceConfig(**data, filename=file_name, data_type='file')
+
+    self.add_data_source.emit(data_source_config)
     self.dataselectiongroupbox.add_file_to_comboboxes(
-        data_source_dict.get('description', ''),
-        data_source_dict.get('name', ''),
+        data_source_config.description,
+        data_source_config.name,
     )

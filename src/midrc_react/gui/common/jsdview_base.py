@@ -23,6 +23,8 @@ from pydantic import BaseModel, Field
 from PySide6.QtCore import QObject, Signal
 from PySide6.QtWidgets import QMainWindow
 
+from midrc_react.core.jsdconfig import DataSourceConfig
+
 
 class FileInfo(BaseModel):
     description: Optional[str] = None
@@ -146,7 +148,7 @@ class JsdViewBase(QObject):
     _data_selection_group_box = GroupBoxData()
     _controller = None
     update_view_on_controller_initialization = True
-    add_data_source = Signal(dict)
+    add_data_source = Signal(DataSourceConfig)
 
     def __init__(self):
         """
