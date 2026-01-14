@@ -1,0 +1,74 @@
+version: 0.1.0
+
+tool:
+  name: Representativeness Exploration and Comparison Tool - REACT
+  repo_url: https://github.com/MIDRC/MIDRC-REACT
+  tool_homepage: https://github.com/MIDRC/MIDRC-REACT
+  documentation_url: https://midrc.github.io/MIDRC-REACT/
+  tool_type: Script
+
+llm:
+  usesLlm: false
+  bringOwnKey: false
+
+input:
+  - name: Imaging structured 1
+    dataCategory: imaging
+    dataClass: structured
+    dataType: radiology
+    format:
+      - csv
+    dataStandard:
+      - dicom
+    proprietary: false
+    source: https://data.midrc.org/
+
+output:
+  - name: Imaging Tabular 1
+    dataCategory: imaging
+    dataClass: tabular
+    dataType: radiology
+    format:
+      - csv
+    dataStandard:
+      - dicom
+    proprietary: false
+    source: https://data.midrc.org/
+
+license:
+  license_type: Apache-2.0
+  link: https://github.com/MIDRC/MIDRC-REACT/blob/master/LICENSE
+
+funding:
+  source: Developed for MIDRC creation with NIBIB, and then generalized and converted to tool via ARPA-H BDF
+  agreement: Not specified
+  link: ""
+
+domains:
+  - Imaging and other AI input domains
+
+credit:
+  - name: MIDRC
+    role: Developer
+    org: Medical Imaging and Data Resource Center
+    url: https://www.midrc.org/
+
+target_users:
+  primary_user:
+    user_type: researcher
+    technical_literacy_level:
+      - intermediate
+    biomedical_literacy_level:
+      - intermediate
+
+maturity:
+  beginning_maturity: 1
+  current_maturity: 8
+
+media:
+  [
+    { "link": "https://www.youtube.com/watch?v=PFa6EUqE-G8" },
+    { "link": "https://player.vimeo.com/video/998029033" },
+  ]
+
+collaborations: []
