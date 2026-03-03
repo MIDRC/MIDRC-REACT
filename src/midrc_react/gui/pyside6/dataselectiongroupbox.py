@@ -123,6 +123,8 @@ class JsdDataSelectionGroupBox(QGroupBox):
         """
         category_list = [self.category_combobox.itemText(i) for i in range(self.category_combobox.count())]
         category_index = self.category_combobox.currentIndex()
+        if category_index >=0 and category_index < len(category_list):
+            self.data.update_category_list(category_list, category_index)
         return self.data.category_info
 
     def add_file_combobox_to_layout(self, auto_populate: bool = True):

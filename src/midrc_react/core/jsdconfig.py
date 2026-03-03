@@ -68,7 +68,7 @@ class ConfigData(BaseModel):
     """
     # Define fields based on expected YAML structure
     data_sources: DataSourceConfigList = Field(..., alias='data sources')
-    custom_age_ranges: Optional[Dict[str, List[Union[int, float]]]] = Field(None, alias='custom_age_range')
+    custom_age_ranges: Optional[Dict[str, List[List[Union[int, float]]]]] = Field(None, alias='custom age ranges')
 
     class Config:
         validate_by_name = True
